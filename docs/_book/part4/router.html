@@ -1,0 +1,507 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>React + React-Router 路由配置 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../part5/gojs.html" />
+    
+    
+    <link rel="prev" href="form.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">前端配置</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../part1/kickstart.html">
+            
+                <a href="../part1/kickstart.html">
+            
+                    
+                    项目安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    前端架构
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">代码规范</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../part2/code-rules.html">
+            
+                <a href="../part2/code-rules.html">
+            
+                    
+                    规范与 Eslint 配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">交互组件</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../part3/table.html">
+            
+                <a href="../part3/table.html">
+            
+                    
+                    table
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" >
+            
+                <span>
+            
+                    
+                    form
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Demo 示例</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="redux.html">
+            
+                <a href="redux.html">
+            
+                    
+                    saga + redux + container 数据流转
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="async.html">
+            
+                <a href="async.html">
+            
+                    
+                    async + await 并发或顺序数据请求
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="form.html">
+            
+                <a href="form.html">
+            
+                    
+                    表单操作管理实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.4" data-path="router.html">
+            
+                <a href="router.html">
+            
+                    
+                    React + React-Router 路由配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">前端分享</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../part5/gojs.html">
+            
+                <a href="../part5/gojs.html">
+            
+                    
+                    GoJS 初探
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >React + React-Router 路由配置</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="react--react-router-&#x8DEF;&#x7531;&#x914D;&#x7F6E;">React + React-Router &#x8DEF;&#x7531;&#x914D;&#x7F6E;</h1>
+<h2 id="react-router">React-Router</h2>
+<ul>
+<li>&#x6982;&#x8FF0;&#xFF1A;Router&#x5B9E;&#x8D28;&#x4E3A;&#x4E00;&#x4E2A;&#x5BB9;&#x5668;&#xFF0C;&#x771F;&#x6B63;&#x7684;&#x8DEF;&#x7531;&#x901A;&#x8FC7;Route&#x7EC4;&#x4EF6;&#x6765;&#x5B9A;&#x4E49;&#x3002;<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">Router</span> <span class="hljs-attr">history</span>=<span class="hljs-string">{hashHistory}</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Route</span> <span class="hljs-attr">path</span>=<span class="hljs-string">&quot;/&quot;</span> <span class="hljs-attr">component</span>=<span class="hljs-string">{App}</span>/&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">Router</span>&gt;</span>
+</code></pre>
+&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x7684;&#x542B;&#x4E49;&#x662F;&#x8BBF;&#x95EE;&#x6839;&#x8DEF;&#x7531;<code>/</code>&#x65F6;&#xFF0C;&#x5C06;&#x52A0;&#x8F7D;App&#x7EC4;&#x4EF6;&#x3002;&#x7EC4;&#x4EF6;&#x548C;&#x8DEF;&#x7531;&#x4E00;&#x4E00;&#x5BF9;&#x5E94;&#x3002;&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x591A;&#x4E2A;Route&#x7EC4;&#x4EF6;&#x6765;&#x5B9A;&#x4E49;&#x591A;&#x7EC4;&#x8DEF;&#x7531;&#x3002;
+&#x4E5F;&#x53EF;&#x4EE5;&#x5D4C;&#x5957;&#x8DEF;&#x7531;&#xFF0C;&#x5B9E;&#x73B0;&#x5728;&#x7236;&#x7EC4;&#x4EF6;&#x4E2D;&#x52A0;&#x8F7D;&#x5B50;&#x7EC4;&#x4EF6;&#x3002;&#x5982;&#x4E0B;&#xFF0C;&#x8BBF;&#x95EE;<code>/repos</code>&#x65F6;&#xFF0C;&#x4F1A;&#x5148;&#x52A0;&#x8F7D;App&#xFF0C;&#x7136;&#x540E;&#x5728;&#x5176;&#x5185;&#x90E8;&#x52A0;&#x8F7D;Repos.<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">Router</span> <span class="hljs-attr">history</span>=<span class="hljs-string">{hashHistory}</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Route</span> <span class="hljs-attr">path</span>=<span class="hljs-string">&quot;/&quot;</span> <span class="hljs-attr">component</span>=<span class="hljs-string">{App}</span>/&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Route</span> <span class="hljs-attr">path</span>=<span class="hljs-string">&quot;/repos&quot;</span> <span class="hljs-attr">component</span>=<span class="hljs-string">{Repos}</span>/&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">Route</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">Router</span>&gt;</span>
+</code></pre>
+ps:&#x66F4;&#x591A;&#x7EC4;&#x4EF6;&#x53C2;&#x89C1;<a href="https://reacttraining.com/react-router/web/api/" target="_blank">&#x8FD9;&#x91CC;</a></li>
+</ul>
+<h2 id="&#x914D;&#x7F6E;&#x65B9;&#x6CD5;">&#x914D;&#x7F6E;&#x65B9;&#x6CD5;</h2>
+<p>&#x5728;&#x5B9E;&#x9645;&#x9879;&#x76EE;&#x4E2D;&#xFF0C;&#x901A;&#x5E38;&#x5C06;route&#x548C;component&#x7684;&#x6620;&#x5C04;&#x5173;&#x7CFB;&#x5355;&#x72EC;&#x5199;&#x5728;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x91CC;&#x3002;&#x8DEF;&#x7531;&#x53EF;&#x4EE5;&#x662F;&#x540C;&#x6B65;&#x8DEF;&#x7531;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x5F02;&#x6B65;&#x8DEF;&#x7531;&#x3002;</p>
+<ul>
+<li><p>&#x5F02;&#x6B65;&#x8DEF;&#x7531;&#x7684;&#x5B9E;&#x73B0;</p>
+<p>  &#x901A;&#x8FC7;async&#x51FD;&#x6570;&#x5C06;&#x8DEF;&#x7531;&#x5F02;&#x6B65;&#x5316;&#x3002;&#x5728;&#x5339;&#x914D;&#x5230;&#x6307;&#x5B9A;&#x8DEF;&#x7531;&#x65F6;&#x624D;&#x52A0;&#x8F7D;&#x5BF9;&#x5E94;&#x7684;&#x7EC4;&#x4EF6;.&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#x7247;&#x6BB5;&#xFF1A;</p>
+<pre><code class="lang-javascript">  [
+    {
+        path: <span class="hljs-string">&quot;/&quot;</span>,
+        name: <span class="hljs-string">&quot;&#x95E8;&#x6237;&quot;</span>,
+        getComponent: PoolReport(),
+        childRoutes: [{
+          path: <span class="hljs-string">&quot;home-pool&quot;</span>,
+          name: <span class="hljs-string">&quot;&#x8D44;&#x6E90;&#x6C60;&quot;</span>,
+          getComponent: HomePool()
+        }]
+     }, 
+    <span class="hljs-string">&apos;other route...&apos;</span>,
+   ]
+</code></pre>
+<p>  <code>PoolReport()</code>&#x548C;<code>HomePool()</code>&#x662F;&#x5F02;&#x6B65;&#x52A0;&#x8F7D;&#x7EC4;&#x4EF6;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x4F4D;&#x4E8E;&#x8981;&#x52A0;&#x8F7D;&#x7EC4;&#x4EF6;&#x76EE;&#x5F55;&#x4E4B;&#x4E2D;&#x3002;&#x8BE5;&#x51FD;&#x6570;&#x7684;&#x5B9E;&#x73B0;&#x5982;&#x4E0B;:
+  &#x5148;&#x5F02;&#x6B65;import&#x7EC4;&#x4EF6;&#xFF0C;</p>
+<pre><code class="lang-javascript">  <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">doGet</span>(<span class="hljs-params"></span>)</span>{
+      <span class="hljs-keyword">try</span>{
+       <span class="hljs-keyword">const</span> component = <span class="hljs-keyword">await</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">&apos;./&apos;</span>);
+       <span class="hljs-keyword">return</span> component;
+      }<span class="hljs-keyword">catch</span>(error){
+       <span class="hljs-built_in">console</span>.log(error);
+     }
+  }
+</code></pre>
+<p>  &#x7136;&#x540E;&#x521B;&#x5EFA;&#x7EC4;&#x4EF6;</p>
+<pre><code class="lang-javascript">  create(errorLoading, injectReducer, injectSagas) {
+      <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">nextState, cb</span>) </span>{
+          doGet()
+              .then(component =&gt; {
+                  cb(<span class="hljs-literal">null</span>, component.default);
+              })
+              .catch(errorLoading)
+      }
+  }
+</code></pre>
+<p>  &#x8FD9;&#x91CC;&#x6D89;&#x53CA;&#x5230;&#x5C06;&#x7EC4;&#x4EF6;&#x7684;reducer&#x548C;saga&#x6CE8;&#x5165;&#x5230;&#x5168;&#x5C40;&#x3002;</p>
+<p>  1.&#x6CE8;&#x5165;reducer&#x7684;&#x4E00;&#x822C;&#x505A;&#x6CD5;&#x662F;&#x91C7;&#x7528;store&#x5BF9;&#x8C61;&#x7684;<code>replaceReducer(nextReducer)</code>&#x6765;&#x66FF;&#x6362;&#x5F53;&#x524D;&#x7684;reducer&#x3002;
+  <code>nextReducer</code>&#x4E3A;&#x6CE8;&#x5165;&#x4E86;&#x5F53;&#x524D;reducer&#x7684;&#x65B0;reducer&#x3002;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-javascript">  <span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">injectAsyncReducer</span>(<span class="hljs-params">store, isValid</span>) </span>{
+      <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">injectReducer</span>(<span class="hljs-params">name, aysncReducer</span>) </span>{
+          <span class="hljs-keyword">if</span>(isValid) {
+              <span class="hljs-comment">//...</span>
+          }
+          invariant(
+                isString(name) &amp;&amp; !isEmpty(name) &amp;&amp; isFunction(asyncReducer),
+                <span class="hljs-string">&apos;(app/utils...) injectAsyncReducer: Expected `asyncReducer` to be a reducer function&apos;</span>
+          );
+          <span class="hljs-keyword">if</span> (<span class="hljs-built_in">Reflect</span>.has(store.asyncReducers, name)) <span class="hljs-keyword">return</span>;
+          store.asyncReducers[name] = asyncReducer;
+          store.replaceReducer(createReducer(store.aysnReducer));
+      }
+  }
+</code></pre>
+<p>  2.&#x6CE8;&#x5165;saga&#x7684;&#x65B9;&#x5F0F;&#x548C;&#x6CE8;&#x5165;reducer&#x7684;&#x65B9;&#x5F0F;&#x5927;&#x81F4;&#x76F8;&#x540C;&#x3002;&#x91C7;&#x7528;<code>sagas.map(store.runSaga)</code>&#x3002;</p>
+<pre><code class="lang-javascript">  <span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">injectAsyncSagas</span>(<span class="hljs-params">store, isValid</span>) </span>{
+      <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">injectSagas</span>(<span class="hljs-params">sagas</span>) </span>{
+          <span class="hljs-keyword">if</span>(isValid){
+              <span class="hljs-comment">//...</span>
+          }
+          invariant(
+                isString(name) &amp;&amp; !isEmpty(name) &amp;&amp; isFunction(asyncReducer),
+                <span class="hljs-string">&apos;(app/utils...) injectAsyncReducer: Expected `asyncReducer` to be a reducer function&apos;</span>
+          );
+          warning(
+                !isEmpty(sagas),
+                <span class="hljs-string">&apos;(app/utils...) injectAsyncSagas: Received an empty `sagas` array&apos;</span>
+          );
+          sagas.map(store.runSaga); 
+      }
+  }
+</code></pre>
+</li>
+<li><p>&#x6240;&#x6709;&#x7684;&#x8DEF;&#x7531;&#x4FE1;&#x606F;&#x53EF;&#x4EE5;&#x6309;&#x7167;&#x8DEF;&#x7531;&#x5D4C;&#x5957;&#x89C4;&#x5219;&#x4EE5;&#x4E0A;&#x8FF0;&#x7684;&#x65B9;&#x6CD5;&#x914D;&#x7F6E;&#x3002;&#x7136;&#x540E;&#x5728;&#x5E94;&#x7528;&#x7684;&#x5165;&#x53E3;&#x6587;&#x4EF6;&#xFF08;app.js&#xFF09;&#x4E2D;&#x6307;&#x5B9A;&#x6839;&#x8DEF;&#x7531;&#x548C;&#x6839;&#x7EC4;&#x4EF6;&#x3002;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-javascript">  <span class="hljs-keyword">const</span> rootRoute = {
+    component: App,
+    childRoutes: createRoutes(store)
+  };
+</code></pre>
+</li>
+<li>&#x7136;&#x540E;&#x5C06;&#x6839;&#x8DEF;&#x7531;&#x6DFB;&#x52A0;&#x5230;&#x8DEF;&#x7531;&#x5668;Router&#x7684;route&#x5C5E;&#x6027;&#x4E2D;&#x5373;&#x53EF;&#x3002;<pre><code class="lang-html">  <span class="hljs-tag">&lt;<span class="hljs-name">Provider</span> <span class="hljs-attr">store</span>=<span class="hljs-string">{store}</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">LanguageProvider</span> <span class="hljs-attr">messages</span>=<span class="hljs-string">{translationMessages}</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Router</span> <span class="hljs-attr">history</span>=<span class="hljs-string">{history}</span> <span class="hljs-attr">routes</span>=<span class="hljs-string">{rootRoute}</span>/&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">LanguageProvider</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">Provider</span>&gt;</span>
+</code></pre>
+</li>
+</ul>
+<h2 id="demo">Demo</h2>
+<ul>
+<li><a href="http://cloudj.pages.idcos.com:8082/feteam/_demo/_demo2/index.html" title="router_demo" target="_blank">view</a></li>
+<li><a href="http://gitlab.idcos.com:8082/CloudJ/feteam/tree/master/demo/demo2" target="_blank">source code</a></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="form.html" class="navigation navigation-prev " aria-label="Previous page: 表单操作管理实现">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../part5/gojs.html" class="navigation navigation-next " aria-label="Next page: GoJS 初探">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"React + React-Router 路由配置","level":"4.4","depth":1,"next":{"title":"GoJS 初探","level":"5.1","depth":1,"path":"part5/gojs.md","ref":"part5/gojs.md","articles":[]},"previous":{"title":"表单操作管理实现","level":"4.3","depth":1,"path":"part4/form.md","ref":"part4/form.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"part4/router.md","mtime":"2017-09-21T13:41:19.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-09-29T09:50:27.017Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
