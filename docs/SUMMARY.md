@@ -59,5 +59,5 @@
 * [webpack基础内容](part12/webpack.md)
 * [什么是loader](part12/loader.md)
   * [关于样式的loder](part12/loader/css.md)
-* [什么是Plugin]()(part13/plugin.md)
+* [什么是Plugin](part12/plugin.md)
 
