@@ -1,5 +1,5 @@
 ### 浅浅的谈一谈关于Vue 的生命周期
-#### lifecycle hooks   v。
+#### lifecycle hooks  
 
 | vue 2.0 | description |
 | ------ | ------ |

@@ -87,7 +87,7 @@ Vue 官方文档中关于插槽的文档说明很短，语言很精练，这篇�
 - 结构 slot-scope 例如
 
 ```js
-<test-slot v-bind:todos="todos" :items="items">
+<test-slot v-bind:todos="todos" v-bind:items="items">
   <template slot-scope="{ todo }">
     <span>{{ todo }}</span>
   </template>
@@ -100,12 +100,11 @@ Vue 官方文档中关于插槽的文档说明很短，语言很精练，这篇�
 <template>
   <div id="app1">
     <h2>app</h2>
-     <test-slot v-bind:todos="todos" :items="items">
+     <test-slot v-bind:todos="todos" v-bind:items="items">
       <!-- 将 `slotProps` 定义为插槽作用域的名字 -->
       <template slot-scope="slotProps">
-        <span>{{slotProps.age}}</span>
-        <span>{{slotProps.addr}}</span>
-        <span>{{slotProps.todo}}</span>
+        <span>{{slotProps.todo.text}}</span>
+        <span>{{slotProps.item.text}}</span>
       </template>
     </test-slot>
   </div>
@@ -146,7 +145,7 @@ export default {
       >
         <!-- 我们为每个 todo 准备了一个插槽，-->
         <!-- 将 `todo` 对象作为一个插槽的 prop 传入。-->
-        <slot v-bind:todo="todo">
+        <slot v-bind:todo="todo" v-bind:item="item">
           <!-- 回退的内容 -->
           {{ todo.text }}
         </slot>
