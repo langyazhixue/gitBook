@@ -98,3 +98,10 @@ new Vue({
 
    下面放一张 官网出的图
    ![图2](./img/o_lifecycle.png) 
+
+####  生命周期总结
+1. beforecreate : 举个栗子：可以在这加个loading事件 
+2. created ：在这结束loading，还做一些初始化，实现函数自执行 
+3. mounted ： 在这发起后端请求，拿回数据，配合路由钩子做一些事情
+4. beforeDestroy： 你确认删除XX吗？
+5. destroyed ：当前组件已被删除，清空相关内容
