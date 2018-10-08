@@ -322,7 +322,7 @@ clearfix:before, .clearfix:after {
     * 优点：占位符是独立定义，不调用的时候是不会在 CSS 中产生任何代码；
 
 ### 插值 #{}
-  * 可以获得更好的结构体系
+  * 利用插值可以获得更好的结构体系
 输入
 
 ```
@@ -347,3 +347,16 @@ $properties: (margin, padding);
 }
 
 ```
+
+### 数据类型 & 运算
+  * 数据类型
+    1. 数字: 如，1、 2、 13、 10px；
+    2. 字符串: 有引号字符串或无引号字符串，如，"foo"、 'bar'、 baz
+    3. 颜色: 如，blue、 #04a3f9、 rgba(255,0,0,0.5)
+    4. 布尔型: 如，true、 false；
+    5. 空值: 如，true、 false；
+    6. 值列表: 用空格或者逗号分开，如，1.5em 1em 0 2em 、 Helvetica, Arial, sans-serif。
+
+  * 运算
+  
+
