@@ -2,9 +2,13 @@
 * 最近看Element UI 的源码，然后发现Element UI 的样式是用scss 写的，所以就想着学学 scss
 [中文官网](https://www.sass.hk)
 ![scss](./imgs/scss.jpg)
+
 ## 安装
 * npm install sass
 * npm install sass-loader
+
+## 编译
+* sass --watch scss.scss:test.scss --style expanded
 
 ## 语法
 
@@ -19,9 +23,7 @@ nav {
     padding: 0;
     list-style: none;
   }
-
   li { display: inline-block; }
-
   a {
     display: block;
     padding: 6px 12px;
@@ -188,7 +190,6 @@ header nav a {
 
 3. 伪类嵌套
   * 其实伪类嵌套和属性嵌套非常类似，只不过他需要借助`&`符号一起配合使用。
-
 ```css
 .clearfix{
 &:before,
@@ -310,7 +311,7 @@ clearfix:before, .clearfix:after {
   padding-top: 5px;
 }
 ```
-* * 混合宏 VS 继承 VS 占位符
+* * 混合宏 VS 继承 VS 占位符 
   1. 混合宏
     *  缺点：他不会自动合并相同的样式代码，如果在样式文件中调用同一个混合宏，会产生多个对应的样式代码，造成代码的冗余，
     * 优点： 可以传参数
@@ -325,7 +326,7 @@ clearfix:before, .clearfix:after {
   * 利用插值可以获得更好的结构体系
 输入
 
-```
+``` css
 $properties: (margin, padding);
 @mixin set-value($side, $value) {
     @each $prop in $properties {
@@ -340,7 +341,7 @@ $properties: (margin, padding);
 
 输出
 
-```
+``` css
 .login-box {
   margin-top: 14px;
   padding-top: 14px;
@@ -351,12 +352,62 @@ $properties: (margin, padding);
 ### 数据类型 & 运算
   * 数据类型
     1. 数字: 如，1、 2、 13、 10px；
-    2. 字符串: 有引号字符串或无引号字符串，如，"foo"、 'bar'、 baz
-    3. 颜色: 如，blue、 #04a3f9、 rgba(255,0,0,0.5)
+    2. 字符串: 有引号字符串或无引号字符串，如，"foo"、 'bar'、 'baz'；
+    3. 颜色: 如，blue、 #04a3f9、 rgba(255,0,0,0.5)；
     4. 布尔型: 如，true、 false；
     5. 空值: 如，true、 false；
     6. 值列表: 用空格或者逗号分开，如，1.5em 1em 0 2em 、 Helvetica, Arial, sans-serif。
 
   * 运算
+    1. 乘法：进行乘法运算时，两个值单位相同时，只需要为一个数值提供单位即可
+
+    ```css
+    box {
+      width: 10px * 2;
+    }
+
+    ```
+    2. 除法
+
+    ```css
+    .box {
+      width: 100px / 2;
+    }
+
+    ```
+    3. 变量计算
+     输入
+    ```
+    .box {
+      width: ((220px + 720px) - 11 * 20px ) / 12 ;  
+    }
+
+    ```
+     输出
+
+    ```css
+    .box {
+      width: 60px; 
+    }
+
+    ```
+    4. 颜色运算
+    
+    输入
+
+    ```css
+    p {
+      color: #010203 + #040506;
+    }
+    ```
+    输出
+
+    ```css
+    p {
+      color: #050709;
+    }
+    ```
+    5. 字符串运算
+    
   
 
