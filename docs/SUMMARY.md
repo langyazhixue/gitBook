@@ -56,8 +56,9 @@
 * [path](part11/path.md)
 
 ### webpack 基础内容
-* [webpack基础内容](part12/webpack.md)
-* [什么是loader](part12/loader.md)
-  * [关于样式的loder](part12/loader/css.md)
-* [什么是Plugin](part12/plugin.md)
+* [关于webpack](part12/webpack.md)
+* [关于loader](part12/loader.md)
+  <!-- * [关于样式的loder](part12/loader/css.md) -->
+* [关于Plugin](part12/plugin.md)
+* [hash详解](part12/hash.md)
 
