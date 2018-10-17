@@ -8,7 +8,7 @@
 [英文官网](./imgs/scss.jpg)
 
 ## 安装
-* npm install sass
+* npm install node-sass
 * npm install sass-loader
 
 ## 编译
@@ -19,7 +19,7 @@
 
 ## 语法
 
-### 4中不通的输出方式
+### 4中不同的输出方式
 
 输入
 
@@ -196,34 +196,36 @@ header nav a {
 ```
 
 * 伪类嵌套
-  * 其实伪类嵌套和属性嵌套非常类似，只不过他需要借助`&`符号一起配合使用。
-```css
-.clearfix{
-&:before,
-&:after {
-    content:"";
+  * 其实伪类嵌套和属性嵌套非常类似，只不过它需要借助`&`符号一起配合使用。
+
+  输入
+
+  ```css
+  .clearfix{
+  &:before,
+  &:after {
+      content:"";
+      display: table;
+    }
+  &:after {
+      clear:both;
+      overflow: hidden;
+    }
+  }
+  ```
+
+  输出
+
+  ```css
+  clearfix:before, .clearfix:after {
+    content: "";
     display: table;
   }
-&:after {
-    clear:both;
+  .clearfix:after {
+    clear: both;
     overflow: hidden;
   }
-}
-
-```
-
-输出
-
-```css
-clearfix:before, .clearfix:after {
-  content: "";
-  display: table;
-}
-.clearfix:after {
-  clear: both;
-  overflow: hidden;
-}
-```
+  ```
 
 ### 混合宏
   * 当你的样式变得越来越复杂，需要重复使用大段的样式时，使用变量就无法达到目的了
@@ -485,7 +487,7 @@ $properties: (margin, padding);
 
   * @for
     1. @for 有 **2中** 循环方式
-    ```css
+    ```scss
     @for $i from <start> through <end>
     @for $i from <start> to <end>
     ```
@@ -513,7 +515,8 @@ $properties: (margin, padding);
     }
     ```   
   * @while
-    @while指令跟 @for 指令很相似，只要 @while 后面的条件为 true 就会执行
+
+    1. @while指令跟 @for 指令很相似，只要 @while 后面的条件为 true 就会执行
 
      输入
     ```scss
@@ -545,7 +548,7 @@ $properties: (margin, padding);
     ```
 
   * @each
-  @each 循环就是去遍历一个列表，然后从列表中取出对应的值
+    1. @each 循环就是去遍历一个列表，然后从列表中取出对应的值
 
   输入
 
@@ -584,7 +587,7 @@ $properties: (margin, padding);
   ```
 
   ### 函数
-  1. 字符串函数
+  1. 字符串函数:
     字符串函数顾名思意是用来处理字符串的函数
     * unquote($string)：删除字符串中的引号;
     * quote($string)：给字符串添加引号
@@ -608,7 +611,7 @@ $properties: (margin, padding);
       ```
     * unit():主要用来获取一个值所使用的单位
     * unitless()：判断一个值是否带有单位
-    * sass 的 map 常常被称为数据地图,我们可以使用map来管理变量，在sass中，map 自带了七个参数
+    * sass 的 map 常常被称为数据地图,我们可以使用map来管理变量，在sass中，map 自带了七个函数
       ```scss
       $map: (
         $key1: value1,

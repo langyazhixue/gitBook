@@ -40,24 +40,25 @@
 * [闭包](part8/closure.md)
 * [内存回收](part8/memory.md)
 * [排序](part8/sort.md)
-* [事件冒泡和捕获](part8/event.md)
+<!-- * [事件冒泡和捕获](part8/event.md) -->
 * [数组排序的几种方法](part8/array_sort.md)
 * [递归算法](part8/recursion.md)
 
 
-### es6
-* [修饰器](part7/decorator.md)
+<!-- ### es6
+* [修饰器](part7/decorator.md) -->
 
-
+<!-- 
 ### HTTP
-* [URI和URL](part9/URL.md)
+* [URI和URL](part9/URL.md) -->
 
-### node 
-* [path](part11/path.md)
+<!-- ### node 
+* [path](part11/path.md) -->
 
 ### webpack 基础内容
 * [关于webpack](part12/webpack.md)
 * [关于loader](part12/loader.md)
+* [关于webpackDevServe](part12/devServe.md)
   <!-- * [关于样式的loder](part12/loader/css.md) -->
 * [关于Plugin](part12/plugin.md)
 * [hash详解](part12/hash.md)

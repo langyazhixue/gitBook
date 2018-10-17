@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>path · GitBook</title>
+        <title>关于webpackDevServe · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -65,10 +65,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../part12/webpack.html" />
+    <link rel="next" href="plugin.html" />
     
     
-    <link rel="prev" href="../part9/URL.html" />
+    <link rel="prev" href="loader.html" />
     
 
     </head>
@@ -460,20 +460,7 @@
             
         </li>
     
-        <li class="chapter " data-level="8.6" data-path="../part8/event.md">
-            
-                <span>
-            
-                    
-                    事件冒泡和捕获
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="8.7" data-path="../part8/array_sort.html">
+        <li class="chapter " data-level="8.6" data-path="../part8/array_sort.html">
             
                 <a href="../part8/array_sort.html">
             
@@ -486,7 +473,7 @@
             
         </li>
     
-        <li class="chapter " data-level="8.8" data-path="../part8/recursion.html">
+        <li class="chapter " data-level="8.7" data-path="../part8/recursion.html">
             
                 <a href="../part8/recursion.html">
             
@@ -502,73 +489,13 @@
 
     
         
-        <li class="header">es6</li>
-        
-        
-    
-        <li class="chapter " data-level="9.1" data-path="../part7/decorator.html">
-            
-                <a href="../part7/decorator.html">
-            
-                    
-                    修饰器
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-    
-        
-        <li class="header">HTTP</li>
-        
-        
-    
-        <li class="chapter " data-level="10.1" data-path="../part9/URL.html">
-            
-                <a href="../part9/URL.html">
-            
-                    
-                    URI和URL
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-    
-        
-        <li class="header">node</li>
-        
-        
-    
-        <li class="chapter active" data-level="11.1" data-path="path.html">
-            
-                <a href="path.html">
-            
-                    
-                    path
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-    
-        
         <li class="header">webpack 基础内容</li>
         
         
     
-        <li class="chapter " data-level="12.1" data-path="../part12/webpack.html">
+        <li class="chapter " data-level="9.1" data-path="webpack.html">
             
-                <a href="../part12/webpack.html">
+                <a href="webpack.html">
             
                     
                     关于webpack
@@ -579,9 +506,9 @@
             
         </li>
     
-        <li class="chapter " data-level="12.2" data-path="../part12/loader.html">
+        <li class="chapter " data-level="9.2" data-path="loader.html">
             
-                <a href="../part12/loader.html">
+                <a href="loader.html">
             
                     
                     关于loader
@@ -592,9 +519,22 @@
             
         </li>
     
-        <li class="chapter " data-level="12.3" data-path="../part12/plugin.html">
+        <li class="chapter active" data-level="9.3" data-path="devServe.html">
             
-                <a href="../part12/plugin.html">
+                <a href="devServe.html">
+            
+                    
+                    关于webpackDevServe
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.4" data-path="plugin.html">
+            
+                <a href="plugin.html">
             
                     
                     关于Plugin
@@ -605,9 +545,9 @@
             
         </li>
     
-        <li class="chapter " data-level="12.4" data-path="../part12/hash.html">
+        <li class="chapter " data-level="9.5" data-path="hash.html">
             
-                <a href="../part12/hash.html">
+                <a href="hash.html">
             
                     
                     hash详解
@@ -648,7 +588,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >path</a>
+        <a href=".." >关于webpackDevServe</a>
     </h1>
 </div>
 
@@ -663,44 +603,42 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p>&#x6211;&#x4EEC;&#x5728;&#x914D;&#x7F6E;webpack&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x7ECF;&#x5E38;&#x4F1A;&#x7528;&#x5230;node &#x7684; <code>path&#x6A21;&#x5757;</code>,&#x90A3;&#x6211;&#x4EEC;&#x73B0;&#x5728;&#x5C31;&#x6765;&#x4E86;&#x89E3;&#x4E0B;&#x5E38;&#x7528;&#x7684;path&#x6A21;&#x5757;&#x7684;&#x529F;&#x80FD;&#x5427;</p>
-<h4 id="1-pathresolvepaths">1. path.resolve([...paths])</h4>
+                                <h2 id="webpack-dev-server">webpack-dev-server</h2>
+<h2 id="&#x63CF;&#x8FF0;">&#x63CF;&#x8FF0;</h2>
+<p>  webpack-dev-server&#x662F;&#x4E00;&#x4E2A;&#x5C0F;&#x578B;&#x7684;node.js Express&#x670D;&#x52A1;&#x5668;,&#x5B83;&#x4F7F;&#x7528;webpack-dev-middleware&#x4E2D;&#x95F4;&#x4EF6;&#x6765;&#x4E3A;&#x901A;&#x8FC7;webpack&#x6253;&#x5305;&#x751F;&#x6210;&#x7684;&#x8D44;&#x6E90;&#x6587;&#x4EF6;&#x63D0;&#x4F9B;Web&#x670D;&#x52A1;&#x3002;&#x5B83;&#x8FD8;&#x6709;&#x4E00;&#x4E2A;&#x901A;&#x8FC7;Socket.IO(&#x4EE3;&#x7406;&#x5BA2;&#x6237;&#x7AEF;))&#x8FDE;&#x63A5;&#x7740;webpack-dev-server&#x670D;&#x52A1;&#x5668;&#x7684;&#x5C0F;&#x578B;&#x8FD0;&#x884C;&#x65F6;&#x7A0B;&#x5E8F;&#x3002;webpack-dev-server&#x53D1;&#x9001;&#x5173;&#x4E8E;&#x7F16;&#x8BD1;&#x72B6;&#x6001;&#x7684;&#x6D88;&#x606F;&#x5230;&#x5BA2;&#x6237;&#x7AEF;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x6839;&#x636E;&#x6D88;&#x606F;&#x4F5C;&#x51FA;&#x54CD;&#x5E94;&#x3002;&#x7B80;&#x800C;&#x8A00;&#x4E4B;&#xFF0C;&#x5C31;&#x662F;&#x4E00;&#x4E2A;http&#x670D;&#x52A1;&#x5668;</p>
 <ul>
-<li><code>...paths &lt;string&gt;</code> &#x4E00;&#x4E2A;&#x8DEF;&#x5F84;&#x6216;&#x8DEF;&#x5F84;&#x7247;&#x6BB5;&#x7684;&#x5E8F;&#x5217;</li>
-<li>&#x8FD4;&#x56DE;: <string>
-path.resolve() &#x65B9;&#x6CD5;&#x4F1A;&#x628A;&#x4E00;&#x4E2A;&#x8DEF;&#x5F84;&#x6216;&#x8DEF;&#x5F84;&#x7247;&#x6BB5;&#x7684;&#x5E8F;&#x5217;&#x89E3;&#x6790;&#x4E3A;&#x4E00;&#x4E2A;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;&#x3002;<br>
-&#x5982;&#x679C;&#x5904;&#x7406;&#x5B8C;&#x5168;&#x90E8;&#x7ED9;&#x5B9A;&#x7684; path &#x7247;&#x6BB5;&#x540E;&#x8FD8;&#x672A;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;&#xFF0C;&#x5219;&#x5F53;&#x524D;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#x4F1A;&#x88AB;&#x7528;&#x4E0A;&#x3002;<br>
-&#x751F;&#x6210;&#x7684;&#x8DEF;&#x5F84;&#x662F;&#x89C4;&#x8303;&#x5316;&#x540E;&#x7684;&#xFF0C;&#x4E14;&#x672B;&#x5C3E;&#x7684;&#x659C;&#x6760;&#x4F1A;&#x88AB;&#x5220;&#x9664;&#xFF0C;&#x9664;&#x975E;&#x8DEF;&#x5F84;&#x88AB;&#x89E3;&#x6790;&#x4E3A;&#x6839;&#x76EE;&#x5F55;&#x3002;<br>
-&#x5982;&#x679C;&#x6CA1;&#x6709;&#x4F20;&#x5165; path &#x7247;&#x6BB5;&#xFF0C;&#x5219; path.resolve() &#x4F1A;&#x8FD4;&#x56DE;&#x5F53;&#x524D;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#x7684;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;&#x3002;</string></li>
+<li>devSrver(webpack-dev-server)&#x6709;&#x4E00;&#x4E2A;&#x6A21;&#x5757;&#x70ED;&#x66FF;&#x6362;&#x529F;&#x80FD;&#x4F1A;&#x5728;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E2D;&#x66FF;&#x6362;&#x3001;&#x6DFB;&#x52A0;&#x6216;&#x5220;&#x9664;&#x6A21;&#x5757;&#xFF0C;&#x800C;&#x65E0;&#x9700;&#x91CD;&#x65B0;&#x52A0;&#x8F7D;&#x9875;&#x9762;&#x3002;&#x53EA;&#x8981;&#x5F00;&#x542F;<code>hot</code>&#x914D;&#x7F6E;
+&#x8FD9;&#x91CC;&#x6709;&#x4E00;&#x7BC7;&#x6587;&#x7AE0;&#x5199;&#x7684;&#x5F88;&#x597D;<a href="https://www.cnblogs.com/wmhuang/p/7137480.html" target="_blank"></a></li>
 </ul>
-<pre><code class="lang-js">  path.resolve(<span class="hljs-string">&apos;/foo/bar&apos;</span>, <span class="hljs-string">&apos;./baz&apos;</span>);
-  <span class="hljs-comment">// &#x8FD4;&#x56DE;: &apos;/foo/bar/baz&apos;</span>
-
-  path.resolve(<span class="hljs-string">&apos;/foo/bar&apos;</span>, <span class="hljs-string">&apos;/tmp/file/&apos;</span>);
-  <span class="hljs-comment">// &#x8FD4;&#x56DE;: &apos;/tmp/file&apos;</span>
-  path.resolve(<span class="hljs-string">&apos;wwwroot&apos;</span>, <span class="hljs-string">&apos;static_files/png/&apos;</span>, <span class="hljs-string">&apos;../gif/image.gif&apos;</span>);
-  <span class="hljs-comment">// &#x5982;&#x679C;&#x5F53;&#x524D;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#x4E3A; /home/myself/node&#xFF0C;</span>
-  <span class="hljs-comment">// &#x5219;&#x8FD4;&#x56DE; &apos;/home/myself/node/wwwroot/static_files/gif/image.gif&apos;</span>
+<h2 id="&#x914D;&#x7F6E;">&#x914D;&#x7F6E;</h2>
+<pre><code class="lang-js"><span class="hljs-comment">// these devServer options should be customized in /config/index.js</span>
+  <span class="hljs-built_in">module</span>.exports = {
+    devServer: {
+      clientLogLevel: <span class="hljs-string">&apos;warning&apos;</span>,
+      inline:<span class="hljs-literal">true</span>
+      historyApiFallback: {
+        rewrites: [
+          { <span class="hljs-keyword">from</span>: <span class="hljs-regexp">/.*/</span>, to: path.posix.join(config.dev.assetsPublicPath, <span class="hljs-string">&apos;index.html&apos;</span>) },
+        ],
+      },
+      hot: <span class="hljs-literal">true</span>,
+      contentBase: <span class="hljs-literal">false</span>, <span class="hljs-comment">// since we use CopyWebpackPlugin.</span>
+      compress: <span class="hljs-literal">true</span>,
+      host: HOST || config.dev.host,
+      port: PORT || config.dev.port,
+      open: config.dev.autoOpenBrowser,
+      overlay: config.dev.errorOverlay
+        ? { warnings: <span class="hljs-literal">false</span>, errors: <span class="hljs-literal">true</span> }
+        : <span class="hljs-literal">false</span>,
+      publicPath: config.dev.assetsPublicPath,
+      proxy: config.dev.proxyTable,
+      quiet: <span class="hljs-literal">true</span>, <span class="hljs-comment">// necessary for FriendlyErrorsPlugin</span>
+      watchOptions: {
+        poll: config.dev.poll,
+      }
+    }
+  }
 </code></pre>
-<h4 id="2-pathjoinpaths">2. path.join([...paths])</h4>
-<ul>
-<li>...paths <string> &#x4E00;&#x4E2A;&#x8DEF;&#x5F84;&#x7247;&#x6BB5;&#x7684;&#x5E8F;&#x5217;</string></li>
-<li>&#x8FD4;&#x56DE;: <string>
-path.join() &#x65B9;&#x6CD5;&#x4F7F;&#x7528;&#x5E73;&#x53F0;&#x7279;&#x5B9A;&#x7684;&#x5206;&#x9694;&#x7B26;&#x628A;&#x5168;&#x90E8;&#x7ED9;&#x5B9A;&#x7684; path &#x7247;&#x6BB5;&#x8FDE;&#x63A5;&#x5230;&#x4E00;&#x8D77;&#xFF0C;&#x5E76;&#x89C4;&#x8303;&#x5316;&#x751F;&#x6210;&#x7684;&#x8DEF;&#x5F84;</string></li>
-</ul>
-<pre><code class="lang-js">  path.join(<span class="hljs-string">&apos;/foo&apos;</span>, <span class="hljs-string">&apos;bar&apos;</span>, <span class="hljs-string">&apos;baz/asdf&apos;</span>, <span class="hljs-string">&apos;quux&apos;</span>, <span class="hljs-string">&apos;..&apos;</span>);
-  <span class="hljs-comment">// &#x8FD4;&#x56DE;: &apos;/foo/bar/baz/asdf&apos;</span>
-
-  path.join(<span class="hljs-string">&apos;foo&apos;</span>, {}, <span class="hljs-string">&apos;bar&apos;</span>);
-  <span class="hljs-comment">// &#x629B;&#x51FA; &apos;TypeError: Path must be a string. Received {}&apos;</span>
-  path.join(<span class="hljs-string">&apos;src/common&apos;</span>, <span class="hljs-string">&apos;../assets/logo.png&apos;</span>)
-  <span class="hljs-comment">// &#x8FD4;&#x56DE; src/assets/logo.png</span>
-</code></pre>
-<p>&#x6CE8;&#x610F;&#xFF1A;</p>
-<ul>
-<li>__dirname&#xFF1A;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#xFF0C;&#x5B58;&#x50A8;&#x7684;&#x662F;&#x5F53;&#x524D;&#x6587;&#x4EF6;&#x6240;&#x5728;&#x7684;&#x6587;&#x4EF6;&#x76EE;&#x5F55;</li>
-<li>__filename&#xFF1A;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#xFF0C;&#x5B58;&#x50A8;&#x7684;&#x662F;&#x5F53;&#x524D;&#x6587;&#x4EF6;&#x540D;</li>
-</ul>
 
                                 
                                 </section>
@@ -728,12 +666,12 @@ path.join() &#x65B9;&#x6CD5;&#x4F7F;&#x7528;&#x5E73;&#x53F0;&#x7279;&#x5B9A;&#x7
 
             
                 
-                <a href="../part9/URL.html" class="navigation navigation-prev " aria-label="Previous page: URI和URL">
+                <a href="loader.html" class="navigation navigation-prev " aria-label="Previous page: 关于loader">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../part12/webpack.html" class="navigation navigation-next " aria-label="Next page: 关于webpack">
+                <a href="plugin.html" class="navigation navigation-next " aria-label="Next page: 关于Plugin">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -744,7 +682,7 @@ path.join() &#x65B9;&#x6CD5;&#x4F7F;&#x7528;&#x5E73;&#x53F0;&#x7279;&#x5B9A;&#x7
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"path","level":"11.1","depth":1,"next":{"title":"关于webpack","level":"12.1","depth":1,"path":"part12/webpack.md","ref":"part12/webpack.md","articles":[]},"previous":{"title":"URI和URL","level":"10.1","depth":1,"path":"part9/URL.md","ref":"part9/URL.md","articles":[]},"dir":"ltr"},"config":{"plugins":["etoc","theme-comscore","livereload"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"etoc":{"mindepth":3,"maxdepth":4,"header":1,"h2lb":3,"notoc":false},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"水泡泡","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*","description":"水泡泡的testbook"},"file":{"path":"part11/path.md","mtime":"2018-05-31T13:16:55.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-10T06:48:39.168Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"关于webpackDevServe","level":"9.3","depth":1,"next":{"title":"关于Plugin","level":"9.4","depth":1,"path":"part12/plugin.md","ref":"part12/plugin.md","articles":[]},"previous":{"title":"关于loader","level":"9.2","depth":1,"path":"part12/loader.md","ref":"part12/loader.md","articles":[]},"dir":"ltr"},"config":{"plugins":["etoc","theme-comscore","livereload"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"etoc":{"mindepth":3,"maxdepth":4,"header":1,"h2lb":3,"notoc":false},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"水泡泡","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*","description":"水泡泡的testbook"},"file":{"path":"part12/devServe.md","mtime":"2018-08-31T08:40:15.100Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-17T07:12:58.597Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
