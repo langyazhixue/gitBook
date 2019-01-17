@@ -519,9 +519,12 @@ $properties: (margin, padding);
     1. @while指令跟 @for 指令很相似，只要 @while 后面的条件为 true 就会执行
 
      输入
+
     ```scss
+
     $types: 4;
       $type-width:20px;
+
       @while $types > 0 {
         .while-#{$types} {
           width: $type-width + $types;
@@ -530,6 +533,7 @@ $properties: (margin, padding);
     }
 
     ```
+
     输出
 
     ```css
@@ -641,7 +645,7 @@ $properties: (margin, padding);
       2. lighten($color,$amount)：让颜色变得更亮；
       3. darken($color,$amount)： 让颜色变得更暗；
       4. saturate($color,$amount):通过改变颜色的饱和度值，让颜色更饱和，从而创建一个新的颜色
-      5. desaturate():通过改变颜色的饱和度值，让颜色更饱和，从而创建一个新的颜色
+      5. desaturate():通过改变颜色的饱和度值，让颜色更少饱和，从而创建一个新的颜色
     * Opacity 函数
       1. opacity($color)：获取一个颜色的透明度值，如果颜色没有指定透明度，那么这个函数得到的值都会是1
 

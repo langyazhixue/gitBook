@@ -104,12 +104,10 @@ Vue 官方文档中关于插槽的文档说明很短，语言很精练，这篇�
       <!-- 将 `slotProps` 定义为插槽作用域的名字 -->
       <template slot-scope="slotProps">
         <span>{{slotProps.todo.text}}</span>
-        <span>{{slotProps.item.text}}</span>
       </template>
     </test-slot>
   </div>
 </template>
-
 import testSlot from './child.vue'
 export default {
   data () {
@@ -137,7 +135,6 @@ export default {
 ```js
 <template>
   <div class="hello">
-    <slot :addr="items[2].addr"></slot>
     <ul>
       <li
         v-for="todo in todos"

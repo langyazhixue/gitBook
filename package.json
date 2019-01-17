@@ -16,7 +16,6 @@
     "build:book": "gitbook build",
     "git:add": "git add -A"
   },
-  //"precommit": "build:book,git:add",
   "repository": {
     "type": "git",
     "url": "git@gitlab.idcos.com:CloudJ/feteam.git"
