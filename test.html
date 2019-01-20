@@ -50,10 +50,33 @@
 </body>
 </html>
 <script>
-  var button = document.querySelector('button')
-  button.addEventListener('click',function(){
-    //window.location.assign('http://www.runoob.com')
-    document.getElementById('divNode').scrollIntoView(true)
-    // console.log(document.getElementById('divNode'))
-  })
+  // var button = document.querySelector('button')
+  // button.addEventListener('click',function(){
+  //   //window.location.assign('http://www.runoob.com')
+  //   document.getElementById('divNode').scrollIntoView(true)
+  //   // console.log(document.getElementById('divNode'))
+  // })
+  var person = {}
+  var temp = []
+  // Object.defineProperty(person,'name',{
+  // value: '张三',
+  // configurable:false
+  // })
+  // Object.defineProperty(person,'name',{
+  // configurable:true
+  // })
+
+  Object.defineProperty(person, 'name', {
+  set: function(newVal) {
+    temp['name'] = newVal;
+    console.log('为person设置新的姓名：' + newVal);
+  },
+  get: function() {
+    var _name =  temp['name'] || '默认姓名';
+    console.log('获取person的姓名：' +  _name);
+    return _name;
+  }
+});
+person.name = '张三'; 
+console.log(person.name)  
 </script>

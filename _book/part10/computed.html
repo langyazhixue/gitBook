@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>URI和URL · GitBook</title>
+        <title>谈谈Vue的computed的setter和getter · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -65,10 +65,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="location.html" />
+    <link rel="next" href="watch.html" />
     
     
-    <link rel="prev" href="../part14/Popup.md" />
+    <link rel="prev" href="deep.html" />
     
 
     </head>
@@ -250,9 +250,9 @@
         
         
     
-        <li class="chapter " data-level="4.1" data-path="../part10/issues.html">
+        <li class="chapter " data-level="4.1" data-path="issues.html">
             
-                <a href="../part10/issues.html">
+                <a href="issues.html">
             
                     
                     Vue 开发常见问题及处理方式
@@ -263,9 +263,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.2" data-path="../part10/differenceBetween2A1.html">
+        <li class="chapter " data-level="4.2" data-path="differenceBetween2A1.html">
             
-                <a href="../part10/differenceBetween2A1.html">
+                <a href="differenceBetween2A1.html">
             
                     
                     2.0版本与1.0版本的区别
@@ -276,9 +276,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.3" data-path="../part10/slot.html">
+        <li class="chapter " data-level="4.3" data-path="slot.html">
             
-                <a href="../part10/slot.html">
+                <a href="slot.html">
             
                     
                     关于Vue的插槽
@@ -289,9 +289,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.4" data-path="../part10/LifeCycle.html">
+        <li class="chapter " data-level="4.4" data-path="LifeCycle.html">
             
-                <a href="../part10/LifeCycle.html">
+                <a href="LifeCycle.html">
             
                     
                     关于Vue的生命周期
@@ -302,9 +302,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.5" data-path="../part10/deep.html">
+        <li class="chapter " data-level="4.5" data-path="deep.html">
             
-                <a href="../part10/deep.html">
+                <a href="deep.html">
             
                     
                     vue 深度作用选择器
@@ -315,9 +315,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.6" data-path="../part10/computed.html">
+        <li class="chapter active" data-level="4.6" data-path="computed.html">
             
-                <a href="../part10/computed.html">
+                <a href="computed.html">
             
                     
                     谈谈Vue的computed的setter和getter
@@ -328,9 +328,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.7" data-path="../part10/watch.html">
+        <li class="chapter " data-level="4.7" data-path="watch.html">
             
-                <a href="../part10/watch.html">
+                <a href="watch.html">
             
                     
                     谈谈Vue的watch
@@ -414,9 +414,9 @@
         
         
     
-        <li class="chapter active" data-level="7.1" data-path="URL.html">
+        <li class="chapter " data-level="7.1" data-path="../browser/URL.html">
             
-                <a href="URL.html">
+                <a href="../browser/URL.html">
             
                     
                     URI和URL
@@ -427,9 +427,9 @@
             
         </li>
     
-        <li class="chapter " data-level="7.2" data-path="location.html">
+        <li class="chapter " data-level="7.2" data-path="../browser/location.html">
             
-                <a href="location.html">
+                <a href="../browser/location.html">
             
                     
                     Location 详解
@@ -440,9 +440,9 @@
             
         </li>
     
-        <li class="chapter " data-level="7.3" data-path="history.html">
+        <li class="chapter " data-level="7.3" data-path="../browser/history.html">
             
-                <a href="history.html">
+                <a href="../browser/history.html">
             
                     
                     history 详解
@@ -739,7 +739,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >URI和URL</a>
+        <a href=".." >谈谈Vue的computed的setter和getter</a>
     </h1>
 </div>
 
@@ -754,37 +754,93 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="uri-&#x548C;-url">URI &#x548C; URL</h1>
-<h2 id="uri">URI</h2>
+                                <h3 id="&#x8C08;&#x8C08;-vue--&#x4E2D;-&#x7684;-computed">&#x8C08;&#x8C08; Vue  &#x4E2D; &#x7684; computed</h3>
+<p>computed &#x662F; Vue &#x4E2D;&#x7684;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x529F;&#x80FD;&#x3002;&#x770B;&#x4E0B;&#x9762;&#x7684;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x4F8B;&#x5B50;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+      {{fullName}}
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&apos;changeFullName&apos;</span>&gt;</span>&#x4FEE;&#x6539;fullName<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">
+  export <span class="hljs-keyword">default</span> {
+    name: <span class="hljs-string">&apos;test&apos;</span>,
+    data () {
+      <span class="hljs-keyword">return</span> {
+        firstName: <span class="hljs-string">&apos;Dell&apos;</span>,
+        lastName: <span class="hljs-string">&apos;Lee&apos;</span>
+      }
+    },
+    computed: {
+      fullName: {
+        <span class="hljs-keyword">get</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+          <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.firstName + <span class="hljs-string">&apos; &apos;</span> + <span class="hljs-keyword">this</span>.lastName
+        },
+        <span class="hljs-keyword">set</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(value)</span> </span>{
+          console.log(value)
+        }
+      }
+    },
+    methods: {
+      changeFullName () {
+        <span class="hljs-keyword">this</span>.fullName = <span class="hljs-string">&apos;Mike wang&apos;</span>
+      }
+    }
+  }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
 <ul>
-<li>URI &#x662F; Uniform Resource Identifier &#x7684;&#x7F29;&#x5199;&#xFF0C;&#x662F;&#x5728;&#x67D0;&#x4E00;&#x89C4;&#x5219;&#x4E0B;&#x80FD;&#x628A;&#x4E00;&#x4E2A;&#x8D44;&#x6E90;&#x72EC;&#x4E00;&#x65E0;&#x4E8C;&#x5730;&#x6807;&#x8BC6;&#x51FA;&#x6765;<ul>
-<li>Uniform
-&#x89C4;&#x5B9A;&#x7EDF;&#x4E00;&#x7684;&#x683C;&#x5F0F;&#x65B9;&#x4FBF;&#x5904;&#x7406;&#x591A;&#x79CD;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x7684;&#x8D44;&#x6E90;&#xFF0C;&#x800C;&#x4E0D;&#x7528;&#x6839;&#x636E;&#x4E0A;&#x4E0B;&#x6587;&#x73AF;&#x5883;&#x6765;&#x8BC6;&#x522B;&#x8D44;&#x6E90;&#x6307;&#x5B9A;&#x7684;&#x8BBF;&#x95EE;&#x65B9;&#x5F0F;&#x3002;&#x53E6;&#x5916;&#xFF0C;&#x52A0;&#x5165;&#x65B0;&#x589E;&#x7684;&#x534F;&#x8BAE;&#x65B9;&#x6848;(&#x5982;http&#x6216;&#x8005;ftp) &#x4E5F;&#x66F4;&#x52A0;&#x5BB9;&#x6613;&#x3002;</li>
-<li>Resource 
-&#x8D44;&#x6E90;&#x7684;&#x5B9A;&#x4E49;&#x5F0F;<code>&#x53EF;&#x8BC6;&#x522B;&#x7684;&#x4EFB;&#x4F55;&#x7EDF;&#x4E00;</code></li>
-<li>Identifier
-&#x8868;&#x793A;&#x53EF;&#x8BC6;&#x522B;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x4E5F;&#x79F0;&#x4E3A;&#x6807;&#x793A;&#x7B26;
-URI&#x662F;&#x7531;&#x67D0;&#x4E2A;&#x534F;&#x8BAE;&#x65B9;&#x6848;&#x8868;&#x793A;&#x7684;&#x8D44;&#x6E90;&#x7684;&#x5B9A;&#x4F4D;&#x6807;&#x793A;&#x7B26;&#x3002;<code>RFC3980:&#x7EDF;&#x4E00;&#x8D44;&#x6E90;&#x6807;&#x793A;&#x7B26;&#xFF08;URI&#xFF09;&#x901A;&#x7528;&#x8BED;&#x6CD5;</code>&#x4E2D;&#x5217;&#x4E3E;&#x4E86;&#x51E0;&#x79CD;URI&#x4F8B;&#x5B50;<pre><code>ftp://ftp.is.co.za/rfc/frc181.txt
-http://www/ietf.org/rfc/frc/txt
-tel:+1-872-244-444
-telnet://192.0.0.20:80/
-urn:oasis.names.specification.docbook.dtd.4.1.2
-</code></pre></li>
+<li>&#x521D;&#x59CB;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x9875;&#x9762;&#x8F93;&#x51FA;&#x5982;&#x4E0B;
+<img src="img/computed/1.jpg" alt="&#x56FE;1"></li>
 </ul>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x770B;&#x5230;<code>fullName</code> &#x7684;&#x503C; &#x4F9D;&#x8D56;&#x4E8E; <code>firstName</code> &#x548C; <code>lastName</code></p>
+<ul>
+<li>&#x5F53;&#x6211;&#x4EEC;&#x70B9;&#x51FB; &#x6309;&#x94AE;&#x7684;&#x65F6;&#x5019;&#xFF0C;<code>fullName</code>&#x4E2D;&#x7684;<code>set</code>&#x65B9;&#x6CD5;&#x8FD0;&#x884C;&#xFF0C;&#x9875;&#x9762;&#x8F93;&#x51FA;&#x5982;&#x4E0B;</li>
+</ul>
+<p><img src="img/computed/2.jpg" alt="&#x56FE;2"></p>
+<ul>
+<li>&#x6765;&#x4FEE;&#x6539; set &#x51FD;&#x6570;<pre><code class="lang-js">computed: {
+fullName: {
+  <span class="hljs-comment">// getter</span>
+  get: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;&#x8D70;set&apos;</span>)
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.firstName + <span class="hljs-string">&apos; &apos;</span> + <span class="hljs-keyword">this</span>.lastName
+  },
+  <span class="hljs-comment">// setter</span>
+  set: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">value</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;&#x8D70;get&apos;</span>)
+    <span class="hljs-keyword">this</span>.fistName=value.split(<span class="hljs-string">&apos; &apos;</span>)[<span class="hljs-number">0</span>]
+    <span class="hljs-keyword">this</span>.lastName=value.split(<span class="hljs-string">&apos; &apos;</span>)[<span class="hljs-number">1</span>]
+    <span class="hljs-built_in">console</span>.log(value)
+  }
+}
+}
+</code></pre>
+&#x8F93;&#x51FA;&#x5982;&#x4E0B;</li>
+</ul>
+<p><img src="img/computed/3.jpg" alt="&#x56FE;3"></p>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x5148;&#x8D70;&#x4E86; <code>set</code>&#x65B9;&#x6CD5;&#xFF0C;&#x56E0;&#x4E3A;<code>set</code>&#x65B9;&#x6CD5;&#x4FEE;&#x6539;&#x4E86;firstName&#x548C;lastName&#xFF0C;&#x7531;&#x4E8E;fullName &#x5F53;&#x4F9D;&#x8D56;&#x7684;&#x503C;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x5219;&#x4F1A;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;,&#x5373;&#x91CD;&#x65B0;&#x6267;&#x884C;&#x4E86;<code>get</code>&#x65B9;&#x6CD5;</p>
+<ul>
+<li>&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x9ED8;&#x8BA4;&#x53EA;&#x6709; <code>get</code>&#x65B9;&#x6CD5;&#xFF0C;&#x5199;&#x6CD5;&#x5982;&#x4E0B;<pre><code class="lang-js">computed: {
+fullName(){
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.firstName + <span class="hljs-string">&apos; &apos;</span> + <span class="hljs-keyword">this</span>.lastName
+}
+}
+</code></pre>
 </li>
 </ul>
-<h2 id="uri-&#x548C;-url-&#x7684;&#x5173;&#x7CFB;">URI &#x548C; URL &#x7684;&#x5173;&#x7CFB;</h2>
+<h3 id="&#x6211;&#x5BF9;&#x4E8E;computed-&#x7684;&#x7406;&#x89E3;">&#x6211;&#x5BF9;&#x4E8E;computed &#x7684;&#x7406;&#x89E3;</h3>
 <ul>
-<li>URI&#xFF08;&#x7EDF;&#x4E00;&#x8D44;&#x6E90;&#x6807;&#x793A;&#x7B26;&#xFF09;&#x7528;&#x5B57;&#x7B26;&#x4E32;&#x6807;&#x793A;&#x67D0;&#x4E00;&#x8D44;&#x6E90;&#xFF0C;&#x800C;URL&#xFF08;&#x7EDF;&#x4E00;&#x8D44;&#x6E90;&#x5B9A;&#x4F4D;&#x7B26;&#xFF09;&#x8868;&#x793A;&#x8D44;&#x6E90;&#x7684;&#x5730;&#x5740;&#x3002;URL&#x662F;&#x7528;&#x5B9A;&#x4F4D;&#x7684;&#x65B9;&#x5F0F;&#x5B9E;&#x73B0;&#x4E86;URI&#xFF0C;&#x5C5E;&#x4E8E;URI&#x7684;&#x5B50;&#x96C6;&#x3002;</li>
-<li><p>&#x6765;&#x4E2A;&#x4F8B;&#x5B50;&#x5427;
- &#x5047;&#x8BBE;&#x8FD9;&#x4E2A;&#x4E16;&#x754C;&#x4E0A;&#x6240;&#x6709;&#x4EBA;&#x7684;&#x8EAB;&#x4EFD;&#x8BC1;&#x53F7;&#x90FD;&#x4E0D;&#x80FD;&#x91CD;&#x590D;&#xFF0C;&#x90A3;&#x4E48;&#x901A;&#x8FC7;&#x8EAB;&#x4EFD;&#x8BC1;&#x53F7;&#x5C31;&#x53EF;&#x4EE5;&#x786E;&#x5B9A;&#x4E00;&#x4E2A;&#x4EBA;&#x3002;
- &#x6BD4;&#x65B9;&#x8BF4;&#x5BF9;&#x4E8E;&#x676D;&#x5DDE;&#x7684;&#x5F20;&#x4E09;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x6765;&#x6807;&#x793A;&#x4ED6;&#xFF1A;<br> 
- <code>&#x8EAB;&#x4EFD;&#x8BC1;&#x53F7;&#xFF1A;1234567890</code><br> 
- &#x53E6;&#x5916;&#xFF1A;&#x6211;&#x4EEC;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;URL &#x7684;&#x65B9;&#x5F0F;&#x6765;&#x5B9A;&#x4F4D;&#x5F20;&#x4E09;&#xFF1A;<br> 
-<code>&#x7269;&#x4F4F;&#x5740;&#x534F;&#x8BAE;://&#x5730;&#x7403;/&#x4E2D;&#x56FD;/&#x6D59;&#x6C5F;&#x7701;/&#x676D;&#x5DDE;&#x5E02;/&#x897F;&#x6E56;&#x533A;/&#x67D0;&#x5927;&#x5B66;/14&#x53F7;&#x5BBF;&#x820D;&#x697C;/525&#x53F7;&#x5BDD;/&#x5F20;&#x4E09;.&#x4EBA;</code><br> 
-&#x6240;&#x4EE5;&#x4E0D;&#x8BBA;&#x662F;&#x7528;&#x5B9A;&#x4F4D;&#x7684;&#x65B9;&#x5F0F;&#x8FD8;&#x662F;&#x7528;&#x7F16;&#x53F7;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x6211;&#x4EEC;&#x90FD;&#x53EF;&#x4EE5;&#x552F;&#x4E00;&#x786E;&#x5B9A;&#x4E00;&#x4E2A;&#x4EBA;&#xFF0C;&#x90FD;&#x662F;URl&#x7684;&#x4E00;&#x79CD;&#x5B9E;&#x73B0;&#xFF0C;&#x800C;URL&#x5C31;&#x662F;&#x7528;&#x5B9A;&#x4F4D;&#x7684;&#x65B9;&#x5F0F;&#x5B9E;&#x73B0;&#x7684;URI&#x3002;<br> </p>
-<p>&#xA0;&#xA0;&#x56DE;&#x5230;Web&#x4E0A;&#xFF0C;&#x5047;&#x8BBE;&#x6240;&#x6709;&#x7684;Html&#x6587;&#x6863;&#x90FD;&#x6709;&#x552F;&#x4E00;&#x7684;&#x7F16;&#x53F7;&#xFF0C;&#x8BB0;&#x4F5C;html:xxxxx&#xFF0C;xxxxx&#x662F;&#x4E00;&#x4E32;&#x6570;&#x5B57;&#xFF0C;&#x5373;Html&#x6587;&#x6863;&#x7684;&#x8EAB;&#x4EFD;&#x8BC1;&#x53F7;&#x7801;&#xFF0C;&#x8FD9;&#x4E2A;&#x80FD;&#x552F;&#x4E00;&#x6807;&#x8BC6;&#x4E00;&#x4E2A;Html&#x6587;&#x6863;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x53F7;&#x7801;&#x5C31;&#x662F;&#x4E00;&#x4E2A;URI&#x3002;&#x800C;URL&#x5219;&#x901A;&#x8FC7;&#x63CF;&#x8FF0;&#x662F;&#x54EA;&#x4E2A;&#x4E3B;&#x673A;&#x4E0A;&#x54EA;&#x4E2A;&#x8DEF;&#x5F84;&#x4E0A;&#x7684;&#x6587;&#x4EF6;&#x6765;&#x552F;&#x4E00;&#x786E;&#x5B9A;&#x4E00;&#x4E2A;&#x8D44;&#x6E90;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x5B9A;&#x4F4D;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x5B9E;&#x73B0;&#x7684;URI&#x3002;</p>
-</li>
+<li>data &#x5C5E;&#x6027;&#x521D;&#x59CB;&#x5316; <code>get</code> <code>set</code></li>
+<li>computed &#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x63D0;&#x4F9B;&#x7684;&#x51FD;&#x6570;&#x5C06;&#x7528;&#x4F5C;&#x5C5E;&#x6027; <code>fullName</code> &#x7684; <code>get</code>&#x548C;<code>set</code></li>
+<li>&#x5F53;&#x9996;&#x6B21;&#x83B7;&#x53D6; <code>fullName</code> &#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x7684;&#x503C;&#x65F6;&#xFF0C;vue &#x5F00;&#x59CB;<code>fullName</code>&#x4F9D;&#x8D56;&#x6536;&#x96C6;</li>
+<li>&#x5F53;&#x521D;&#x59CB;&#x60C5;&#x51B5;&#x4E0B;&#x6267;&#x884C;<code>fullName</code>&#x7684; <code>get</code>&#x65B9;&#x6CD5;&#x65F6;&#x5019;&#xFF0C;Vue&#x5224;&#x5B9A; <code>firstName</code>&#x548C; <code>lastName</code> &#x662F;<code>fullName</code>&#x7684;&#x4F9D;&#x8D56;</li>
+<li>&#x5728;&#x6267;&#x884C;<code>changeFullName</code>&#x65B9;&#x6CD5;&#x65F6;&#xFF0C;&#x6267;&#x884C;&#x4E86;<code>set</code>&#x65B9;&#x6CD5;&#xFF0C;&#x7531;&#x4E8E;<code>set</code>&#x65B9;&#x6CD5;&#x4E2D;&#x4FEE;&#x6539;&#x4E86;<code>firstName</code>&#x548C; <code>lastName</code>&#xFF0C;&#x6545;Vue&#x53C8;&#x6267;&#x884C;&#x4E86;<code>get</code>&#x65B9;&#x6CD5;&#xFF0C;&#x4FEE;&#x6539;&#x4E86;<code>fullName</code>&#x7684;&#x503C;</li>
+<li>&#x901A;&#x8FC7;&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x6211;&#x4EEC;&#x4E5F;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x662F;&#x57FA;&#x4E8E;&#x5B83;&#x4EEC;&#x7684;&#x4F9D;&#x8D56;&#x8FDB;&#x884C;&#x7F13;&#x5B58;&#x7684;&#xFF0C;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x53EA;&#x6709;&#x5728;&#x5B83;&#x7684;&#x76F8;&#x5173;&#x4F9D;&#x8D56;&#x53D1;&#x751F;&#x6539;&#x53D8;&#x65F6;&#x624D;&#x4F1A;&#x91CD;&#x65B0;&#x6C42;&#x503C;&#x3002;</li>
 </ul>
 
                                 
@@ -813,12 +869,12 @@ urn:oasis.names.specification.docbook.dtd.4.1.2
 
             
                 
-                <a href="../part14/Popup.md" class="navigation navigation-prev " aria-label="Previous page: Popup 弹框组件">
+                <a href="deep.html" class="navigation navigation-prev " aria-label="Previous page: vue 深度作用选择器">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="location.html" class="navigation navigation-next " aria-label="Next page: Location 详解">
+                <a href="watch.html" class="navigation navigation-next " aria-label="Next page: 谈谈Vue的watch">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -829,7 +885,7 @@ urn:oasis.names.specification.docbook.dtd.4.1.2
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"URI和URL","level":"7.1","depth":1,"next":{"title":"Location 详解","level":"7.2","depth":1,"path":"browser/location.md","ref":"browser/location.md","articles":[]},"previous":{"title":"Popup 弹框组件","level":"6.1","depth":1,"path":"part14/Popup.md","ref":"part14/Popup.md","articles":[]},"dir":"ltr"},"config":{"plugins":["etoc","theme-comscore","livereload"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"etoc":{"h2lb":3,"header":1,"maxdepth":4,"mindepth":3,"notoc":false},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"水泡泡","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*","description":"水泡泡的testbook"},"file":{"path":"browser/URL.md","mtime":"2019-01-19T07:03:33.297Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-19T07:13:36.727Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"谈谈Vue的computed的setter和getter","level":"4.6","depth":1,"next":{"title":"谈谈Vue的watch","level":"4.7","depth":1,"path":"part10/watch.md","ref":"part10/watch.md","articles":[]},"previous":{"title":"vue 深度作用选择器","level":"4.5","depth":1,"path":"part10/deep.md","ref":"part10/deep.md","articles":[]},"dir":"ltr"},"config":{"plugins":["etoc","theme-comscore","livereload"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"etoc":{"h2lb":3,"header":1,"maxdepth":4,"mindepth":3,"notoc":false},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"水泡泡","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*","description":"水泡泡的testbook"},"file":{"path":"part10/computed.md","mtime":"2019-01-20T11:14:31.232Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-19T07:13:36.727Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -23,6 +23,8 @@
 * [关于Vue的插槽](part10/slot.md)
 * [关于Vue的生命周期](part10/LifeCycle.md)
 * [vue 深度作用选择器](part10/deep.md)
+* [谈谈Vue的computed的setter和getter](part10/computed.md)
+* [谈谈Vue的watch](part10/watch.md)
 
 ### Vue Router
 * [谈谈v-router中的path](part14/vue-router-path.md)
@@ -52,6 +54,9 @@
 * [数组排序的几种方法](part8/array_sort.md)
 * [递归算法](part8/recursion.md)
 <!-- * [事件冒泡和捕获](part8/event.md) -->
+
+### javascript对象之es6
+* [Object.defineProperty](es6/Object.defineProperty.md)
 
 ### css 预编译语言
 * [css 命名规范](part6/css-name.md)
