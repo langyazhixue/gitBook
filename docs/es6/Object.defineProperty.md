@@ -22,7 +22,10 @@ console.log(person.name)
   4. enumerable：是否可枚举（是否能在for...in循环中遍历出来或在Object.keys中列举出来）
   5. get：一会细说
   6. set：一会细说
+<<<<<<< HEAD
   
+=======
+>>>>>>> c2a28f2b252d8fb0905497a4abb77ee08ad719cf
 *descriptor 默认值*
 回头看第一个例子
 

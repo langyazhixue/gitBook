@@ -1,5 +1,7 @@
 ### 谈谈 Vue  中 的 computed
+
 computed 是 Vue 中的计算属性功能。看下面的一个简单例子
+
 ```html 
 <template>
   <div>
@@ -83,6 +85,7 @@ computed: {
 ```
 
 ### 我对于computed 的理解
+
   * data 属性初始化 `get` `set`
   * computed 计算属性初始化，提供的函数将用作属性 `fullName` 的 `get`和`set`
   * 当首次获取 `fullName` 计算属性的值时，vue 开始`fullName`依赖收集

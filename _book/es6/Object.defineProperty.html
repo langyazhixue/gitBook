@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>React + React-Router 路由配置 · GitBook</title>
+        <title>Object.defineProperty · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -65,10 +65,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="react.html" />
+    <link rel="next" href="../part6/css-name.html" />
     
     
-    <link rel="prev" href="async.html" />
+    <link rel="prev" href="../part8/recursion.md" />
     
 
     </head>
@@ -145,9 +145,9 @@
         
         
     
-        <li class="chapter " data-level="2.1" data-path="redux.html">
+        <li class="chapter " data-level="2.1" data-path="../part4/redux.html">
             
-                <a href="redux.html">
+                <a href="../part4/redux.html">
             
                     
                     saga + redux + container 数据流转
@@ -158,9 +158,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.2" data-path="HOC.html">
+        <li class="chapter " data-level="2.2" data-path="../part4/HOC.html">
             
-                <a href="HOC.html">
+                <a href="../part4/HOC.html">
             
                     
                     React高阶组件
@@ -171,9 +171,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3" data-path="async.html">
+        <li class="chapter " data-level="2.3" data-path="../part4/async.html">
             
-                <a href="async.html">
+                <a href="../part4/async.html">
             
                     
                     async + await 并发或顺序数据请求
@@ -184,9 +184,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.4" data-path="router.html">
+        <li class="chapter " data-level="2.4" data-path="../part4/router.html">
             
-                <a href="router.html">
+                <a href="../part4/router.html">
             
                     
                     React + React-Router 路由配置
@@ -197,9 +197,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.5" data-path="react.html">
+        <li class="chapter " data-level="2.5" data-path="../part4/react.html">
             
-                <a href="react.html">
+                <a href="../part4/react.html">
             
                     
                     React 全家桶 demo
@@ -578,9 +578,9 @@
         
         
     
-        <li class="chapter " data-level="10.1" data-path="../es6/Object.defineProperty.html">
+        <li class="chapter active" data-level="10.1" data-path="Object.defineProperty.html">
             
-                <a href="../es6/Object.defineProperty.html">
+                <a href="Object.defineProperty.html">
             
                     
                     Object.defineProperty
@@ -739,7 +739,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >React + React-Router 路由配置</a>
+        <a href=".." >Object.defineProperty</a>
     </h1>
 </div>
 
@@ -754,115 +754,115 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="react--react-router-&#x8DEF;&#x7531;&#x914D;&#x7F6E;">React + React-Router &#x8DEF;&#x7531;&#x914D;&#x7F6E;</h1>
-<h2 id="react-router">React-Router</h2>
+                                <h3 id="&#x8C08;&#x8C08;objectdefineproperty">&#x8C08;&#x8C08;Object.defineProperty</h3>
 <ul>
-<li>&#x6982;&#x8FF0;&#xFF1A;Router&#x5B9E;&#x8D28;&#x4E3A;&#x4E00;&#x4E2A;&#x5BB9;&#x5668;&#xFF0C;&#x771F;&#x6B63;&#x7684;&#x8DEF;&#x7531;&#x901A;&#x8FC7;Route&#x7EC4;&#x4EF6;&#x6765;&#x5B9A;&#x4E49;&#x3002;<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">Router</span> <span class="hljs-attr">history</span>=<span class="hljs-string">{hashHistory}</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">Route</span> <span class="hljs-attr">path</span>=<span class="hljs-string">&quot;/&quot;</span> <span class="hljs-attr">component</span>=<span class="hljs-string">{App}</span>/&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">Router</span>&gt;</span>
-</code></pre>
-&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x7684;&#x542B;&#x4E49;&#x662F;&#x8BBF;&#x95EE;&#x6839;&#x8DEF;&#x7531;<code>/</code>&#x65F6;&#xFF0C;&#x5C06;&#x52A0;&#x8F7D;App&#x7EC4;&#x4EF6;&#x3002;&#x7EC4;&#x4EF6;&#x548C;&#x8DEF;&#x7531;&#x4E00;&#x4E00;&#x5BF9;&#x5E94;&#x3002;&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x591A;&#x4E2A;Route&#x7EC4;&#x4EF6;&#x6765;&#x5B9A;&#x4E49;&#x591A;&#x7EC4;&#x8DEF;&#x7531;&#x3002;
-&#x4E5F;&#x53EF;&#x4EE5;&#x5D4C;&#x5957;&#x8DEF;&#x7531;&#xFF0C;&#x5B9E;&#x73B0;&#x5728;&#x7236;&#x7EC4;&#x4EF6;&#x4E2D;&#x52A0;&#x8F7D;&#x5B50;&#x7EC4;&#x4EF6;&#x3002;&#x5982;&#x4E0B;&#xFF0C;&#x8BBF;&#x95EE;<code>/repos</code>&#x65F6;&#xFF0C;&#x4F1A;&#x5148;&#x52A0;&#x8F7D;App&#xFF0C;&#x7136;&#x540E;&#x5728;&#x5176;&#x5185;&#x90E8;&#x52A0;&#x8F7D;Repos.<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">Router</span> <span class="hljs-attr">history</span>=<span class="hljs-string">{hashHistory}</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">Route</span> <span class="hljs-attr">path</span>=<span class="hljs-string">&quot;/&quot;</span> <span class="hljs-attr">component</span>=<span class="hljs-string">{App}</span>/&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">Route</span> <span class="hljs-attr">path</span>=<span class="hljs-string">&quot;/repos&quot;</span> <span class="hljs-attr">component</span>=<span class="hljs-string">{Repos}</span>/&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">Route</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">Router</span>&gt;</span>
-</code></pre>
-ps:&#x66F4;&#x591A;&#x7EC4;&#x4EF6;&#x53C2;&#x89C1;<a href="https://reacttraining.com/react-router/web/api/" target="_blank">&#x8FD9;&#x91CC;</a></li>
+<li>&#x4E3E;&#x4F8B;</li>
 </ul>
-<h2 id="&#x914D;&#x7F6E;&#x65B9;&#x6CD5;">&#x914D;&#x7F6E;&#x65B9;&#x6CD5;</h2>
-<p>&#x5728;&#x5B9E;&#x9645;&#x9879;&#x76EE;&#x4E2D;&#xFF0C;&#x901A;&#x5E38;&#x5C06;route&#x548C;component&#x7684;&#x6620;&#x5C04;&#x5173;&#x7CFB;&#x5355;&#x72EC;&#x5199;&#x5728;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x91CC;&#x3002;&#x8DEF;&#x7531;&#x53EF;&#x4EE5;&#x662F;&#x540C;&#x6B65;&#x8DEF;&#x7531;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x5F02;&#x6B65;&#x8DEF;&#x7531;&#x3002;</p>
-<ul>
-<li><p>&#x5F02;&#x6B65;&#x8DEF;&#x7531;&#x7684;&#x5B9E;&#x73B0;</p>
-<p>  &#x901A;&#x8FC7;async&#x51FD;&#x6570;&#x5C06;&#x8DEF;&#x7531;&#x5F02;&#x6B65;&#x5316;&#x3002;&#x5728;&#x5339;&#x914D;&#x5230;&#x6307;&#x5B9A;&#x8DEF;&#x7531;&#x65F6;&#x624D;&#x52A0;&#x8F7D;&#x5BF9;&#x5E94;&#x7684;&#x7EC4;&#x4EF6;.&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#x7247;&#x6BB5;&#xFF1A;</p>
-<pre><code class="lang-javascript">  [
-    {
-        path: <span class="hljs-string">&quot;/&quot;</span>,
-        name: <span class="hljs-string">&quot;&#x95E8;&#x6237;&quot;</span>,
-        getComponent: PoolReport(),
-        childRoutes: [{
-          path: <span class="hljs-string">&quot;home-pool&quot;</span>,
-          name: <span class="hljs-string">&quot;&#x8D44;&#x6E90;&#x6C60;&quot;</span>,
-          getComponent: HomePool()
-        }]
-     }, 
-    <span class="hljs-string">&apos;other route...&apos;</span>,
-   ]
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> person = {}
+<span class="hljs-built_in">Object</span>.defineProperty(person,<span class="hljs-string">&apos;name&apos;</span>,{
+  value: <span class="hljs-string">&apos;&#x5F20;&#x4E09;&apos;</span>
+})
+<span class="hljs-built_in">console</span>.log(person.name)
 </code></pre>
-<p>  <code>PoolReport()</code>&#x548C;<code>HomePool()</code>&#x662F;&#x5F02;&#x6B65;&#x52A0;&#x8F7D;&#x7EC4;&#x4EF6;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x4F4D;&#x4E8E;&#x8981;&#x52A0;&#x8F7D;&#x7EC4;&#x4EF6;&#x76EE;&#x5F55;&#x4E4B;&#x4E2D;&#x3002;&#x8BE5;&#x51FD;&#x6570;&#x7684;&#x5B9E;&#x73B0;&#x5982;&#x4E0B;:
-  &#x5148;&#x5F02;&#x6B65;import&#x7EC4;&#x4EF6;&#xFF0C;</p>
-<pre><code class="lang-javascript">  <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">doGet</span>(<span class="hljs-params"></span>)</span>{
-      <span class="hljs-keyword">try</span>{
-       <span class="hljs-keyword">const</span> component = <span class="hljs-keyword">await</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">&apos;./&apos;</span>);
-       <span class="hljs-keyword">return</span> component;
-      }<span class="hljs-keyword">catch</span>(error){
-       <span class="hljs-built_in">console</span>.log(error);
-     }
+<p><em>&#x53C2;&#x6570;</em></p>
+<ol>
+<li>&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#xFF1A;&#x8981;&#x8BBE;&#x7F6E;&#x7684;&#x76EE;&#x6807;&#x5BF9;&#x8C61;&#xFF08;&#x5FC5;&#x586B;&#xFF09;</li>
+<li>&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#xFF1A;&#x9700;&#x8981;&#x5B9A;&#x4E49;&#x7684;&#x5C5E;&#x6027;&#x6216;&#x65B9;&#x6CD5;&#x7684;&#x540D;&#x79F0;&#xFF08;&#x5FC5;&#x586B;&#xFF09;</li>
+<li>&#x7B2C;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#xFF1A;&#x76EE;&#x6807;&#x5C5E;&#x6027;&#x6240;&#x62E5;&#x6709;&#x7684;&#x7279;&#x6027;&#x3002;&#xFF08;descriptor&#xFF09;&#xFF08;&#x5FC5;&#x586B;
+&#x6CE8;&#x610F;&#xFF1A; &#x4E09;&#x4E2A;&#x53C2;&#x6570;&#x90FD;&#x662F;&#x5FC5;&#x586B;&#x9879;&#xFF0C;&#x91CD;&#x70B9;&#x4ECB;&#x7ECD;&#x7B2C;&#x4E09;&#x4E2A;&#x53C2;&#x6570; descriptor</li>
+</ol>
+<p><em>descriptor</em></p>
+<ol>
+<li>value&#xFF1A;&#x5C5E;&#x6027;&#x7684;&#x503C;</li>
+<li>writable&#xFF1A;&#x5982;&#x679C;&#x4E3A;false&#xFF0C;&#x5C5E;&#x6027;&#x7684;&#x503C;&#x5C31;&#x4E0D;&#x80FD;&#x88AB;&#x91CD;&#x5199;, &#x53EA;&#x80FD;&#x4E3A;&#x53EA;&#x8BFB;&#x4E86;</li>
+<li>configurable&#xFF1A;&#x603B;&#x5F00;&#x5173;&#xFF0C;&#x4E00;&#x65E6;&#x4E3A;false&#xFF0C;&#x5C31;&#x4E0D;&#x80FD;&#x518D;&#x8BBE;&#x7F6E;&#x4ED6;&#x7684;&#xFF08;value&#xFF0C;writable&#xFF0C;configurable&#xFF09;</li>
+<li>enumerable&#xFF1A;&#x662F;&#x5426;&#x53EF;&#x679A;&#x4E3E;&#xFF08;&#x662F;&#x5426;&#x80FD;&#x5728;for...in&#x5FAA;&#x73AF;&#x4E2D;&#x904D;&#x5386;&#x51FA;&#x6765;&#x6216;&#x5728;Object.keys&#x4E2D;&#x5217;&#x4E3E;&#x51FA;&#x6765;&#xFF09;</li>
+<li>get&#xFF1A;&#x4E00;&#x4F1A;&#x7EC6;&#x8BF4;</li>
+<li>set&#xFF1A;&#x4E00;&#x4F1A;&#x7EC6;&#x8BF4;
+<em>descriptor &#x9ED8;&#x8BA4;&#x503C;</em>
+&#x56DE;&#x5934;&#x770B;&#x7B2C;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;</li>
+</ol>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> person= {};
+<span class="hljs-built_in">Object</span>.defineProperty(person, <span class="hljs-string">&quot;name&quot;</span>, {
+  value: <span class="hljs-string">&apos;&#x5F20;&#x4E09;&apos;</span>
+})
+<span class="hljs-built_in">console</span>.log(person.name); <span class="hljs-comment">// &#x5F20;&#x4E09;</span>
+</code></pre>
+<p>&#x4F46;&#x662F;&#x7B2C;&#x4E00;&#x6B21;&#x7684;&#x65F6;&#x5019; &#x53EF;&#x4EE5;&#x7B80;&#x5355;&#x7684;&#x7406;&#x89E3;&#x4E3A;&#xFF08;&#x6682;&#x65F6;&#x8FD9;&#x6837;&#x7406;&#x89E3;&#xFF09;&#x5B83;&#x4F1A;&#x9ED8;&#x8BA4;&#x5E2E;&#x6211;&#x4EEC;&#x628A;writable&#xFF0C;configurable&#xFF0C;enumerable&#x90FD;&#x8BBE;&#x4E0A;&#x503C;&#xFF0C;&#x800C;&#x4E14;&#x503C;&#x8FD8;&#x90FD;&#x662F;false&#x3002;
+&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x548C;&#x4E0B;&#x9762;&#x662F;&#x7B49;&#x4EF7;&#x7684;&#x7684;&#xFF08;&#x4EC5;&#x9650;&#x4E8E;&#x7B2C;&#x4E00;&#x6B21;&#x8BBE;&#x7F6E;&#x7684;&#x65F6;&#x5019;&#x3002;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> person = {};
+<span class="hljs-built_in">Object</span>.defineProperty(person ,<span class="hljs-string">&quot;name&quot;</span>,{
+  value: <span class="hljs-string">&apos;&#x5F20;&#x4E09;&apos;</span>,
+  writable :<span class="hljs-literal">false</span>,
+  enumerable: <span class="hljs-literal">false</span>,
+  configurable: <span class="hljs-literal">false</span>
+});
+<span class="hljs-built_in">console</span>.log(person.name); <span class="hljs-comment">// &#x5F20;&#x4E09;</span>
+</code></pre>
+<p><em>configurable</em>
+&#x603B;&#x5F00;&#x5173;&#xFF0C;&#x7B2C;&#x4E00;&#x6B21;&#x8BBE;&#x7F6E; false &#x4E4B;&#x540E;&#xFF0C;&#xFF0C;&#x7B2C;&#x4E8C;&#x6B21;&#x4EC0;&#x4E48;&#x8BBE;&#x7F6E;&#x4E5F;&#x4E0D;&#x884C;&#x4E86;&#xFF0C;&#x6BD4;&#x5982;&#x8BF4;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> person = {};
+<span class="hljs-built_in">Object</span>.defineProperty(person,<span class="hljs-string">&quot;name&quot;</span>,{
+  configurable: <span class="hljs-literal">false</span>
+});
+<span class="hljs-built_in">Object</span>.defineProperty(person,<span class="hljs-string">&quot;name&quot;</span>,{
+  configurable: <span class="hljs-literal">true</span>
+});
+<span class="hljs-comment">//error: Uncaught TypeError: Cannot redefine property: name</span>
+</code></pre>
+<p>&#x5C31;&#x4F1A;&#x62A5;&#x9519;&#x4E86;&#x3002;&#x3002;
+&#x6CE8;&#x610F;&#x4E0A;&#x9762;&#x8BB2;&#x7684;&#x9ED8;&#x8BA4;&#x503C;&#x3002;&#x3002;&#x3002;&#x5982;&#x679C;&#x7B2C;&#x4E00;&#x6B21;&#x4E0D;&#x8BBE;&#x7F6E;&#x5B83;&#x4F1A;&#x600E;&#x6837;&#x3002;&#x3002;&#x4F1A;&#x5E2E;&#x4F60;&#x8BBE;&#x7F6E;&#x4E3A;false&#x3002;&#x3002;&#x6240;&#x4EE5;&#x3002;&#x3002;&#x7B2C;&#x4E8C;&#x6B21;&#x3002;&#x518D;&#x8BBE;&#x7F6E;&#x4ED6;&#x4F1A;&#x600E;&#x6837;&#xFF1F;&#x3002;&#x3002;&#x5BF9;&#x55BD;&#xFF0C;&#xFF0C;&#x4F1A;&#x62A5;&#x9519;</p>
+<p><em>writable</em>
+&#x5982;&#x679C;&#x8BBE;&#x7F6E;&#x4E3A;false,&#x5C31;&#x53D8;&#x6210;&#x4E4B;&#x8BFB;</p>
+<pre><code class="lang-js">
+<span class="hljs-keyword">var</span> person = {}; 
+<span class="hljs-built_in">Object</span>.defineProperty(person, <span class="hljs-string">&quot;name&quot;</span>, { 
+    &#x3000;&#x3000;value : <span class="hljs-string">&apos;&#x5F20;&#x4E09;&apos;</span>,
+    &#x3000;&#x3000;writable : <span class="hljs-literal">false</span> 
+&#x3000;&#x3000;}
+);
+<span class="hljs-built_in">console</span>.log(person.name); <span class="hljs-comment">// &#x6253;&#x5370; &#x5F20;&#x4E09;</span>
+person.name = <span class="hljs-string">&apos;&#x674E;&#x56DB;&apos;</span>; <span class="hljs-comment">// &#x6CA1;&#x6709;&#x9519;&#x8BEF;&#x629B;&#x51FA;&#xFF08;&#x5728;&#x4E25;&#x683C;&#x6A21;&#x5F0F;&#x4E0B;&#x4F1A;&#x629B;&#x51FA;&#xFF0C;&#x5373;&#x4F7F;&#x4E4B;&#x524D;&#x5DF2;&#x7ECF;&#x6709;&#x76F8;&#x540C;&#x7684;&#x503C;&#xFF09;</span>
+<span class="hljs-built_in">console</span>.log(person.name); <span class="hljs-comment">// &#x6253;&#x5370; &#x5F20;&#x4E09;&#xFF0C; &#x8D4B;&#x503C;&#x4E0D;&#x8D77;&#x4F5C;&#x7528;&#x3002;</span>
+</code></pre>
+<p><em>enumerable</em>
+&#x5C5E;&#x6027;&#x7279;&#x6027;enumerable&#x5B9A;&#x4E49;&#x4E86;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x5728;for...in&#x5FAA;&#x73AF;&#x548C;Object.keys()&#x88AB;&#x679A;&#x4E3E;</p>
+<pre><code class="lang-js">
+<span class="hljs-keyword">var</span> person = {}; 
+<span class="hljs-built_in">Object</span>.defineProperty(person, <span class="hljs-string">&quot;name&quot;</span>, { 
+    &#x3000;&#x3000;value : <span class="hljs-string">&apos;&#x5F20;&#x4E09;&apos;</span>,
+    &#x3000;&#x3000;enumerable: <span class="hljs-literal">true</span>
+&#x3000;&#x3000;}
+);
+<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Object</span>.keys(person)); <span class="hljs-comment">// &#x6253;&#x5370; [&quot;name&quot;]</span>
+</code></pre>
+<p>&#x5982;&#x679C;&#x5C06;enumerable&#x6539;&#x4E3A;false, for...in &#x7C7B;&#x4F3C;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> person = {}; 
+<span class="hljs-built_in">Object</span>.defineProperty(person, <span class="hljs-string">&quot;name&quot;</span>, { 
+    &#x3000;&#x3000;value : <span class="hljs-string">&apos;&#x5F20;&#x4E09;&apos;</span>,
+    &#x3000;&#x3000;enumerable: <span class="hljs-literal">false</span>
+&#x3000;&#x3000;}
+);
+<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Object</span>.keys(person)); <span class="hljs-comment">// &#x6253;&#x5370; []</span>
+</code></pre>
+<p>set&#x548C;get</p>
+<p><code>&#x5728; descriptor &#x4E2D;&#x4E0D;&#x80FD;&#x540C;&#x65F6;&#x8BBE;&#x7F6E;&#x8BBF;&#x95EE;&#x5668;&#xFF08;get &#x548C; set&#xFF09;&#x548C; wriable &#x6216; value&#xFF0C;&#x5426;&#x5219;&#x4F1A;&#x9519;&#xFF0C;&#x5C31;&#x662F;&#x8BF4;&#x60F3;&#x7528; get &#x548C; set&#xFF0C;&#x5C31;&#x4E0D;&#x80FD;&#x7528; writable &#x6216; value &#x4E2D;&#x7684;&#x4EFB;&#x4F55;&#x4E00;&#x4E2A;</code></p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> person= {};
+<span class="hljs-keyword">var</span> temp = [];
+<span class="hljs-built_in">Object</span>.defineProperty(person, <span class="hljs-string">&apos;name&apos;</span>, {
+  set: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">newVal</span>) </span>{
+    temp[<span class="hljs-string">&apos;name&apos;</span>] = newVal;
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;&#x4E3A;person&#x8BBE;&#x7F6E;&#x65B0;&#x7684;&#x59D3;&#x540D;&#xFF1A;&apos;</span> + newVal);
+  },
+  get: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> _name =  temp[<span class="hljs-string">&apos;name&apos;</span>] || <span class="hljs-string">&apos;&#x9ED8;&#x8BA4;&#x59D3;&#x540D;&apos;</span>;
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;&#x83B7;&#x53D6;person&#x7684;&#x59D3;&#x540D;&#xFF1A;&apos;</span> +  _name);
+    <span class="hljs-keyword">return</span> _name;
   }
+});
+person.name = <span class="hljs-string">&apos;&#x5F20;&#x4E09;&apos;</span>;      <span class="hljs-comment">//&#x6253;&#x5370; &#x83B7;&#x53D6;person&#x7684;&#x59D3;&#x540D;&#xFF1A;&#x5F20;&#x4E09;</span>
+<span class="hljs-built_in">console</span>.log(person.name)  <span class="hljs-comment">//&#x6253;&#x5370; &#x83B7;&#x53D6;person&#x7684;&#x59D3;&#x540D;&#xFF1A;&#x5F20;&#x4E09;(&#x5982;&#x679C;&#x4E0D;&#x8BBE;&#x7F6E;name&#xFF0C;&#x8FD9;&#x91CC;&#x4F1A;&#x6253;&#x5370;&apos;&#x9ED8;&#x8BA4;&#x59D3;&#x540D;&apos;)</span>
 </code></pre>
-<p>  &#x7136;&#x540E;&#x521B;&#x5EFA;&#x7EC4;&#x4EF6;</p>
-<pre><code class="lang-javascript">  create(errorLoading, injectReducer, injectSagas) {
-      <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">nextState, cb</span>) </span>{
-          doGet()
-              .then(component =&gt; {
-                  cb(<span class="hljs-literal">null</span>, component.default);
-              })
-              .catch(errorLoading)
-      }
-  }
-</code></pre>
-<p>  &#x8FD9;&#x91CC;&#x6D89;&#x53CA;&#x5230;&#x5C06;&#x7EC4;&#x4EF6;&#x7684;reducer&#x548C;saga&#x6CE8;&#x5165;&#x5230;&#x5168;&#x5C40;&#x3002;</p>
-<p>  1.&#x6CE8;&#x5165;reducer&#x7684;&#x4E00;&#x822C;&#x505A;&#x6CD5;&#x662F;&#x91C7;&#x7528;store&#x5BF9;&#x8C61;&#x7684;<code>replaceReducer(nextReducer)</code>&#x6765;&#x66FF;&#x6362;&#x5F53;&#x524D;&#x7684;reducer&#x3002;
-  <code>nextReducer</code>&#x4E3A;&#x6CE8;&#x5165;&#x4E86;&#x5F53;&#x524D;reducer&#x7684;&#x65B0;reducer&#x3002;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-javascript">  <span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">injectAsyncReducer</span>(<span class="hljs-params">store, isValid</span>) </span>{
-      <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">injectReducer</span>(<span class="hljs-params">name, aysncReducer</span>) </span>{
-          <span class="hljs-keyword">if</span>(isValid) {
-              <span class="hljs-comment">//...</span>
-          }
-          invariant(
-                isString(name) &amp;&amp; !isEmpty(name) &amp;&amp; isFunction(asyncReducer),
-                <span class="hljs-string">&apos;(app/utils...) injectAsyncReducer: Expected `asyncReducer` to be a reducer function&apos;</span>
-          );
-          <span class="hljs-keyword">if</span> (<span class="hljs-built_in">Reflect</span>.has(store.asyncReducers, name)) <span class="hljs-keyword">return</span>;
-          store.asyncReducers[name] = asyncReducer;
-          store.replaceReducer(createReducer(store.aysnReducer));
-      }
-  }
-</code></pre>
-<p>  2.&#x6CE8;&#x5165;saga&#x7684;&#x65B9;&#x5F0F;&#x548C;&#x6CE8;&#x5165;reducer&#x7684;&#x65B9;&#x5F0F;&#x5927;&#x81F4;&#x76F8;&#x540C;&#x3002;&#x91C7;&#x7528;<code>sagas.map(store.runSaga)</code>&#x3002;</p>
-<pre><code class="lang-javascript">  <span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">injectAsyncSagas</span>(<span class="hljs-params">store, isValid</span>) </span>{
-      <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">injectSagas</span>(<span class="hljs-params">sagas</span>) </span>{
-          <span class="hljs-keyword">if</span>(isValid){
-              <span class="hljs-comment">//...</span>
-          }
-          invariant(
-                isString(name) &amp;&amp; !isEmpty(name) &amp;&amp; isFunction(asyncReducer),
-                <span class="hljs-string">&apos;(app/utils...) injectAsyncReducer: Expected `asyncReducer` to be a reducer function&apos;</span>
-          );
-          warning(
-                !isEmpty(sagas),
-                <span class="hljs-string">&apos;(app/utils...) injectAsyncSagas: Received an empty `sagas` array&apos;</span>
-          );
-          sagas.map(store.runSaga); 
-      }
-  }
-</code></pre>
-</li>
-<li><p>&#x6240;&#x6709;&#x7684;&#x8DEF;&#x7531;&#x4FE1;&#x606F;&#x53EF;&#x4EE5;&#x6309;&#x7167;&#x8DEF;&#x7531;&#x5D4C;&#x5957;&#x89C4;&#x5219;&#x4EE5;&#x4E0A;&#x8FF0;&#x7684;&#x65B9;&#x6CD5;&#x914D;&#x7F6E;&#x3002;&#x7136;&#x540E;&#x5728;&#x5E94;&#x7528;&#x7684;&#x5165;&#x53E3;&#x6587;&#x4EF6;&#xFF08;app.js&#xFF09;&#x4E2D;&#x6307;&#x5B9A;&#x6839;&#x8DEF;&#x7531;&#x548C;&#x6839;&#x7EC4;&#x4EF6;&#x3002;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-javascript">  <span class="hljs-keyword">const</span> rootRoute = {
-    component: App,
-    childRoutes: createRoutes(store)
-  };
-</code></pre>
-</li>
-<li>&#x7136;&#x540E;&#x5C06;&#x6839;&#x8DEF;&#x7531;&#x6DFB;&#x52A0;&#x5230;&#x8DEF;&#x7531;&#x5668;Router&#x7684;route&#x5C5E;&#x6027;&#x4E2D;&#x5373;&#x53EF;&#x3002;<pre><code class="lang-html">  <span class="hljs-tag">&lt;<span class="hljs-name">Provider</span> <span class="hljs-attr">store</span>=<span class="hljs-string">{store}</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">LanguageProvider</span> <span class="hljs-attr">messages</span>=<span class="hljs-string">{translationMessages}</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">Router</span> <span class="hljs-attr">history</span>=<span class="hljs-string">{history}</span> <span class="hljs-attr">routes</span>=<span class="hljs-string">{rootRoute}</span>/&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">LanguageProvider</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">Provider</span>&gt;</span>
-</code></pre>
-</li>
-</ul>
 
                                 
                                 </section>
@@ -890,12 +890,12 @@ ps:&#x66F4;&#x591A;&#x7EC4;&#x4EF6;&#x53C2;&#x89C1;<a href="https://reacttrainin
 
             
                 
-                <a href="async.html" class="navigation navigation-prev " aria-label="Previous page: async + await 并发或顺序数据请求">
+                <a href="../part8/recursion.md" class="navigation navigation-prev " aria-label="Previous page: 递归算法">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="react.html" class="navigation navigation-next " aria-label="Next page: React 全家桶 demo">
+                <a href="../part6/css-name.html" class="navigation navigation-next " aria-label="Next page: css 命名规范">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -906,11 +906,7 @@ ps:&#x66F4;&#x591A;&#x7EC4;&#x4EF6;&#x53C2;&#x89C1;<a href="https://reacttrainin
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-<<<<<<< HEAD
-            gitbook.page.hasChanged({"page":{"title":"React + React-Router 路由配置","level":"2.4","depth":1,"next":{"title":"React 全家桶 demo","level":"2.5","depth":1,"path":"part4/react.md","ref":"part4/react.md","articles":[]},"previous":{"title":"async + await 并发或顺序数据请求","level":"2.3","depth":1,"path":"part4/async.md","ref":"part4/async.md","articles":[]},"dir":"ltr"},"config":{"plugins":["etoc","theme-comscore","livereload"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"etoc":{"mindepth":3,"maxdepth":4,"header":1,"h2lb":3,"notoc":false},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"水泡泡","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*","description":"水泡泡的testbook"},"file":{"path":"part4/router.md","mtime":"2018-11-19T11:31:34.313Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-18T03:06:18.230Z"},"basePath":"..","book":{"language":""}});
-=======
-            gitbook.page.hasChanged({"page":{"title":"React + React-Router 路由配置","level":"2.4","depth":1,"next":{"title":"React 全家桶 demo","level":"2.5","depth":1,"path":"part4/react.md","ref":"part4/react.md","articles":[]},"previous":{"title":"async + await 并发或顺序数据请求","level":"2.3","depth":1,"path":"part4/async.md","ref":"part4/async.md","articles":[]},"dir":"ltr"},"config":{"plugins":["etoc","theme-comscore","livereload"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"etoc":{"h2lb":3,"header":1,"maxdepth":4,"mindepth":3,"notoc":false},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"水泡泡","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*","description":"水泡泡的testbook"},"file":{"path":"part4/router.md","mtime":"2019-01-19T07:03:33.342Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-19T07:13:36.727Z"},"basePath":"..","book":{"language":""}});
->>>>>>> c2a28f2b252d8fb0905497a4abb77ee08ad719cf
+            gitbook.page.hasChanged({"page":{"title":"Object.defineProperty","level":"10.1","depth":1,"next":{"title":"css 命名规范","level":"11.1","depth":1,"path":"part6/css-name.md","ref":"part6/css-name.md","articles":[]},"previous":{"title":"递归算法","level":"9.7","depth":1,"path":"part8/recursion.md","ref":"part8/recursion.md","articles":[]},"dir":"ltr"},"config":{"plugins":["etoc","theme-comscore","livereload"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"etoc":{"h2lb":3,"header":1,"maxdepth":4,"mindepth":3,"notoc":false},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"水泡泡","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*","description":"水泡泡的testbook"},"file":{"path":"es6/Object.defineProperty.md","mtime":"2019-01-20T08:36:32.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-19T07:13:36.727Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
