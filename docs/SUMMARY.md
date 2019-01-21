@@ -15,7 +15,6 @@
 * [table](part5/table.md)-->
 
 ### Vue 入门
-<<<<<<< HEAD
 <!-- * [Vue 开发常见问题及处理方式](part10/issues.md) -->
 <!-- * [2.0版本与1.0版本的区别](part10/differenceBetween2A1.md) -->
 * [关于Vue的生命周期](vue/LifeCycle.md)
@@ -30,15 +29,6 @@
 * [vue 为什么组件的data要写成返回对象的函数?](vue/question-data.md)
 * [谈谈Vue 中的get和set](vue/get-set.md)
 * [Vue 深度作用选择器](vue/deep.md)
-=======
-* [Vue 开发常见问题及处理方式](part10/issues.md)
-* [2.0版本与1.0版本的区别](part10/differenceBetween2A1.md)
-* [关于Vue的插槽](part10/slot.md)
-* [关于Vue的生命周期](part10/LifeCycle.md)
-* [vue 深度作用选择器](part10/deep.md)
-* [谈谈Vue的computed的setter和getter](part10/computed.md)
-* [谈谈Vue的watch](part10/watch.md)
->>>>>>> c2a28f2b252d8fb0905497a4abb77ee08ad719cf
 
 ### Vue Router
 * [谈谈v-router中的path](part14/vue-router-path.md)
@@ -67,14 +57,8 @@
 * [递归算法](part8/recursion.md)
 <!-- * [事件冒泡和捕获](part8/event.md) -->
 
-<<<<<<< HEAD
-### es6
-* [修饰器](part7/decorator.md)
-* [谈谈]
-=======
 ### javascript对象之es6
 * [Object.defineProperty](es6/Object.defineProperty.md)
->>>>>>> c2a28f2b252d8fb0905497a4abb77ee08ad719cf
 
 ### css 预编译语言
 * [css 命名规范](part6/css-name.md)
