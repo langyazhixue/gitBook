@@ -65,7 +65,7 @@ new Vue({
       console.log('混入对象的钩子被调用')
     }
   }
-  
+
   new Vue({
     mixins: [mixin],
     created: function () {

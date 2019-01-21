@@ -4,9 +4,9 @@
 * 有时候设置的路径不一致，但是我们希望跳转到同一个页面，或者说是打开同一个组件。这时候我们就用到了路由的重新定向redirect参数。
 
 ### 
-1. 一般情况
-```js
+* 一般情况
 
+```js
 import VueRouter from 'vue-router'
 import Vue from 'vue'
 Vue.use(VueRouter)
@@ -32,9 +32,10 @@ const router = new VueRouter({
 export default router
 
 ```
-* 注意：重新定向的路径下必须有组件，不然v-router 会映射找到 errPage 组件
 
-2. 重定向时传递参数
+注意：重新定向的路径下必须有组件，不然v-router 会映射找到 errPage 组件
+
+*  重定向时传递参数
 
 vue也已经为我们设置好重定向时传递参数，我们只需要在ridirect后边的参数里复制重定向路径的path参数就可以了
 
