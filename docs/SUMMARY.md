@@ -22,7 +22,7 @@
 * [2.0版本与1.0版本的区别](part10/differenceBetween2A1.md)
 * [关于Vue的插槽](part10/slot.md)
 * [关于Vue的生命周期](part10/LifeCycle.md)
-* [vue 深度作用选择器](part10/deep.md)
+* [Vue深度作用选择器](part10/deep.md)
 
 ### Vue Router
 * [谈谈v-router中的path](part14/vue-router-path.md)
@@ -31,7 +31,6 @@
 
 ### Vue 组件
 * [Popup 弹框组件](part14/Popup.md)
-
 <!-- ### 项目中用到的插件介绍
 * [前端实现excel表格导出](part13/js-xlsx.md) -->
 
