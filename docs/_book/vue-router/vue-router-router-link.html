@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>saga + redux + container 数据流转 · GitBook</title>
+        <title>谈谈Vue-Router中的router-link · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="HOC.html" />
+    <link rel="next" href="vue-router-redirect.html" />
     
     
-    <link rel="prev" href="../part2/issues.html" />
+    <link rel="prev" href="vue-router-path.html" />
     
 
     </head>
@@ -137,9 +137,9 @@
         
         
     
-        <li class="chapter active" data-level="2.1" data-path="redux.html">
+        <li class="chapter " data-level="2.1" data-path="../part4/redux.html">
             
-                <a href="redux.html">
+                <a href="../part4/redux.html">
             
                     
                     saga + redux + container 数据流转
@@ -150,9 +150,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.2" data-path="HOC.html">
+        <li class="chapter " data-level="2.2" data-path="../part4/HOC.html">
             
-                <a href="HOC.html">
+                <a href="../part4/HOC.html">
             
                     
                     React高阶组件
@@ -163,9 +163,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3" data-path="async.html">
+        <li class="chapter " data-level="2.3" data-path="../part4/async.html">
             
-                <a href="async.html">
+                <a href="../part4/async.html">
             
                     
                     async + await 并发或顺序数据请求
@@ -176,9 +176,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.4" data-path="router.html">
+        <li class="chapter " data-level="2.4" data-path="../part4/router.html">
             
-                <a href="router.html">
+                <a href="../part4/router.html">
             
                     
                     React + React-Router 路由配置
@@ -189,9 +189,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.5" data-path="react.html">
+        <li class="chapter " data-level="2.5" data-path="../part4/react.html">
             
-                <a href="react.html">
+                <a href="../part4/react.html">
             
                     
                     React 全家桶 demo
@@ -385,9 +385,9 @@
         
         
     
-        <li class="chapter " data-level="4.1" data-path="../vue-router/vue-router-path.html">
+        <li class="chapter " data-level="4.1" data-path="vue-router-path.html">
             
-                <a href="../vue-router/vue-router-path.html">
+                <a href="vue-router-path.html">
             
                     
                     谈谈Vue-Router中的path
@@ -398,9 +398,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.2" data-path="../vue-router/vue-router-router-link.html">
+        <li class="chapter active" data-level="4.2" data-path="vue-router-router-link.html">
             
-                <a href="../vue-router/vue-router-router-link.html">
+                <a href="vue-router-router-link.html">
             
                     
                     谈谈Vue-Router中的router-link
@@ -411,9 +411,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.3" data-path="../vue-router/vue-router-redirect.html">
+        <li class="chapter " data-level="4.3" data-path="vue-router-redirect.html">
             
-                <a href="../vue-router/vue-router-redirect.html">
+                <a href="vue-router-redirect.html">
             
                     
                     谈谈Vue-Router中的redirect
@@ -776,7 +776,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >saga + redux + container 数据流转</a>
+        <a href=".." >谈谈Vue-Router中的router-link</a>
     </h1>
 </div>
 
@@ -791,118 +791,87 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="sagareduxcontainer&#x6570;&#x636E;&#x6D41;&#x8F6C;">saga+redux+container&#x6570;&#x636E;&#x6D41;&#x8F6C;</h1>
-<h2 id="&#x4E09;&#x5927;&#x6982;&#x5FF5;&#x7684;&#x7B80;&#x4ECB;">&#x4E09;&#x5927;&#x6982;&#x5FF5;&#x7684;&#x7B80;&#x4ECB;</h2>
+                                <h2 id=""><router-link></router-link></h2>
+<p><code>&lt;router-link&gt;</code> &#x7EC4;&#x4EF6;&#x652F;&#x6301;&#x7528;&#x6237;&#x5728;&#x5177;&#x6709;&#x8DEF;&#x7531;&#x529F;&#x80FD;&#x7684;&#x5E94;&#x7528;&#x4E2D; (&#x70B9;&#x51FB;) &#x5BFC;&#x822A;&#x3002; &#x901A;&#x8FC7; to &#x5C5E;&#x6027;&#x6307;&#x5B9A;&#x76EE;&#x6807;&#x5730;&#x5740;
+&#x9ED8;&#x8BA4;&#x6E32;&#x67D3;&#x6210;&#x5E26;&#x6709;&#x6B63;&#x786E;&#x94FE;&#x63A5;&#x7684; <code>&lt;a&gt;</code> &#x6807;&#x7B7E;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x914D;&#x7F6E; tag &#x5C5E;&#x6027;&#x751F;&#x6210;&#x522B;&#x7684;&#x6807;&#x7B7E;.&#x3002;&#x53E6;&#x5916;&#xFF0C;&#x5F53;&#x76EE;&#x6807;&#x8DEF;&#x7531;&#x6210;&#x529F;&#x6FC0;&#x6D3B;&#x65F6;&#xFF0C;&#x94FE;&#x63A5;&#x5143;&#x7D20;&#x81EA;&#x52A8;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x8868;&#x793A;&#x6FC0;&#x6D3B;&#x7684; CSS &#x7C7B;&#x540D;&#x3002;</p>
+<h2 id="props"><router-link> Props</router-link></h2>
+<p><em>to</em> </p>
 <ul>
-<li>saga:&#x6982;&#x62EC;&#x7684;&#x6765;&#x8BF4;&#xFF0C;saga&#x662F;&#x4E3A;&#x4E86;&#x5904;&#x7406;redux&#x7684;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;(Side Effects)&#xFF0C;&#x8FD9;&#x91CC;&#x7684;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A;redux&#x91CC;&#x7684;&#x5F02;&#x6B65;action&#x3002;saga&#x4E00;&#x822C;&#x90FD;&#x662F;&#x901A;&#x8FC7;<a href="http://leonshi.com/redux-saga-in-chinese/docs/ExternalResources.html" target="_blank">Generator</a>&#x6765;&#x521B;&#x5EFA;&#x7684;&#x3002;</li>
-<li>redux&#xFF1A;&#x7BA1;&#x7406;react&#x5E94;&#x7528;&#x7684;state.</li>
-<li>container:&#x5728;&#x8FD9;&#x91CC;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A;&#x5BB9;&#x5668;&#x7EC4;&#x4EF6;&#xFF08;redux&#x4E2D;&#x4E00;&#x822C;&#x5C06;&#x7EC4;&#x4EF6;&#x5206;&#x4E3A;&#x5BB9;&#x5668;&#x7EC4;&#x4EF6;&#x548C;&#x5C55;&#x793A;&#x7EC4;&#x4EF6;&#xFF09;&#x3002;</li>
+<li>&#x7C7B;&#x578B;&#xFF1A;<code>string | Location</code></li>
+<li><code>required</code></li>
 </ul>
-<h2 id="&#x6570;&#x636E;&#x6D41;&#x8F6C;&#x8FC7;&#x7A0B;&#x4EE5;demo&#x7B80;&#x5355;&#x8BA1;&#x65F6;&#x5668;&#x4E3A;&#x4F8B;">&#x6570;&#x636E;&#x6D41;&#x8F6C;&#x8FC7;&#x7A0B;(&#x4EE5;Demo_&#x7B80;&#x5355;&#x8BA1;&#x65F6;&#x5668;&#x4E3A;&#x4F8B;)</h2>
+<p>&#x8868;&#x793A;&#x76EE;&#x6807;&#x8DEF;&#x7531;&#x7684;&#x94FE;&#x63A5;&#x3002;&#x5F53;&#x88AB;&#x70B9;&#x51FB;&#x540E;&#xFF0C;&#x5185;&#x90E8;&#x4F1A;&#x7ACB;&#x523B;&#x628A; to &#x7684;&#x503C;&#x4F20;&#x5230; router.push()&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x4E2A;&#x503C;&#x53EF;&#x4EE5;&#x662F;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x6216;&#x8005;&#x662F;&#x63CF;&#x8FF0;&#x76EE;&#x6807;&#x4F4D;&#x7F6E;&#x7684;&#x5BF9;&#x8C61;</p>
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!-- &#x5B57;&#x7B26;&#x4E32; --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">router-link</span> <span class="hljs-attr">to</span>=<span class="hljs-string">&quot;home&quot;</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-name">router-link</span>&gt;</span>
+<span class="hljs-comment">&lt;!-- &#x6E32;&#x67D3;&#x7ED3;&#x679C; --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;home&quot;</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- &#x4F7F;&#x7528; v-bind &#x7684; JS &#x8868;&#x8FBE;&#x5F0F; --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">router-link</span> <span class="hljs-attr">v-bind:to</span>=<span class="hljs-string">&quot;&apos;home&apos;&quot;</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-name">router-link</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- &#x4E0D;&#x5199; v-bind &#x4E5F;&#x53EF;&#x4EE5;&#xFF0C;&#x5C31;&#x50CF;&#x7ED1;&#x5B9A;&#x522B;&#x7684;&#x5C5E;&#x6027;&#x4E00;&#x6837; --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">router-link</span> <span class="hljs-attr">:to</span>=<span class="hljs-string">&quot;&apos;home&apos;&quot;</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-name">router-link</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- &#x540C;&#x4E0A; --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">router-link</span> <span class="hljs-attr">:to</span>=<span class="hljs-string">&quot;{ path: &apos;home&apos; }&quot;</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-name">router-link</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- &#x547D;&#x540D;&#x7684;&#x8DEF;&#x7531; --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">router-link</span> <span class="hljs-attr">:to</span>=<span class="hljs-string">&quot;{ name: &apos;user&apos;, params: { userId: 123 }}&quot;</span>&gt;</span>User<span class="hljs-tag">&lt;/<span class="hljs-name">router-link</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- &#x5E26;&#x67E5;&#x8BE2;&#x53C2;&#x6570;&#xFF0C;&#x4E0B;&#x9762;&#x7684;&#x7ED3;&#x679C;&#x4E3A; /register?plan=private --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">router-link</span> <span class="hljs-attr">:to</span>=<span class="hljs-string">&quot;{ path: &apos;register&apos;, query: { plan: &apos;private&apos; }}&quot;</span>&gt;</span>Register<span class="hljs-tag">&lt;/<span class="hljs-name">router-link</span>&gt;</span>
+</code></pre>
+<p><em>replace</em></p>
 <ul>
-<li>&#x9996;&#x5148;&#xFF0C;react&#x5E94;&#x7528;&#x7684;initialState&#x6765;&#x6E90;&#x4E8E;reducer,&#x5728;container&#xFF08;&#x5BB9;&#x5668;&#x7EC4;&#x4EF6;&#xFF0C;&#x901A;&#x5E38;&#x4E3A;index.js or index.jsx&#xFF09;&#x4E2D;&#x901A;&#x8FC7;<code>react-redux</code>&#x5E93;&#x63D0;&#x4F9B;&#x7684;<code>connect()</code>&#x6765;&#x5305;&#x88C5;&#x5C55;&#x793A;&#x7EC4;&#x4EF6;&#xFF0C;&#x5C06;state,dispatch&#x6CE8;&#x5165;&#x5230;&#x5C55;&#x793A;&#x7EC4;&#x4EF6;&#x4E2D;&#x3002;&#x5982;&#x4E0B;&#xFF0C;Timer&#x4E3A;&#x5C55;&#x793A;&#x7EC4;&#x4EF6;&#x3002;<pre><code class="lang-javascript">  <span class="hljs-keyword">const</span> timer = connect(
-      mapStateToProps
-  )(Timer)
-</code></pre>
-</li>
-<li><p>&#x7ECF;&#x8FC7;&#x5305;&#x88C5;&#x7684;&#x5C55;&#x793A;&#x7EC4;&#x4EF6;&#x83B7;&#x5F97;&#x4E86;&#x521D;&#x59CB;&#x7684;&#x6570;&#x636E;&#x548C;dispatch action&#x7684;&#x80FD;&#x529B;&#x3002;&#x8FD9;&#x91CC;&#x7684;action&#x53EF;&#x4EE5;&#x7B80;&#x5355;&#x7684;&#x533A;&#x5206;&#x4E3A;&#x540C;&#x6B65;action&#x548C;&#x5F02;&#x6B65;action,&#x540C;&#x6B65;&#x7684;action&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4EA4;&#x7531;reducer&#x6765;&#x5904;&#x7406;&#xFF0C;&#x5F02;&#x6B65;&#x7684;action&#x5C31;&#x8981;&#x7528;&#x5230;saga&#x6765;&#x5904;&#x7406;&#x3002;</p>
-<p>  &#x5728;&#x5B9E;&#x9645;&#x7684;&#x5F00;&#x53D1;&#x4E2D;&#x662F;&#x5728;action&#x5230;&#x8FBE;store&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#x52A0;&#x5165;&#x4E00;&#x5C42;&#x4E2D;&#x95F4;&#x4EF6;&#x6765;&#x5904;&#x7406;action,&#x4E4B;&#x540E;&#x4EA4;&#x7ED9;reducer&#x6765;&#x5904;&#x7406;action&#xFF0C;&#x4ECE;&#x800C;&#x8FD4;&#x56DE;&#x65B0;&#x7684;state&#x6765;&#x89E6;&#x53D1;rerender.
-  &#x5728;&#x8BE5;Demo&#x4E2D;&#xFF0C;&#x5C55;&#x793A;&#x7EC4;&#x4EF6;&#x4E2D;dispatch&#x7684;&#x5168;&#x90FD;&#x662F;&#x540C;&#x6B65;action&#xFF08;STOP,RESET,START&#xFF09;,&#x8BA1;&#x65F6;&#x7684;&#x52A8;&#x4F5C;(TICK)&#x662F;&#x8981;&#x5468;&#x671F;&#x6027;&#x7684;&#x8FDB;&#x884C;dispatch&#xFF0C;&#x5728;&#x8FD9;&#x91CC;&#x5C31;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A;&#x5F02;&#x6B65;action&#x3002;</p>
-<pre><code class="lang-html">  <span class="hljs-tag">&lt;<span class="hljs-name">button</span>
-     <span class="hljs-attr">disabled</span>=<span class="hljs-string">{this.props.status</span> =<span class="hljs-string">==</span> &apos;<span class="hljs-attr">Running</span>&apos;}
-     <span class="hljs-attr">onClick</span>=<span class="hljs-string">{()</span> =&gt;</span> this.props.dispatch(actions.reset())}
-  &gt;
-      Reset
-  <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">button</span>
-      <span class="hljs-attr">disabled</span>=<span class="hljs-string">{this.props.status</span> =<span class="hljs-string">==</span> &apos;<span class="hljs-attr">Running</span>&apos;}
-      <span class="hljs-attr">onClick</span>=<span class="hljs-string">{()</span> =&gt;</span> this.props.dispatch(actions.start())}
-  &gt;
-      Start
-   <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">button</span>
-      <span class="hljs-attr">disabled</span>=<span class="hljs-string">{this.props.status</span> =<span class="hljs-string">==</span> &apos;<span class="hljs-attr">Stopped</span>&apos;}
-      <span class="hljs-attr">onClick</span>=<span class="hljs-string">{()</span> =&gt;</span> this.props.dispatch(actions.stop())}
-  &gt;
-      Stop
-  <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-</code></pre>
-</li>
-<li><p>saga &#x4E2D;&#x91C7;&#x7528;&#x7684;&#x662F;Generator&#x51FD;&#x6570;&#x3002;&#x4E3A;&#x4E86;dispatch&#x5F02;&#x6B65;&#x7684;action(&#x5728;saga&#x7684;&#x6982;&#x5FF5;&#x91CC;&#xFF0C;&#x5E94;&#x8BE5;&#x79F0;&#x4F5C;Effects)&#xFF0C;&#x5728;&#x5B9E;&#x9645;&#x5F00;&#x53D1;&#x4E2D;&#xFF0C;&#x9700;&#x8981;&#x91C7;&#x7528;<code>redux-saga/effects</code>&#x5E93;&#x3002;&#x8BE5;&#x5E93;&#x4E2D;&#x5C01;&#x88C5;&#x4E86;&#x5F88;&#x591A;<code>Effects Creators</code>&#x3002;&#x5728;&#x8BE5;Demo&#x4E2D;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x7528;&#x5230;<code>call()</code>&#x548C;<code>put()</code>&#x65B9;&#x6CD5;&#x3002;</p>
-<ul>
-<li><code>call()</code>:&#x7528;&#x6765;&#x58F0;&#x660E;&#x5F0F;&#x7684;&#x8C03;&#x7528;&#x5F02;&#x6B65;&#x51FD;&#x6570;&#xFF0C;&#x5728;&#x672C;&#x4F8B;&#x4E2D;&#x8C03;&#x7528;&#x4E00;&#x4E2A;&#x8FD4;&#x56DE;Promise&#x5BF9;&#x8C61;&#x7684;&#x51FD;&#x6570;</li>
-<li><p><code>put()</code>:&#x7528;&#x6765;&#x53D1;&#x9001;&#x4E00;&#x4E2A;action&#x5230;redux store&#x4E2D;&#x3002;&#x53EF;&#x4EE5;&#x7B80;&#x5355;&#x7684;&#x7406;&#x89E3;&#x4E3A;saga&#x4E2D;dispatch action&#x7684;&#x65B9;&#x5F0F;&#x3002;</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) {
-<span class="hljs-keyword">const</span> {stopped,tick} = <span class="hljs-keyword">yield</span> race({ <span class="hljs-comment">//&#x5728;&#x4E24;&#x4E2A;Effects&#x4E4B;&#x95F4;&#x6267;&#x884C;race</span>
-  stopped: take(<span class="hljs-string">&quot;STOP&quot;</span>),
-  tick: call(wait, <span class="hljs-number">1000</span>) <span class="hljs-comment">//&#x5BF9;&#x4E8E;&#x8FD4;&#x56DE;promise&#x5BF9;&#x8C61;&#x7684;&#x51FD;&#x6570;&#x91C7;&#x7528;&#x58F0;&#x660E;&#x5F0F;&#x8C03;&#x7528;&#xFF1A;&#xFF1A;call()</span>
-});
-<span class="hljs-keyword">if</span> (!stopped) {
-  <span class="hljs-keyword">yield</span> put(actions.tick()); <span class="hljs-comment">//&#x91C7;&#x7528;&#x58F0;&#x660E;&#x5F0F;&#x7684;put()&#x65B9;&#x6CD5;&#x6765;dispatch action</span>
-} <span class="hljs-keyword">else</span> {
-  <span class="hljs-keyword">break</span>;
-}
-}
-</code></pre>
-<p>ps:&#x66F4;&#x591A;<code>Effects Creators</code>&#x53C2;&#x89C1;<a href="http://leonshi.com/redux-saga-in-chinese/docs/api/index.html#effect-creators" target="_blank">&#x8FD9;&#x91CC;</a></p>
-</li>
+<li>&#x7C7B;&#x578B;&#xFF1A;<code>boolean</code></li>
+<li>&#x9ED8;&#x8BA4;&#x503C;&#xFF1A; <code>false</code></li>
 </ul>
-</li>
-<li>&#x5230;&#x6B64;&#x4E3A;&#x6B62;&#xFF0C;&#x6570;&#x636E;&#x6765;&#x6E90;&#x6709;&#x4E24;&#x4E2A;&#x90E8;&#x5206;&#x7EC4;&#x6210;&#xFF1A;&#x5C55;&#x793A;&#x7EC4;&#x4EF6;&#x4E2D;&#x76F4;&#x63A5;dispatch&#x7684;&#x540C;&#x6B65;action&#x3001;saga&#x4E2D;&#x7ECF;&#x8FC7;&#x5904;&#x7406;&#x4E4B;&#x540E;&#x5E76;put&#x7684;&#x5F02;&#x6B65;action&#xFF08;&#x8FD9;&#x91CC;&#x4E3A;&#x4E86;&#x7B80;&#x5355;&#xFF0C;&#x6240;&#x6709;&#x7684;action&#x90FD;&#x53EA;&#x6709;&#x4E00;&#x4E2A;<code>type</code>&#x5B57;&#x6BB5;&#xFF09;&#x3002;&#x4E24;&#x90E8;&#x5206;&#x6570;&#x636E;&#x4E4B;&#x540E;&#x5168;&#x90E8;&#x4EA4;&#x7ED9;reducer&#x6765;&#x5904;&#x7406;action&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;<pre><code class="lang-javascript">  <span class="hljs-keyword">const</span> timer = (state = {status: <span class="hljs-string">&quot;Stopped&quot;</span>,seconds: <span class="hljs-number">0</span>}, action) =&gt; {
-  <span class="hljs-keyword">switch</span>(action.type){
-      <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;START&apos;</span>:
-          <span class="hljs-keyword">return</span> { ...state, status: <span class="hljs-string">&apos;Running&apos;</span> }
-      <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;STOP&apos;</span>:
-          <span class="hljs-keyword">return</span> { ...state, status: <span class="hljs-string">&apos;Stopped&apos;</span> }
-      <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;TICK&apos;</span>:
-          <span class="hljs-keyword">return</span> { ...state, seconds: state.seconds + <span class="hljs-number">1</span> }
-      <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;RESET&apos;</span>:
-          <span class="hljs-keyword">return</span> { ...state, seconds: <span class="hljs-number">0</span> }
-      <span class="hljs-keyword">default</span>:
-          <span class="hljs-keyword">return</span> state
-      }
-  }
-  <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> timer
+<p>&#x8BBE;&#x7F6E; replace&#x5C5E;&#x6027;&#x7684;&#x8BDD;&#xFF0C;&#x5F53;&#x70B9;&#x51FB;&#x65F6;&#x5019;&#xFF0C;&#x4F1A;&#x8C03;&#x7528;router.replace(),&#x800C;&#x4E0D;&#x662F;router.push(),&#x4E8E;&#x662F;&#x5BFC;&#x822A;&#x540E;&#x4E0D;&#x4F1A;&#x7559;&#x4E0B;history&#x8BB0;&#x5F55;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">router-link</span> <span class="hljs-attr">:to</span>=<span class="hljs-string">&quot;{ path: &apos;/abc&apos;}&quot;</span> <span class="hljs-attr">replace</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">router-link</span>&gt;</span>
 </code></pre>
-</li>
-<li>&#x7ECF;&#x8FC7;reducer&#x7684;&#x5904;&#x7406;&#xFF0C;&#x8FD4;&#x56DE;&#x4E86;&#x65B0;&#x7684;state&#x6811;&#xFF0C;&#x5E76;&#x4E14;&#x4EA4;&#x7ED9;&#x4E86;Store,&#x7531;&#x4E8E;Store&#x6CE8;&#x518C;&#x4E86;&#x76D1;&#x542C;&#xFF0C;&#x65B0;&#x7684;state&#x6811;&#x5C06;&#x88AB;&#x7528;&#x4E8E;&#x66F4;&#x65B0;View.</li>
-</ul>
-<h2 id="example">example</h2>
+<p><em>append</em></p>
 <ul>
-<li><p>&#x4EE5;Table&#x7EC4;&#x4EF6;&#x7684;&#x641C;&#x7D22;&#x529F;&#x80FD;&#x4E3A;&#x4F8B;&#xFF1A;
-&#x4E00;&#x4E2A;&#x8DEF;&#x7531;&#x4E0B;&#x7684;index.jsx&#x901A;&#x8FC7;&#x4E86;<code>connect</code>&#x65B9;&#x6CD5;&#x7684;&#x5305;&#x88C5;&#x4E4B;&#x540E;&#xFF0C;&#x901A;&#x8FC7;props&#x5C06;dispatch&#x4F20;&#x9012;&#x7ED9;&#x5B50;&#x7EC4;&#x4EF6;&#x3002;&#x5728;&#x5B50;&#x7EC4;&#x4EF6;&#x4E2D;&#x5C31;&#x53EF;&#x4EE5;&#x5728;handleSearch&#x7684;&#x65F6;&#x5019;dispatch&#x4E00;&#x4E2A;&#x5305;&#x542B;&#x641C;&#x7D22;keyword
-&#x7684;Action&#x3002;</p>
-<pre><code class="lang-javascript">  <span class="hljs-keyword">this</span>.props.dispatch({
-    type:<span class="hljs-string">&quot;pm-pool/on-search&quot;</span>,
-    payload:{
-      condition:keyword,
-      resPoolId:<span class="hljs-keyword">this</span>.props.ResPoolID
-    }
-  });
+<li>&#x7C7B;&#x578B;&#xFF1A;<code>boolean</code></li>
+<li>&#x9ED8;&#x8BA4;&#x503C;&#xFF1A;  <code>false</code></li>
+</ul>
+<p>&#x8BBE;&#x7F6E;<code>append</code>&#x5C5E;&#x6027;&#x540E;&#xFF0C;&#x5219;&#x5728;&#x5F53;&#x524D;&#x76F8;&#x5BF9;&#x8DEF;&#x5F84;&#x524D;&#x6DFB;&#x52A0;&#x57FA;&#x7840;&#x8DEF;&#x5F84;&#x3002;&#x4F8B;&#x5982;&#x6211;&#x4EEC;&#x4ECE;<code>/a</code>&#x5BFC;&#x822A;&#x5230;&#x4E00;&#x4E2A;&#x76F8;&#x5BF9;&#x8DEF;&#x5F84; <code>/b</code>,&#x5982;&#x679C;&#x6CA1;&#x6709;&#x914D;&#x7F6E;<code>append</code>,&#x5219;&#x8DEF;&#x5F84;&#x4E3A;<code>/b</code>,
+&#x5982;&#x679C;&#x914D;&#x7F6E;&#x4E86;&#xFF0C;&#x5219;&#x4E3A;<code>/a/b</code></p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">router-link</span> <span class="hljs-attr">:to</span>=<span class="hljs-string">&quot;{ path: &apos;relative/path&apos;}&quot;</span> <span class="hljs-attr">append</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">router-link</span>&gt;</span>
 </code></pre>
-<p>  &#x7136;&#x540E;&#x8BE5;Action&#x88AB;saga&#x4E2D;&#x7684;watcher&#x622A;&#x83B7;&#xFF0C;&#x8FDB;&#x5165;&#x76F8;&#x5E94;&#x8BE5;Action&#x7684;&#x51FD;&#x6570;&#x3002;&#x5728;&#x8BE5;&#x51FD;&#x6570;&#x4E2D;&#x901A;&#x8FC7;put&#x65B9;&#x6CD5;&#x5411;redux store &#x4E2D;&#x53D1;&#x9001;action&#xFF0C;&#x5E76;&#x4E14;&#x91CD;&#x65B0;&#x8BF7;&#x6C42;&#x5E26;&#x6709;keywords&#x7684;&#x6570;&#x636E;</p>
-<pre><code class="lang-javascript">  <span class="hljs-keyword">yield</span> put({
-          type:<span class="hljs-string">&quot;pm-pool/set-search-condition&quot;</span>,
-          payload:condition
-  })
-    <span class="hljs-keyword">yield</span> call(loadStorage,pageNum,pageSize,condition,resPoolId)
+<p><em>tag</em></p>
+<ul>
+<li>&#x7C7B;&#x578B;&#xFF1A; <code>string</code></li>
+<li>&#x9ED8;&#x8BA4;&#x503C;&#xFF1A;<code>a</code>
+&#x6709;&#x65F6;&#x5019;&#x60F3;&#x8981; <code>&lt;router-link&gt;</code> &#x6E32;&#x67D3;&#x6210;&#x67D0;&#x79CD;&#x6807;&#x7B7E;&#xFF0C;&#x4F8B;&#x5982;<code>&lt;li&gt;</code>,&#x6211;&#x4EEC;&#x4F7F;&#x7528;<code>tag</code> prop &#x7C7B;&#x578B;&#x5236;&#x5B9A;&#x4F55;&#x79CD;&#x6807;&#x7B7E;&#xFF0C;&#x540C;&#x65F6;&#x5B83;&#x8FD8;&#x4F1A;&#x76D1;&#x542C;&#x70B9;&#x51FB;&#xFF0C;&#x89E6;&#x53D1;&#x5BFC;&#x822A;</li>
+</ul>
+<pre><code class="lang-html">  <span class="hljs-tag">&lt;<span class="hljs-name">router-link</span> <span class="hljs-attr">to</span>=<span class="hljs-string">&quot;/foo&quot;</span> <span class="hljs-attr">tag</span>=<span class="hljs-string">&quot;li&quot;</span>&gt;</span>foo<span class="hljs-tag">&lt;/<span class="hljs-name">router-link</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- &#x6E32;&#x67D3;&#x7ED3;&#x679C; --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>foo<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
 </code></pre>
-<p>  &#x6700;&#x540E;&#xFF0C;&#x53D1;&#x9001;&#x7684;action&#x901A;&#x8FC7;reducer&#x7684;&#x5904;&#x7406;&#xFF0C;&#x5C06;&#x8BF7;&#x6C42;&#x8FD4;&#x56DE;&#x7684;&#x7ED3;&#x679C;&#x653E;&#x5165;state,&#x5E76;&#x4E14;&#x66F4;&#x65B0;table&#x7684;loading&#x72B6;&#x6001;&#x3002;</p>
-<pre><code class="lang-javascript">  <span class="hljs-keyword">const</span> reducer = handleActions({
-     <span class="hljs-comment">//...createTableReducer(&quot;pool/manager&quot;, &quot;res&quot;),</span>
-     <span class="hljs-string">&quot;pm-pool/set-page-loading&quot;</span>:(state,action)=&gt;{
-        <span class="hljs-keyword">return</span> state.setIn([<span class="hljs-string">&quot;loading&quot;</span>],action.payload);
-     },
-     <span class="hljs-string">&quot;pm-pool/set-page-data&quot;</span>:(state,action)=&gt;{
-        <span class="hljs-keyword">return</span> state.setIn([<span class="hljs-string">&quot;pageData&quot;</span>],action.payload);
-     },
-     <span class="hljs-string">&quot;pm-pool/set-search-condition&quot;</span>:(state,action)=&gt;{
-        <span class="hljs-keyword">return</span> state.setIn([<span class="hljs-string">&quot;condition&quot;</span>],action.payload);
-     },
-  }, initialState);
-</code></pre>
+<p><em>active-class</em></p>
+<ul>
+<li>&#x7C7B;&#x578B;&#xFF1A;<code>string</code></li>
+<li><p>&#x9ED8;&#x8BA4;&#x503C;&#xFF1A;<code>router-link-active</code></p>
+<p>&#x8BBE;&#x7F6E; &#x94FE;&#x63A5;&#x6FC0;&#x6D3B;&#x65F6;&#x4F7F;&#x7528;&#x7684; CSS &#x7C7B;&#x540D;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8DEF;&#x7531;&#x7684;&#x6784;&#x9020;&#x9009;&#x9879; linkActiveClass &#x6765;&#x5168;&#x5C40;&#x914D;&#x7F6E;&#x3002;</p>
 </li>
 </ul>
+<p><em>exact</em></p>
+<ul>
+<li>&#x7C7B;&#x578B;&#xFF1A;<code>boolean</code></li>
+<li>&#x9ED8;&#x8BA4;&#x503C;:<code>false</code></li>
+</ul>
+<p><code>&#x662F;&#x5426;&#x6FC0;&#x6D3B;</code>&#x9ED8;&#x8BA4;&#x7C7B;&#x540D;&#x7684;&#x4F9D;&#x636E;&#x662F;<code>inclusive match</code>(&#x5168;&#x5305;&#x542B;&#x5339;&#x914D;)&#x5982;&#x679C;&#x5F53;&#x524D;&#x7684;&#x8DEF;&#x5F84;&#x662F; /a &#x5F00;&#x5934;&#x7684;&#xFF0C;&#x90A3;&#x4E48; <router-link to="/a"> &#x4E5F;&#x4F1A;&#x88AB;&#x8BBE;&#x7F6E; CSS &#x7C7B;&#x540D;&#x3002;</router-link></p>
+<p>&#x6309;&#x7167;&#x8FD9;&#x4E2A;&#x89C4;&#x5219;&#xFF0C;&#x6BCF;&#x4E2A;&#x8DEF;&#x7531;&#x90FD;&#x4F1A;&#x6FC0;&#x6D3B;<router-link to="/">&#xFF01;&#x60F3;&#x8981;&#x94FE;&#x63A5;&#x4F7F;&#x7528; &quot;exact &#x5339;&#x914D;&#x6A21;&#x5F0F;&quot;&#xFF0C;&#x5219;&#x4F7F;&#x7528; exact &#x5C5E;&#x6027;&#xFF1A;</router-link></p>
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!-- &#x8FD9;&#x4E2A;&#x94FE;&#x63A5;&#x53EA;&#x4F1A;&#x5728;&#x5730;&#x5740;&#x4E3A; / &#x7684;&#x65F6;&#x5019;&#x88AB;&#x6FC0;&#x6D3B; --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">router-link</span> <span class="hljs-attr">to</span>=<span class="hljs-string">&quot;/&quot;</span> <span class="hljs-attr">exact</span>&gt;</span>
+</code></pre>
+<p><em>exact-active-class</em></p>
+<ul>
+<li>&#x7C7B;&#x578B;&#xFF1A;<code>string</code></li>
+<li>&#x9ED8;&#x8BA4;&#x503C;&#xFF1A;<code>router-link-exact-active</code></li>
+</ul>
+<p>&#x914D;&#x7F6E;&#x5F53;&#x94FE;&#x63A5;&#x88AB;&#x7CBE;&#x786E;&#x5339;&#x914D;&#x5230;&#x7684;&#x65F6;&#x5019;&#x5E94;&#x6FC0;&#x6D3B;&#x7684;class&#x3002;&#x6CE8;&#x610F;&#x9ED8;&#x8BA4;&#x503C;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x901A;&#x8FC7;&#x8DEF;&#x7531;&#x6784;&#x9020;&#x51FD;&#x6570;&#x9009;&#x9879;
+<code>linkExactActiveClass</code> &#x8FDB;&#x884C;&#x5168;&#x5C40;&#x914D;&#x7F6E;</p>
 
                                 
                                 </section>
@@ -930,12 +899,12 @@
 
             
                 
-                <a href="../part2/issues.html" class="navigation navigation-prev " aria-label="Previous page: 前端常见问题及处理方式">
+                <a href="vue-router-path.html" class="navigation navigation-prev " aria-label="Previous page: 谈谈Vue-Router中的path">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="HOC.html" class="navigation navigation-next " aria-label="Next page: React高阶组件">
+                <a href="vue-router-redirect.html" class="navigation navigation-next " aria-label="Next page: 谈谈Vue-Router中的redirect">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -946,7 +915,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"saga + redux + container 数据流转","level":"2.1","depth":1,"next":{"title":"React高阶组件","level":"2.2","depth":1,"path":"part4/HOC.md","ref":"part4/HOC.md","articles":[]},"previous":{"title":"前端常见问题及处理方式","level":"1.3","depth":1,"path":"part2/issues.md","ref":"part2/issues.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"part4/redux.md","mtime":"2018-11-19T11:31:34.313Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-21T05:45:24.768Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"谈谈Vue-Router中的router-link","level":"4.2","depth":1,"next":{"title":"谈谈Vue-Router中的redirect","level":"4.3","depth":1,"path":"vue-router/vue-router-redirect.md","ref":"vue-router/vue-router-redirect.md","articles":[]},"previous":{"title":"谈谈Vue-Router中的path","level":"4.1","depth":1,"path":"vue-router/vue-router-path.md","ref":"vue-router/vue-router-path.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"vue-router/vue-router-router-link.md","mtime":"2019-01-17T05:47:52.367Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-21T05:45:24.768Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
