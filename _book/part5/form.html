@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>关于loader · GitBook</title>
+        <title>表单操作管理实现 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -65,10 +65,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="devServe.html" />
+    <link rel="next" href="table.html" />
     
     
-    <link rel="prev" href="webpack.html" />
+    <link rel="prev" href="../part4/react.html" />
     
 
     </head>
@@ -210,9 +210,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.6" data-path="../part5/form.html">
+        <li class="chapter active" data-level="2.6" data-path="form.html">
             
-                <a href="../part5/form.html">
+                <a href="form.html">
             
                     
                     表单操作管理实现
@@ -223,9 +223,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.7" data-path="../part5/table.html">
+        <li class="chapter " data-level="2.7" data-path="table.html">
             
-                <a href="../part5/table.html">
+                <a href="table.html">
             
                     
                     table
@@ -715,9 +715,9 @@
         
         
     
-        <li class="chapter " data-level="11.1" data-path="webpack.html">
+        <li class="chapter " data-level="11.1" data-path="../part12/webpack.html">
             
-                <a href="webpack.html">
+                <a href="../part12/webpack.html">
             
                     
                     关于webpack
@@ -728,9 +728,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="11.2" data-path="loader.html">
+        <li class="chapter " data-level="11.2" data-path="../part12/loader.html">
             
-                <a href="loader.html">
+                <a href="../part12/loader.html">
             
                     
                     关于loader
@@ -741,9 +741,9 @@
             
         </li>
     
-        <li class="chapter " data-level="11.3" data-path="devServe.html">
+        <li class="chapter " data-level="11.3" data-path="../part12/devServe.html">
             
-                <a href="devServe.html">
+                <a href="../part12/devServe.html">
             
                     
                     关于webpackDevServe
@@ -754,9 +754,9 @@
             
         </li>
     
-        <li class="chapter " data-level="11.4" data-path="plugin.html">
+        <li class="chapter " data-level="11.4" data-path="../part12/plugin.html">
             
-                <a href="plugin.html">
+                <a href="../part12/plugin.html">
             
                     
                     关于Plugin
@@ -767,9 +767,9 @@
             
         </li>
     
-        <li class="chapter " data-level="11.5" data-path="hash.html">
+        <li class="chapter " data-level="11.5" data-path="../part12/hash.html">
             
-                <a href="hash.html">
+                <a href="../part12/hash.html">
             
                     
                     hash详解
@@ -810,7 +810,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >关于loader</a>
+        <a href=".." >表单操作管理实现</a>
     </h1>
 </div>
 
@@ -825,33 +825,45 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="loader-&#x7684;&#x4F5C;&#x7528;">Loader &#x7684;&#x4F5C;&#x7528;</h2>
-<p>Loader &#x53EF;&#x4EE5;&#x770B;&#x505A;&#x662F;&#x6587;&#x4EF6;&#x8F6C;&#x6362;&#x529F;&#x80FD;&#x7684;&#x7FFB;&#x8BD1;&#x5458;,&#x914D;&#x7F6E;&#x91CC;&#x7684;module.rules&#x6570;&#x7EC4;&#x914D;&#x7F6E;&#x4E86;&#x4E00;&#x7EC4;&#x89C4;&#x5219;&#xFF0C;&#x544A;&#x8BC9;Webpack &#x5728;&#x9047;&#x5230;&#x54EA;&#x4E9B;&#x6587;&#x4EF6;&#x65F6;&#x5019;&#x4F7F;&#x7528;&#x54EA;&#x4E9B;Loader&#x53BB;&#x52A0;&#x8F7D;&#x548C;&#x8F6C;&#x6362;&#x3002;</p>
-<pre><code class="lang-js">  <span class="hljs-built_in">module</span>: {
-    rules:[
-      {
-        test:<span class="hljs-string">&apos;./css$&apos;</span>,
-        use:[
-          <span class="hljs-string">&apos;style-loader&apos;</span>,
-          {
-            loader:<span class="hljs-string">&apos;css-loader&apos;</span>,
-            options:{
-              minize: <span class="hljs-literal">true</span>
-            }
-          }
-        ]
+                                <h1 id="&#x8868;&#x5355;&#x64CD;&#x4F5C;&#x7BA1;&#x7406;&#x7684;&#x5B9E;&#x73B0;">&#x8868;&#x5355;&#x64CD;&#x4F5C;&#x7BA1;&#x7406;&#x7684;&#x5B9E;&#x73B0;</h1>
+<h2 id="ant-design-form">ant Design-form</h2>
+<ul>
+<li><p>form&#x7684;&#x5305;&#x88C5;</p>
+<p>  &#x8BE5;&#x7EC4;&#x4EF6;&#x7684;&#x4E00;&#x4E9B;API&#x9700;&#x8981;&#x7ECF;&#x8FC7;<code>Form.create({})(conponentName)</code>&#x7684;&#x5305;&#x88C5;&#x4E4B;&#x540E;&#x624D;&#x80FD;&#x4F7F;&#x7528;.&#x7ECF;&#x8FC7;&#x5305;&#x88C5;&#x7684;&#x7EC4;&#x4EF6;
+  &#x5E26;&#x6709;<code>this.props.form</code>&#x5C5E;&#x6027;&#x3002;&#x8BE5;&#x5C5E;&#x6027;&#x6709;&#x5F88;&#x591A;&#x63A7;&#x5236;&#x8868;&#x5355;&#x884C;&#x4E3A;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x5982;&#xFF1A;<code>getFieldValue</code>,<code>getFieldsValue</code>,<code>setFieldsValue</code>&#x7B49;&#x7B49;&#x3002;
+  ps:&#x4F7F;&#x7528; getFieldsValue getFieldValue setFieldsValue &#x7B49;&#x65F6;&#xFF0C;&#x5E94;&#x786E;&#x4FDD;&#x5BF9;&#x5E94;&#x7684; field &#x5DF2;&#x7ECF;&#x7528; getFieldDecorator &#x6CE8;&#x518C;&#x8FC7;&#x4E86;&#x3002;
+  getFieldDecorator&#x65B9;&#x6CD5;&#x5BF9;&#x8868;&#x5355;&#x8FDB;&#x884C;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;&#x3002;&#x8BE6;&#x89C1;&#xFF1A;<a href="https://ant.design/components/form-cn/" target="_blank">getFieldDecorator</a></p>
+<pre><code class="lang-javascript">  <span class="hljs-keyword">const</span> WrappedHorizontalLoginForm = Form.create()(HorizontalLoginForm);
+</code></pre>
+</li>
+<li><p>Form.Item</p>
+<p>  &#x4E00;&#x4E2A;Form.Item&#x4E2D;&#x53EA;&#x653E;&#x4E00;&#x4E2A;&#x7ECF;&#x8FC7;<code>getFieldDecoration</code>&#x88C5;&#x9970;&#x8FC7;&#x7684;child.&#x8BE5;child&#x4F1A;&#x88AB;&#x81EA;&#x52A8;&#x6DFB;&#x52A0;value,onChange&#x7B49;&#x5C5E;&#x6027;&#x3002;
+  <code>getFieldDecorator(id,options)</code>:&#x5176;&#x4E2D;&#x7684;option&#x4E00;&#x822C;&#x8BBE;&#x7F6E;field&#x7684;&#x6821;&#x9A8C;&#x89C4;&#x5219;(rules)&#x7B49;&#x53C2;&#x6570;&#x3002;</p>
+<pre><code class="lang-javascript">  &lt;FormItem
+    validateStatus={userNameError ? <span class="hljs-string">&apos;error&apos;</span> : <span class="hljs-string">&apos;&apos;</span>}
+    help={userNameError || <span class="hljs-string">&apos;&apos;</span>}
+  &gt;
+    {getFieldDecorator(<span class="hljs-string">&apos;userName&apos;</span>, {
+      rules: [{ required: <span class="hljs-literal">true</span>, message: <span class="hljs-string">&apos;Please input your username!&apos;</span> }],
+    })(
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Input</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;Username&quot;</span> /&gt;</span>
+    )}
+  <span class="hljs-tag">&lt;/<span class="hljs-name">FormItem</span>&gt;</span></span>
+</code></pre>
+</li>
+<li><p>&#x8868;&#x5355;&#x7684;&#x63D0;&#x4EA4;&#x548C;&#x6821;&#x9A8C;</p>
+<p> &#x54CD;&#x5E94;form&#x7684;onSubmit&#x4E8B;&#x4EF6;&#x3002;<code>this.props.form.validateFields</code>&#x5C06;&#x83B7;&#x53D6;&#x4E00;&#x7EC4;field&#x7684;value&#x548C;error&#x3002;&#x82E5;&#x6821;&#x9A8C;&#x65E0;&#x8BEF;&#xFF0C;&#x5219;&#x63D0;&#x4EA4;&#x8868;&#x5355;&#x3002;</p>
+<pre><code class="lang-javascript">handleSubmit = (e) =&gt; {
+    e.preventDefault();
+    <span class="hljs-keyword">this</span>.props.form.validateFields((err, values) =&gt; {
+      <span class="hljs-keyword">if</span> (!err) {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Received values of form: &apos;</span>, values);
       }
-    ]
+    });
   }
 </code></pre>
-<p>&#x5982;&#x4E0A;&#x914D;&#x7F6E;&#x544A;&#x8BC9;Webpack&#xFF0C;&#x5728;&#x9047;&#x5230;.css&#x7ED3;&#x5C3E;&#x7684;&#x6587;&#x4EF6;&#x65F6;&#x5019;&#xFF0C;&#x5148;&#x4F7F;&#x7528;css-loader&#x8BFB;&#x53D6;css&#x6587;&#x4EF6;&#xFF0C;&#x518D;&#x7531;style-loader&#x5C06;css&#x7684;&#x5185;&#x5BB9;&#x6CE8;&#x5165;&#x5230;js &#x4E2D;&#x3002;<br>
-&#x6CE8;&#x610F;</p>
-<ul>
-<li>use &#x5C5E;&#x6027;&#x7684;&#x503C;&#x9700;&#x8981;&#x662F;&#x4E00;&#x4E2A;&#x7531; Loader &#x540D;&#x79F0;&#x7EC4;&#x6210;&#x7684;&#x6570;&#x7EC4;&#xFF0C;Loader &#x7684;&#x6267;&#x884C;&#x987A;&#x5E8F;&#x662F;&#x7531;&#x540E;&#x5F80;&#x524D;&#x7684;</li>
-<li>&#x6BCF;&#x4E2A; Loader &#x90FD;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;options &#x7684;&#x65B9;&#x5F0F;&#x4F20;&#x5165;&#x53C2;&#x6570;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; URL queryString &#x7684;&#x65B9;&#x5F0F;&#x4F20;&#x5165;&#x53C2;&#x6570;</li>
+</li>
 </ul>
-<h3 id="loader&#x7B80;&#x4ECB;">Loader&#x7B80;&#x4ECB;</h3>
-<h4 id="1-eslint-loader">1. eslint-loader</h4>
 
                                 
                                 </section>
@@ -879,12 +891,12 @@
 
             
                 
-                <a href="webpack.html" class="navigation navigation-prev " aria-label="Previous page: 关于webpack">
+                <a href="../part4/react.html" class="navigation navigation-prev " aria-label="Previous page: React 全家桶 demo">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="devServe.html" class="navigation navigation-next " aria-label="Next page: 关于webpackDevServe">
+                <a href="table.html" class="navigation navigation-next " aria-label="Next page: table">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -895,7 +907,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"关于loader","level":"11.2","depth":1,"next":{"title":"关于webpackDevServe","level":"11.3","depth":1,"path":"part12/devServe.md","ref":"part12/devServe.md","articles":[]},"previous":{"title":"关于webpack","level":"11.1","depth":1,"path":"part12/webpack.md","ref":"part12/webpack.md","articles":[]},"dir":"ltr"},"config":{"plugins":["etoc","theme-comscore","livereload"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"etoc":{"mindepth":3,"maxdepth":4,"header":1,"h2lb":3,"notoc":false},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"水泡泡","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*","description":"水泡泡的testbook"},"file":{"path":"part12/loader.md","mtime":"2018-11-19T11:31:34.272Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-24T06:30:32.310Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"表单操作管理实现","level":"2.6","depth":1,"next":{"title":"table","level":"2.7","depth":1,"path":"part5/table.md","ref":"part5/table.md","articles":[]},"previous":{"title":"React 全家桶 demo","level":"2.5","depth":1,"path":"part4/react.md","ref":"part4/react.md","articles":[]},"dir":"ltr"},"config":{"plugins":["etoc","theme-comscore","livereload"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"etoc":{"mindepth":3,"maxdepth":4,"header":1,"h2lb":3,"notoc":false},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"水泡泡","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*","description":"水泡泡的testbook"},"file":{"path":"part5/form.md","mtime":"2018-11-19T11:31:34.314Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-24T06:30:32.310Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

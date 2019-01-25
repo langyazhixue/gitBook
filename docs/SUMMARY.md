@@ -20,6 +20,7 @@
 * [关于Vue的生命周期](vue/LifeCycle.md)
 * [Vue的组件](vue/component.md)
 * [Vue的computed](vue/computed.md)
+* [Vue中的provide/inject](vue/provide-inject.md)
 * [Vue的watch](vue/watch.md)
 * [Vue的插槽](vue/slot.md)
 * [Vue的mixins](vue/mixins.md)
@@ -27,6 +28,7 @@
 * [Vue过滤器](vue/filter.md)
 * [Vue自定义插件](vue/plugin.md)
 * [Vue为什么组件的data要写成返回对象的函数?](vue/question-data.md)
+* [Vue $el和$refs的用处和区别](vue/el.md)
 * [Vue深度作用选择器](vue/deep.md)
 
 ### Vue Router
