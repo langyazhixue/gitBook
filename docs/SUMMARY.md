@@ -74,10 +74,11 @@
 * [path](part11/path.md) -->
 
 ### webpack 基础内容
-* [关于webpack](part12/webpack.md)
-* [关于loader](part12/loader.md)
-* [关于webpackDevServe](part12/devServe.md)
+* [关于webpack](webpack/webpack.md)
+* [关于loader](webpack/loader.md)
+* [关于webpackDevServe](webpack/devServe.md)
   <!-- * [关于样式的loder](part12/loader/css.md) -->
-* [关于Plugin](part12/plugin.md)
-* [hash详解](part12/hash.md)
+* [webpack踩坑之路(1)——图片的路径与打包](webpack/pk-image.md)
+* [关于Plugin](webpack/plugin.md)
+* [hash详解](webpack/hash.md)
 
