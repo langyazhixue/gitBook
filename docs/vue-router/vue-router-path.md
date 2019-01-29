@@ -35,7 +35,7 @@ export const constantRouterMap = [
   }
 ]
 const router = new VueRouter({
-  mode:"history",
+  mode:"history", // 默认 hash, history  要跟服务器配合使用，慎用
   routes:constantRouterMap
 })
 export default router
@@ -56,7 +56,7 @@ export default router
 
 * `**` 
 
-* `**` 匹配任意字符，直到模式里面的下一个字符为止。匹配方式是非贪婪模式
+* `**` 匹配任意字符，直到模式里面的下一个字符为止。匹配方式是贪婪模式
 
 * `redirect`
 
