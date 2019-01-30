@@ -30,7 +30,6 @@
 * [Vue为什么组件的data要写成返回对象的函数?](vue/question-data.md)
 * [Vue $el和$refs的用处和区别](vue/el.md)
 * [Vue深度作用选择器](vue/deep.md)
-
 ### Vue Router
 * [谈谈Vue-Router中的path](vue-router/vue-router-path.md)
 * [谈谈Vue-Router中的router-link](vue-router/vue-router-router-link.md)
