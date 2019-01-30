@@ -37,7 +37,6 @@ Vue.js 的插件应该有一个公开方法 install。这个方法的第一个�
 ```
 
 #### 使用插件
-
 ```js
 // 通过全局方法 Vue.use() 使用插件。它需要在你调用 new Vue() 启动应用之前完成：
 // 调用 `MyPlugin.install(Vue)`
