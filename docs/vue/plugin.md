@@ -38,10 +38,63 @@ Vue.js 的插件应该有一个公开方法 install。这个方法的第一个�
 
 #### 使用插件
 ```js
-// 通过全局方法 Vue.use() 使用插件。它需要在你调用 new Vue() 启动应用之前完成：
+// 通过全局方法 Vue.use() 使用插件。它需要在你调用 new Vue() 启动应用之前完成
 // 调用 `MyPlugin.install(Vue)`
 Vue.use(MyPlugin,{options})
 new Vue({
   //... options
 })
 ```
+#### 一个小例子
+
+在plugins/test 中
+
+```js
+  // plugins/tes
+  export default {
+    install(Vue) {
+      Vue.myGlobalMethod = function() {
+        console.log('myGlobalMethod')
+      }
+      Vue.directive('my-directive', {
+        bind(el, binding, vnode, oldVnode) {
+          console.log('directive')
+        }
+      })
+    
+      Vue.mixin({
+        beforeCreate() {
+          console.log('beforeCreate')
+        },
+        created() {
+          console.log('create')
+        },
+        mounted() {
+          console.log('mounted')
+        }
+      }) // 一旦使用全局混入对象，将会影响到所有之后创建的Vue实例。
+      Vue.prototype.$myMethod = function(methodOptions) {
+        console.log(methodOptions)
+      }
+    }
+  }
+
+  //  在main.js 中
+  import Test from '@/plugins/test'
+  Vue.use(Element)
+  Vue.use(Test)
+
+```
+然后你可以在组件中发现，因为设置了全局的mixin,给每个组件都增加了`beforeCreate` `created` `mounted` 生命周期,
+并且在组件中可以用注册的方法 `$myMethod`
+
+```js
+methods: {
+    change() {
+      this.$myMethod('test')
+      this.message = '父组件已更新'
+    }
+  }
+}
+```
+
