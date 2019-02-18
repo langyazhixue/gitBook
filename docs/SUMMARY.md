@@ -64,9 +64,10 @@
 * [Object.defineProperty](es6/Object.defineProperty.md)
 
 ### css 预编译语言
-* [css 命名规范](part6/css-name.md)
-* [less 入门](part6/less.md)
-* [scss 入门](part6/scss.md)
+* [css 命名规范](css/css-name.md)
+* [less 入门](css/less.md)
+* [scss 入门](css/scss.md)
+* [elementUI等插件修改样式不污染全局环境](css/changeStyle.md)
 
 <!-- 
 ### HTTP

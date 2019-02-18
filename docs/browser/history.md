@@ -41,6 +41,7 @@ History 对象最初设计来表示窗口的浏览历史。但出于隐私方面
 
 ###  vue router的本质
 vue router 其实本质是在HTML5 historyAPI、window.onpopstate、window.onhashchange上做的封装，通过一定的规则映射到对应的方法上，通过监听变化，从而实现单页路路由
+[链接](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/onpopstate)
 
 
 

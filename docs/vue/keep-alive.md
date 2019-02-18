@@ -1,12 +1,9 @@
 ### Vue的keep-alive用法
 
 `keep-alive` 是Vue提供的一个抽象组件，用来对组件进行缓存，从而节省性能。由于是一个抽象组件，所以在页面渲染完毕后不会被渲染称一个DOM元素
-
-
 在做电商有关的项目中，当我们第一次进入列表页需要请求一下数据，当我从列表页进入详情页，详情页不缓存也需要请求下数据，然后返回列表页，这时候我们使用keep-alive来缓存组件，防止二次渲染，这样会大大的节省性能。
 
 * keep-alive 的基本用法
-
 ```js
  // appMain.vue
  <template>
@@ -127,10 +124,10 @@ export default {
 
 ```html
 <keep-alive include="bookLists,bookLists">
-      <router-view></router-view>
+  <router-view></router-view>
 </keep-alive>
 <keep-alive exclude="indexLists">
-      <router-view></router-view>
+  <router-view></router-view>
 </keep-alive>
 ```
 include属性表示只有name属性为bookLists，bookLists的组件会被缓存，（注意是组件的名字，不是路由的名字）其它组件不会被缓存exclude属性表示除了name属性为indexLists的组件不会被缓存，其它组件都会被缓存
@@ -150,8 +147,9 @@ export default[
   name:'book',
   components:Book,
   meta:{
-     keepAlive:false //不需要被缓存的组件
- } 
+    keepAlive:false //不需要被缓存的组件
+  }
+ }
 ]
 ```
 ```js
@@ -162,9 +160,9 @@ export default[
 <keep-alive v-if="!this.$router.meta.keepAlive"></keep-alive>
 <!--这里是不会被缓存的组件-->
 ```
-* 
 
-
+* 包裹在keep-alive中的组件的状态会被保留，其中我们将某个列表类组件内容滑动到第100条位置，
+那么我们在切换都另外一个组件后再切换回该组件，该组件的位置状态依旧会保持在第100条列表处
 
 
 

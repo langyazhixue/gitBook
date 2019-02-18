@@ -4,7 +4,6 @@
 
 [中文官网](https://www.sass.hk)
 
-
 [英文官网](./imgs/scss.jpg)
 
 ## 安装
@@ -118,16 +117,18 @@ $width:800px;
 
 ```
 * 默认变量
-  *  sass 的默认变量仅需要在值后面加上 !default 即可
+  * sass 的默认变量仅需要在值后面加上 !default 即可
   * sass 的默认变量一般是用来设置默认值，然后根据需求来覆盖的，覆盖的方式也很简单，只需要在默认变量之前重新声明下变量即可。
   * 默认变量的价值在进行`组件化开发`的时候会非常有用
+
+
 输入
 
 ```scss
 $baseLineHeight: 2;
 $baseLineHeight: 1.5 !default;
 body{
-    line-height: $baseLineHeight; 
+  line-height: $baseLineHeight; 
 }
 
 ```
@@ -138,7 +139,6 @@ body{
 body {
   line-height: 2;
 }
-
 ```
 * 局部变量和全局变量
   * 在选择器、函数、混合宏...的外面定义的变量为全局变量
@@ -253,6 +253,31 @@ header nav a {
   border-radius: 10px;
 }
 ```
+有时，不能确定混合指令需要使用多少个参数，比如一个关于 box-shadow 的混合指令不能确定有多少个 'shadow' 会被用到。这时，可以使用参数变量 … 声明（写在参数的最后方）告诉 sass 将这些参数视为值列表处理：
+
+输入
+
+```scss
+  @mixin box-shadow($shadows...) {
+    -moz-box-shadow: $shadows;
+    -webkit-box-shadow: $shadows;
+    box-shadow: $shadows;
+  }
+  .shadows {
+    @include box-shadow(0px 4px 5px #666, 2px 6px 10px #999);
+  }
+```
+
+输出
+
+```scss
+.shadowed {
+  -moz-box-shadow: 0px 4px 5px #666, 2px 6px 10px #999;
+  -webkit-box-shadow: 0px 4px 5px #666, 2px 6px 10px #999;
+  box-shadow: 0px 4px 5px #666, 2px 6px 10px #999;
+}
+```
+
 
 ### 继承
 * 继承类样式块所有样式代码，从而编译出来的css会将选择器合并在一起，形成组合选择器
@@ -596,7 +621,7 @@ $properties: (margin, padding);
     * unquote($string)：删除字符串中的引号;
     * quote($string)：给字符串添加引号
     * to-upper-case()：函数将字符串小写字母换成大写字母
-    * to-upper-case()：函数将字符串大写字母换成小写字母
+    * to-lower-case()：函数将字符串大写字母换成小写字母
   2. 数字函数
     * percentage()：将一个不带单位的数字转换成百分比形式
     * round(）：函数将一个数字四舍五入为一个最接近的整数
