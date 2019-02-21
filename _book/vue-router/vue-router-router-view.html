@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>作用域链 · GitBook</title>
+        <title>谈谈Vue-Router中的router-view · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -65,10 +65,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="closure.html" />
+    <link rel="next" href="../part14/Popup.md" />
     
     
-    <link rel="prev" href="throttle.html" />
+    <link rel="prev" href="vue-router-redirect.html" />
     
 
     </head>
@@ -432,9 +432,9 @@
         
         
     
-        <li class="chapter " data-level="4.1" data-path="../vue-router/vue-router-path.html">
+        <li class="chapter " data-level="4.1" data-path="vue-router-path.html">
             
-                <a href="../vue-router/vue-router-path.html">
+                <a href="vue-router-path.html">
             
                     
                     谈谈Vue-Router中的path
@@ -445,9 +445,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.2" data-path="../vue-router/vue-router-router-link.html">
+        <li class="chapter " data-level="4.2" data-path="vue-router-router-link.html">
             
-                <a href="../vue-router/vue-router-router-link.html">
+                <a href="vue-router-router-link.html">
             
                     
                     谈谈Vue-Router中的router-link
@@ -458,9 +458,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.3" data-path="../vue-router/vue-router-redirect.html">
+        <li class="chapter " data-level="4.3" data-path="vue-router-redirect.html">
             
-                <a href="../vue-router/vue-router-redirect.html">
+                <a href="vue-router-redirect.html">
             
                     
                     谈谈Vue-Router中的redirect
@@ -471,9 +471,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.4" data-path="../vue-router/vue-router-router-view.html">
+        <li class="chapter active" data-level="4.4" data-path="vue-router-router-view.html">
             
-                <a href="../vue-router/vue-router-router-view.html">
+                <a href="vue-router-router-view.html">
             
                     
                     谈谈Vue-Router中的router-view
@@ -577,9 +577,9 @@
         
         
     
-        <li class="chapter " data-level="8.1" data-path="throttle.html">
+        <li class="chapter " data-level="8.1" data-path="../es5/throttle.html">
             
-                <a href="throttle.html">
+                <a href="../es5/throttle.html">
             
                     
                     函数防抖和节流
@@ -590,9 +590,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="8.2" data-path="scope.html">
+        <li class="chapter " data-level="8.2" data-path="../es5/scope.html">
             
-                <a href="scope.html">
+                <a href="../es5/scope.html">
             
                     
                     作用域链
@@ -603,9 +603,9 @@
             
         </li>
     
-        <li class="chapter " data-level="8.3" data-path="closure.html">
+        <li class="chapter " data-level="8.3" data-path="../es5/closure.html">
             
-                <a href="closure.html">
+                <a href="../es5/closure.html">
             
                     
                     闭包
@@ -616,9 +616,9 @@
             
         </li>
     
-        <li class="chapter " data-level="8.4" data-path="memory.html">
+        <li class="chapter " data-level="8.4" data-path="../es5/memory.html">
             
-                <a href="memory.html">
+                <a href="../es5/memory.html">
             
                     
                     内存回收
@@ -629,9 +629,9 @@
             
         </li>
     
-        <li class="chapter " data-level="8.5" data-path="sort.html">
+        <li class="chapter " data-level="8.5" data-path="../es5/sort.html">
             
-                <a href="sort.html">
+                <a href="../es5/sort.html">
             
                     
                     排序
@@ -642,9 +642,9 @@
             
         </li>
     
-        <li class="chapter " data-level="8.6" data-path="array_sort.html">
+        <li class="chapter " data-level="8.6" data-path="../es5/array_sort.html">
             
-                <a href="array_sort.html">
+                <a href="../es5/array_sort.html">
             
                     
                     数组排序的几种方法
@@ -655,9 +655,9 @@
             
         </li>
     
-        <li class="chapter " data-level="8.7" data-path="recursion.html">
+        <li class="chapter " data-level="8.7" data-path="../es5/recursion.html">
             
-                <a href="recursion.html">
+                <a href="../es5/recursion.html">
             
                     
                     递归算法
@@ -862,7 +862,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >作用域链</a>
+        <a href=".." >谈谈Vue-Router中的router-view</a>
     </h1>
 </div>
 
@@ -877,31 +877,17 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x4F5C;&#x7528;&#x57DF;">&#x4F5C;&#x7528;&#x57DF;</h1>
-<p></p><h6 id="&#x4ECA;&#x5929;&#x6765;&#x8C08;&#x8C08;&#x4F5C;&#x7528;&#x57DF;&#xFF0C;&#x628A;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x641E;&#x6E05;&#x695A;&#x4E86;&#xFF0C;&#x5176;&#x5B9E;&#x95ED;&#x5305;&#x7684;&#x95EE;&#x9898;&#x4E5F;&#x6E05;&#x695A;&#x4E86;&#x3002;&#x8981;&#x8BF4;&#x4F5C;&#x7528;&#x57DF;&#xFF0C;&#x5148;&#x8BF4;&#x6267;&#x884C;&#x73AF;&#x5883;&#x5427;">&#x4ECA;&#x5929;&#x6765;&#x8C08;&#x8C08;&#x4F5C;&#x7528;&#x57DF;&#xFF0C;&#x628A;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x641E;&#x6E05;&#x695A;&#x4E86;&#xFF0C;&#x5176;&#x5B9E;&#x95ED;&#x5305;&#x7684;&#x95EE;&#x9898;&#x4E5F;&#x6E05;&#x695A;&#x4E86;&#x3002;&#x8981;&#x8BF4;&#x4F5C;&#x7528;&#x57DF;&#xFF0C;&#x5148;&#x8BF4;&#x6267;&#x884C;&#x73AF;&#x5883;&#x5427;</h6><p></p>
-<h2 id="&#x5148;&#x6765;&#x8C08;&#x8C08;&#x6267;&#x884C;&#x73AF;&#x5883;&#xFF08;execution-context&#xFF09;">&#x5148;&#x6765;&#x8C08;&#x8C08;&#x6267;&#x884C;&#x73AF;&#x5883;&#xFF08;execution context&#xFF09;</h2>
-<p>&#x6267;&#x884C;&#x73AF;&#x5883; &#x662F; js &#x4E2D;&#x6700;&#x4E3A;&#x91CD;&#x8981;&#x7684;&#x4E00;&#x4E2A;&#x6982;&#x5FF5;&#x3002;<code>&#x6267;&#x884C;&#x73AF;&#x5883;&#x5B9A;&#x4E49;&#x4E86;&#x53D8;&#x91CF;&#x548C;&#x51FD;&#x6570;&#x6709;&#x6743;&#x9650;&#x8BBF;&#x95EE;&#x7684;&#x5176;&#x4ED6;&#x6570;&#x636E;&#xFF0C;&#x51B3;&#x5B9A;&#x4E86;&#x5B83;&#x4EEC;&#x5404;&#x81EA;&#x7684;&#x884C;&#x4E3A;</code>&#xFF0C;&#x6BCF;&#x4E2A;&#x6267;&#x884C;&#x73AF;&#x5883;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x4E0E;&#x4E4B;&#x5173;&#x8054;&#x7684;&#x53D8;&#x91CF;&#x5BF9;&#x8C61;(variable object)&#x6709;&#x5168;&#x5C40;&#x6267;&#x884C;&#x73AF;&#x5883;&#x548C;&#x51FD;&#x6570;&#x6267;&#x884C;&#x73AF;&#x5883;</p>
-<ul>
-<li>&#x5168;&#x5C40;&#x6267;&#x884C;&#x73AF;&#x5883; <br>
-&#x5168;&#x5C40;&#x6267;&#x884C;&#x73AF;&#x5883;&#x662F;&#x6700;&#x5916;&#x56F4;&#x7684;&#x4E00;&#x4E2A;&#x6267;&#x884C;&#x73AF;&#x5883;&#x3002;&#x5728;Web&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#xFF0C;&#x5168;&#x5C40;&#x6267;&#x884C;&#x73AF;&#x5883;&#x88AB;&#x8BA4;&#x4E3A;&#x662F;window&#x5BF9;&#x8C61;&#x3002;&#x56E0;&#x6B64;&#x6240;&#x6709;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x548C;&#x51FD;&#x6570;&#x90FD;&#x662F;&#x4F5C;&#x4E3A;window&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;&#x521B;&#x5EFA;&#x7684;&#x3002;&#x67D0;&#x4E2A;&#x6267;&#x884C;&#x73AF;&#x5883;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x4EE3;&#x7801;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x540E;&#xFF0C;&#x8BE5;&#x73AF;&#x5883;&#x88AB;&#x9500;&#x6BC1;&#xFF0C;&#x4FDD;&#x5B58;&#x5728;&#x5176;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x53D8;&#x91CF;&#x548C;&#x51FD;&#x6570;&#x5B9A;&#x4E49;&#x4E5F;&#x968F;&#x4E4B;&#x9500;&#x6BC1;&#x3002;</li>
-<li>&#x51FD;&#x6570;&#x6267;&#x884C;&#x73AF;&#x5883;<br>
-&#x6BCF;&#x4E2A;&#x51FD;&#x6570;&#x90FD;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x6267;&#x884C;&#x73AF;&#x5883;&#xFF0C;&#x5F53;&#x6267;&#x884C;&#x6D41;&#x8FDB;&#x5165;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x65F6;&#xFF0C;&#x51FD;&#x6570;&#x7684;&#x73AF;&#x5883;&#x4F1A;&#x88AB;&#x63A8;&#x5165;&#x4E00;&#x4E2A;&#x73AF;&#x5883;&#x6808;&#xFF0C;&#x800C;&#x5728;&#x51FD;&#x6570;&#x6267;&#x884C;&#x4E4B;&#x540E;&#xFF0C;&#x6808;&#x5C06;&#x5176;&#x73AF;&#x5883;&#x5F39;&#x51FA;&#xFF0C;&#x628A;&#x63A7;&#x5236;&#x6743;&#x8FD4;&#x56DE;&#x7ED9;&#x4E4B;&#x524D;&#x7684;&#x6267;&#x884C;&#x73AF;&#x5883;&#x3002;<br></li>
-</ul>
-<p><code>&#x5F53;&#x4EE3;&#x7801;&#x5728;&#x4E00;&#x4E2A;&#x73AF;&#x5883;&#x4E2D;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x4F1A;&#x521B;&#x5EFA;&#x53D8;&#x91CF;&#x5BF9;&#x8C61;&#x7684;&#x4E00;&#x4E2A;&#x4F5C;&#x7528;&#x57DF;&#x94FE;(scope chain)&#x3002;&#x4F5C;&#x7528;&#x57DF;&#x94FE;&#x7684;&#x7528;&#x9014;&#xFF0C;&#x662F;&#x4FDD;&#x8BC1;&#x5BF9;&#x6267;&#x884C;&#x73AF;&#x5883;&#x6709;&#x6743;&#x8BBF;&#x95EE;&#x7684;&#x6240;&#x6709;&#x53D8;&#x91CF;&#x548C;&#x51FD;&#x6570;&#x7684;&#x6709;&#x5E8F;&#x8BBF;&#x95EE;</code></p>
-<h2 id="&#x4F5C;&#x7528;&#x57DF;&#x548C;&#x4F5C;&#x7528;&#x57DF;&#x94FE;">&#x4F5C;&#x7528;&#x57DF;&#x548C;&#x4F5C;&#x7528;&#x57DF;&#x94FE;<br></h2>
-<p>  &#x4EE5;&#x51FD;&#x6570;&#x4F5C;&#x7528;&#x57DF;&#x4E3A;&#x4F8B;&#x5B50;</p>
-<pre><code class="lang-js">    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">C</span>(<span class="hljs-params">v1,v2</span>) </span>{
-      <span class="hljs-keyword">if</span> (v1 &lt;  v2) {
-          <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>
-      } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (v1 &gt; v2) {
-          <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>
-      } <span class="hljs-keyword">else</span> {
-          <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>
-      } 
-    }
+                                <h3 id="router-view">router-view</h3>
+<p><code>&lt;router-view&gt;</code> &#x7EC4;&#x4EF6;&#x662F;&#x4E00;&#x4E2A;functional &#x7EC4;&#x4EF6;&#xFF0C;&#x6E32;&#x67D3;&#x8DEF;&#x5F84;&#x5339;&#x914D;&#x5230;&#x7684;&#x89C6;&#x56FE;&#x7EC4;&#x4EF6;&#x3002;<code>router-view</code> &#x6E32;&#x67D3;&#x7684;&#x7EC4;&#x4EF6;&#x8FD8;&#x53EF;&#x4EE5;&#x5185;&#x5D4C;&#x81EA;&#x5DF1;&#x7684;<code>router-view</code>
+&#x6839;&#x636E;&#x5D4C;&#x5957;&#x8DEF;&#x5F84;&#xFF0C;&#x6E32;&#x67D3;&#x5D4C;&#x5957;&#x7EC4;&#x4EF6;</p>
+<p>&#x5176;&#x4ED6;&#x5C5E;&#x6027; (&#x975E; router-view &#x4F7F;&#x7528;&#x7684;&#x5C5E;&#x6027;) &#x90FD;&#x76F4;&#x63A5;&#x4F20;&#x7ED9;&#x6E32;&#x67D3;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C; &#x5F88;&#x591A;&#x65F6;&#x5019;&#xFF0C;&#x6BCF;&#x4E2A;&#x8DEF;&#x7531;&#x7684;&#x6570;&#x636E;&#x90FD;&#x662F;&#x5305;&#x542B;&#x5728;&#x8DEF;&#x7531;&#x53C2;&#x6570;&#x4E2D;&#x3002;</p>
+<p>&#x56E0;&#x4E3A;&#x5B83;&#x4E5F;&#x662F;&#x4E2A;&#x7EC4;&#x4EF6;&#xFF0C;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x914D;&#x5408; <code>&lt;transition&gt;</code> &#x548C; <code>&lt;keep-alive&gt;</code> &#x4F7F;&#x7528;&#x3002;&#x5982;&#x679C;&#x4E24;&#x4E2A;&#x7ED3;&#x5408;&#x4E00;&#x8D77;&#x7528;&#xFF0C;&#x8981;&#x786E;&#x4FDD;&#x5728;&#x5185;&#x5C42;&#x4F7F;&#x7528; <code>&lt;keep-alive&gt;</code>&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">transition</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">keep-alive</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">router-view</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">router-view</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">keep-alive</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">transition</span>&gt;</span>
 </code></pre>
-<p>&#x6BCF;&#x6B21;&#x5B9A;&#x4E49;C&#x51FD;&#x6570;&#xFF0C;&#x4F1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5C5E;&#x4E8E;&#x8FD9;&#x4E2A;C&#x51FD;&#x6570;&#x7684;[[scope]]&#x5C5E;&#x6027;&#xFF0C;&#x5176;&#x53EA;&#x5305;&#x62EC;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x5BF9;&#x8C61;&#x3002;
-&#x5728;&#x6267;&#x884C;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4E3A;&#x51FD;&#x6570;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6267;&#x884C;&#x73AF;&#x5883;&#xFF0C;&#x6267;&#x884C;&#x73AF;&#x5883;&#x521B;&#x5EFA;&#x4E86;&#x4F5C;&#x7528;&#x57DF;&#x94FE;[[ scope chain ]],&#x5148;&#x628A;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x5BF9;&#x8C61;&#x590D;&#x5236;&#x5230;&#x4F5C;&#x7528;&#x57DF;&#x94FE;&#x4E2D;&#xFF0C;&#x7136;&#x540E;&#x628A;&#x672C;&#x5730;&#x6D3B;&#x52A8;&#x5BF9;&#x8C61;&#x63A8;&#x5230;&#x4F5C;&#x7528;&#x57DF;&#x94FE;&#x7684;&#x9876;&#x7AEF;&#x3002;&#x6240;&#x4EE5;&#x51FD;&#x6570;&#x5728;&#x8BBF;&#x95EE;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5C31;&#x4F1A;&#x4ECE;&#x4F5C;&#x7528;&#x57DF;&#x94FE;&#x7684;&#x9876;&#x7AEF;&#x5F00;&#x59CB;&#x627E;&#x3002;</p>
 
                                 
                                 </section>
@@ -929,12 +915,12 @@
 
             
                 
-                <a href="throttle.html" class="navigation navigation-prev " aria-label="Previous page: 函数防抖和节流">
+                <a href="vue-router-redirect.html" class="navigation navigation-prev " aria-label="Previous page: 谈谈Vue-Router中的redirect">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="closure.html" class="navigation navigation-next " aria-label="Next page: 闭包">
+                <a href="../part14/Popup.md" class="navigation navigation-next " aria-label="Next page: Popup 弹框组件">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -945,7 +931,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"作用域链","level":"8.2","depth":1,"next":{"title":"闭包","level":"8.3","depth":1,"path":"es5/closure.md","ref":"es5/closure.md","articles":[]},"previous":{"title":"函数防抖和节流","level":"8.1","depth":1,"path":"es5/throttle.md","ref":"es5/throttle.md","articles":[]},"dir":"ltr"},"config":{"plugins":["etoc","theme-comscore","livereload"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"etoc":{"mindepth":3,"maxdepth":4,"header":1,"h2lb":3,"notoc":false},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"水泡泡","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*","description":"水泡泡的testbook"},"file":{"path":"es5/scope.md","mtime":"2018-11-19T11:31:34.320Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-21T09:16:00.637Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"谈谈Vue-Router中的router-view","level":"4.4","depth":1,"next":{"title":"Popup 弹框组件","level":"5.1","depth":1,"path":"part14/Popup.md","ref":"part14/Popup.md","articles":[]},"previous":{"title":"谈谈Vue-Router中的redirect","level":"4.3","depth":1,"path":"vue-router/vue-router-redirect.md","ref":"vue-router/vue-router-redirect.md","articles":[]},"dir":"ltr"},"config":{"plugins":["etoc","theme-comscore","livereload"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"etoc":{"mindepth":3,"maxdepth":4,"header":1,"h2lb":3,"notoc":false},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"水泡泡","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*","description":"水泡泡的testbook"},"file":{"path":"vue-router/vue-router-router-view.md","mtime":"2019-02-18T06:22:36.760Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-21T09:16:00.637Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

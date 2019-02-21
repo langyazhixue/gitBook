@@ -37,6 +37,7 @@
 * [谈谈Vue-Router中的path](vue-router/vue-router-path.md)
 * [谈谈Vue-Router中的router-link](vue-router/vue-router-router-link.md)
 * [谈谈Vue-Router中的redirect](vue-router/vue-router-redirect.md)
+* [谈谈Vue-Router中的router-view](vue-router/vue-router-router-view.md)
 
 ### Vue 组件
 * [Popup 弹框组件](part14/Popup.md)
