@@ -38,7 +38,9 @@
 * [谈谈Vue-Router中的router-link](vue-router/vue-router-router-link.md)
 * [谈谈Vue-Router中的redirect](vue-router/vue-router-redirect.md)
 * [谈谈Vue-Router中的router-view](vue-router/vue-router-router-view.md)
-
+* [谈谈 Vue-router 中的 route](vue-router/vue-router-router.md)
+* [谈谈vue-router中的模式](vue-router/mode.md)
+* [在 vue-router钩子函数用vuex](vue-router/vuex.md)
 ### Vue 组件
 * [Popup 弹框组件](part14/Popup.md)
 <!-- ### 项目中用到的插件介绍 * [前端实现excel表格导出](part13/js-xlsx.md) -->

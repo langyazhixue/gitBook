@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>history 详解 · GitBook</title>
+        <title>谈谈vue-router中的模式 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -65,10 +65,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../dom/document.html" />
+    <link rel="next" href="vuex.html" />
     
     
-    <link rel="prev" href="location.html" />
+    <link rel="prev" href="vue-router-router.html" />
     
 
     </head>
@@ -432,9 +432,9 @@
         
         
     
-        <li class="chapter " data-level="4.1" data-path="../vue-router/vue-router-path.html">
+        <li class="chapter " data-level="4.1" data-path="vue-router-path.html">
             
-                <a href="../vue-router/vue-router-path.html">
+                <a href="vue-router-path.html">
             
                     
                     谈谈Vue-Router中的path
@@ -445,9 +445,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.2" data-path="../vue-router/vue-router-router-link.html">
+        <li class="chapter " data-level="4.2" data-path="vue-router-router-link.html">
             
-                <a href="../vue-router/vue-router-router-link.html">
+                <a href="vue-router-router-link.html">
             
                     
                     谈谈Vue-Router中的router-link
@@ -458,9 +458,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.3" data-path="../vue-router/vue-router-redirect.html">
+        <li class="chapter " data-level="4.3" data-path="vue-router-redirect.html">
             
-                <a href="../vue-router/vue-router-redirect.html">
+                <a href="vue-router-redirect.html">
             
                     
                     谈谈Vue-Router中的redirect
@@ -471,9 +471,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.4" data-path="../vue-router/vue-router-router-view.html">
+        <li class="chapter " data-level="4.4" data-path="vue-router-router-view.html">
             
-                <a href="../vue-router/vue-router-router-view.html">
+                <a href="vue-router-router-view.html">
             
                     
                     谈谈Vue-Router中的router-view
@@ -484,9 +484,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.5" data-path="../vue-router/vue-router-router.html">
+        <li class="chapter " data-level="4.5" data-path="vue-router-router.html">
             
-                <a href="../vue-router/vue-router-router.html">
+                <a href="vue-router-router.html">
             
                     
                     谈谈 Vue-router 中的 route
@@ -497,9 +497,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.6" data-path="../vue-router/mode.html">
+        <li class="chapter active" data-level="4.6" data-path="mode.html">
             
-                <a href="../vue-router/mode.html">
+                <a href="mode.html">
             
                     
                     谈谈vue-router中的模式
@@ -510,9 +510,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.7" data-path="../vue-router/vuex.html">
+        <li class="chapter " data-level="4.7" data-path="vuex.html">
             
-                <a href="../vue-router/vuex.html">
+                <a href="vuex.html">
             
                     
                     在 vue-router钩子函数用vuex
@@ -543,9 +543,9 @@
         
         
     
-        <li class="chapter " data-level="5.1" data-path="URL.html">
+        <li class="chapter " data-level="5.1" data-path="../browser/URL.html">
             
-                <a href="URL.html">
+                <a href="../browser/URL.html">
             
                     
                     URI和URL
@@ -556,9 +556,9 @@
             
         </li>
     
-        <li class="chapter " data-level="5.2" data-path="location.html">
+        <li class="chapter " data-level="5.2" data-path="../browser/location.html">
             
-                <a href="location.html">
+                <a href="../browser/location.html">
             
                     
                     Location 详解
@@ -569,9 +569,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="5.3" data-path="history.html">
+        <li class="chapter " data-level="5.3" data-path="../browser/history.html">
             
-                <a href="history.html">
+                <a href="../browser/history.html">
             
                     
                     history 详解
@@ -894,7 +894,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >history 详解</a>
+        <a href=".." >谈谈vue-router中的模式</a>
     </h1>
 </div>
 
@@ -909,45 +909,54 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="history">history</h2>
-<p>History &#x5BF9;&#x8C61;&#x5305;&#x542B;&#x7528;&#x6237;&#xFF08;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x7A97;&#x53E3;&#x4E2D;&#xFF09;&#x8BBF;&#x95EE;&#x8FC7;&#x7684; URL&#x3002;
-History &#x5BF9;&#x8C61;&#x662F; window &#x5BF9;&#x8C61;&#x7684;&#x4E00;&#x90E8;&#x5206;&#xFF0C;&#x53EF;&#x901A;&#x8FC7; window.history &#x5C5E;&#x6027;&#x5BF9;&#x5176;&#x8FDB;&#x884C;&#x8BBF;&#x95EE;&#x3002;</p>
-<h3 id="&#x5C5E;&#x6027;">&#x5C5E;&#x6027;</h3>
+                                <h3 id="vue-router&#x7684;hash&#x6A21;&#x5F0F;&#x548C;history&#x7684;&#x533A;&#x522B;">vue-router&#x7684;hash&#x6A21;&#x5F0F;&#x548C;history&#x7684;&#x533A;&#x522B;</h3>
+<h3 id="1-&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x6709;hash-&#x548C;-history-&#x6A21;&#x5F0F;">1. &#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x6709;hash &#x548C; history &#x6A21;&#x5F0F;</h3>
+<p>&#x5BF9;&#x4E8E; Vue &#x8FD9;&#x7C7B;&#x524D;&#x7AEF;&#x5F00;&#x53D1;&#x6846;&#x67B6;&#xFF0C;&#x4E3A;&#x4E86;&#x6784;&#x5EFA;<code>SPA</code>(&#x4F46;&#x9875;&#x9762;&#x5E94;&#x7528;)&#xFF0C;&#x9700;&#x8981;&#x5F15;&#x5165;&#x524D;&#x7AEF;&#x8DEF;&#x7531;&#x7CFB;&#x7EDF;&#xFF0C;&#x8FD9;&#x4E5F;&#x5C31;&#x662F; <code>Vue-Router</code>&#x5B58;&#x5728;&#x7684;&#x610F;&#x4E49;&#x3002;
+&#x524D;&#x7AEF;&#x8DEF;&#x7531;&#x7684;&#x6838;&#x5FC3;&#xFF0C;&#x5C31;&#x5728;&#x4E8E; &#x2014;&#x2014; <code>&#x6539;&#x53D8;&#x89C6;&#x56FE;&#x7684;&#x540C;&#x65F6;&#x4E0D;&#x4F1A;&#x5411;&#x540E;&#x7AEF;&#x53D1;&#x51FA;&#x8BF7;&#x6C42;</code></p>
+<p>&#x4E3A;&#x4E86;&#x8FBE;&#x5230;&#x8FD9;&#x4E2A;&#x76EE;&#x7684;&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x5F53;&#x524D;&#x63D0;&#x4F9B;&#x4E86;&#x4EE5;&#x4E0B;&#x4E24;&#x79CD;&#x652F;&#x6301;</p>
 <ul>
-<li>length &#x8FD4;&#x56DE;&#x6D4F;&#x89C8;&#x5668;&#x5386;&#x53F2;&#x5217;&#x8868;&#x4E2D;&#x7684; URL &#x6570;&#x91CF;&#x3002;</li>
+<li><code>hash</code> &#x2014;&#x2014; &#x5373;&#x5730;&#x5740;&#x680F; URL &#x4E2D;&#x7684; # &#x7B26;&#x53F7;</li>
 </ul>
-<h3 id="&#x65B9;&#x6CD5;">&#x65B9;&#x6CD5;</h3>
-<p>History &#x5BF9;&#x8C61;&#x6700;&#x521D;&#x8BBE;&#x8BA1;&#x6765;&#x8868;&#x793A;&#x7A97;&#x53E3;&#x7684;&#x6D4F;&#x89C8;&#x5386;&#x53F2;&#x3002;&#x4F46;&#x51FA;&#x4E8E;&#x9690;&#x79C1;&#x65B9;&#x9762;&#x7684;&#x539F;&#x56E0;&#xFF0C;History &#x5BF9;&#x8C61;&#x4E0D;&#x518D;&#x5141;&#x8BB8;&#x811A;&#x672C;&#x8BBF;&#x95EE;&#x5DF2;&#x7ECF;&#x8BBF;&#x95EE;&#x8FC7;&#x7684;&#x5B9E;&#x9645; URL&#x3002;&#x552F;&#x4E00;&#x4FDD;&#x6301;&#x4F7F;&#x7528;&#x7684;&#x529F;&#x80FD;&#x53EA;&#x6709; back()&#x3001;forward() &#x548C; go() &#x65B9;&#x6CD5;&#x3002;</p>
-<ul>
-<li>back() &#x52A0;&#x8F7D; history &#x5217;&#x8868;&#x4E2D;&#x7684;&#x524D;&#x4E00;&#x4E2A;URL</li>
-<li>forward() &#x52A0;&#x8F7D; history &#x5217;&#x8868;&#x4E2D;&#x7684;&#x4E0B;&#x4E00;&#x4E2A; URL&#x3002;</li>
-<li>go(number|URL) &#x52A0;&#x8F7D; history &#x5217;&#x8868;&#x4E2D;&#x7684;&#x67D0;&#x4E2A;&#x5177;&#x4F53;&#x9875;&#x9762;&#x3002; &#x5176;&#x4E2D;num&#x5927;&#x4E8E;0&#xFF0C;&#x5219;&#x524D;&#x8FDB;&#xFF1B;&#x5C0F;&#x4E8E;0&#xFF0C;&#x5219;&#x540E;&#x9000;</li>
-</ul>
-<h3 id="h5-&#x6269;&#x5C55;&#x65B9;&#x6CD5;">h5 &#x6269;&#x5C55;&#x65B9;&#x6CD5;</h3>
-<p><em>pushState(stateData, title, url)</em> &#x6DFB;&#x52A0;&#x4E00;&#x6761;&#x5386;&#x53F2;&#x8BB0;&#x5F55;&#xFF0C;&#x4E0D;&#x5237;&#x65B0;&#x9875;&#x9762;</p>
-<pre><code class="lang-js">  stateData<span class="hljs-comment">// &#x4E00;&#x4E2A;&#x6307;&#x5B9A;&#x7F51;&#x5740;&#x76F8;&#x5173;&#x7684;&#x72B6;&#x6001;&#x5BF9;&#x8C61;,popstate&#x4E8B;&#x4EF6;&#x89E6;&#x53D1;&#x65F6;&#xFF0C;&#x8BE5;&#x5BF9;&#x8C61;&#x4F1A;&#x4F20;&#x5165;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x4E2D;&#x3002;&#x5982;&#x679C;&#x4E0D;&#x9700;&#x8981;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x6B64;&#x5904;&#x53EF;&#x4EE5;&#x586B;&#x5199;null</span>
-  title <span class="hljs-comment">//  &#x65B0;&#x9875;&#x9762;&#x6807;&#x9898;&#xFF0C;&#x4F46;&#x662F;&#x6240;&#x6709;&#x6D4F;&#x89C8;&#x5668;&#x76EE;&#x524D;&#x90FD;&#x5FFD;&#x7565;&#x8FD9;&#x4E2A;&#x503C;&#xFF0C;&#x56E0;&#x6B64;&#x53EF;&#x4EE5;&#x586B;&#x5199;null</span>
-  url <span class="hljs-comment">// &#x65B0;&#x7684;&#x7F51;&#x5740;&#xFF0C;&#x6B64;&#x5904;&#x5FC5;&#x987B;&#x4E0E;&#x524D;&#x9875;&#x9762;&#x5904;&#x5728;&#x540C;&#x4E2A;&#x57DF;&#x540D;</span>
+<p>&#x6BD4;&#x5982;&#x8FD9;&#x4E2A; URL&#xFF1A;<code>http://www.abc.com/#/hello</code>&#xFF0C;hash &#x7684;&#x503C;&#x4E3A; #/hello&#x3002;&#x5B83;&#x7684;&#x7279;&#x70B9;&#x5728;&#x4E8E;&#xFF1A;hash &#x867D;&#x7136;&#x51FA;&#x73B0;&#x5728; URL &#x4E2D;&#xFF0C;&#x201C;#&#x201D;&#x540E;&#x9762;&#x7684;&#x5185;&#x5BB9;&#x4E0D;&#x4F1A;&#x88AB;&#x5305;&#x62EC;&#x5728; HTTP &#x8BF7;&#x6C42;&#x4E2D;&#xFF0C;&#x5BF9;&#x540E;&#x7AEF;&#x5B8C;&#x5168;&#x6CA1;&#x6709;&#x5F71;&#x54CD;&#xFF0C;&#x56E0;&#x6B64;&#x6539;&#x53D8; hash &#x4E0D;&#x4F1A;&#x91CD;&#x65B0;&#x52A0;&#x8F7D;&#x9875;&#x9762;</p>
+<p>hash&#x6A21;&#x5F0F;&#x80CC;&#x540E;&#x7684;&#x539F;&#x7406;&#x662F;onhashchange&#x4E8B;&#x4EF6;,&#x53EF;&#x4EE5;&#x5728;window&#x5BF9;&#x8C61;&#x4E0A;&#x76D1;&#x542C;&#x8FD9;&#x4E2A;&#x4E8B;&#x4EF6;</p>
+<pre><code class="lang-js"><span class="hljs-built_in">window</span>.onhashchange = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>)</span>{
+  <span class="hljs-built_in">console</span>.log(event.oldURL, event.newURL);
+  <span class="hljs-keyword">let</span> hash = location.hash.slice(<span class="hljs-number">1</span>);
+}
 </code></pre>
-<p><em>replaceState(stateData, title, url)</em></p>
-<p><em>HTML5&#x8FD8;&#x65B0;&#x589E;&#x4E86;&#x53EF;&#x4EE5;&#x76D1;&#x542C;history&#x548C;hash&#x8BBF;&#x95EE;&#x53D8;&#x5316;&#x7684;&#x5168;&#x5C40;&#x65B9;&#x6CD5;</em>
-<em>window.onpopstate</em>&#xFF1A;&#x5F53;&#x8C03;&#x7528;history.go()&#x3001;history.back()&#x3001;history.forward()&#x65F6;&#x89E6;&#x53D1;&#xFF1B;pushState()\replaceState()&#x65B9;&#x6CD5;&#x4E0D;&#x89E6;&#x53D1;&#x3002;
-<em>window.onhashchange</em>&#xFF1A;&#x5F53;&#x524D; URL &#x7684;&#x951A;&#x90E8;&#x5206;(&#x4EE5; &apos;#&apos; &#x53F7;&#x4E3A;&#x5F00;&#x59CB;) &#x53D1;&#x751F;&#x6539;&#x53D8;&#x65F6;&#x89E6;&#x53D1;&#x3002;&#x89E6;&#x53D1;&#x7684;&#x60C5;&#x51B5;&#x5982;&#x4E0B;:</p>
+<p>&#x5173;&#x952E;&#x7684;&#x4E00;&#x70B9;&#x662F; &#x56E0;&#x4E3A;hash&#x53D1;&#x751F;&#x53D8;&#x5316;&#x7684;url&#x90FD;&#x4F1A;&#x88AB;&#x6D4F;&#x89C8;&#x5668;&#x8BB0;&#x5F55;&#x4E0B;&#x6765;&#xFF0C;&#x4ECE;&#x800C;&#x4F60;&#x4F1A;&#x53D1;&#x73B0;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x524D;&#x8FDB;&#x540E;&#x9000;&#x90FD;&#x53EF;&#x4EE5;&#x7528;&#x4E86;&#xFF0C;&#x540C;&#x65F6;&#x70B9;&#x51FB;&#x540E;&#x9000;&#x65F6;&#xFF0C;&#x9875;&#x9762;&#x5B57;&#x4F53;&#x989C;&#x8272;&#x4E5F;&#x4F1A;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x3002;&#x8FD9;&#x6837;&#x4E00;&#x6765;&#xFF0C;&#x5C3D;&#x7BA1;&#x6D4F;&#x89C8;&#x5668;&#x6CA1;&#x6709;&#x8BF7;&#x6C42;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x4F46;&#x662F;&#x9875;&#x9762;&#x72B6;&#x6001;&#x548C;url&#x4E00;&#x4E00;&#x5173;&#x8054;&#x8D77;&#x6765;</p>
+<ul>
+<li><code>history</code> &#x2014;&#x2014; </li>
+</ul>
+<p>history &#x6A21;&#x5F0F;&#x80CC;&#x540E;&#x7684;&#x539F;&#x7406;&#x5229;&#x7528;&#x4E86; HTML5 History Interface &#x4E2D;&#x65B0;&#x589E;&#x7684; pushState() &#x548C; replaceState() &#x65B9;&#x6CD5;&#x3002;&#xFF08;&#x9700;&#x8981;&#x7279;&#x5B9A;&#x6D4F;&#x89C8;&#x5668;&#x652F;&#x6301;&#xFF09;</p>
+<pre><code class="lang-js">
+history.pushState({color:<span class="hljs-string">&apos;red&apos;</span>}, <span class="hljs-string">&apos;red&apos;</span>, <span class="hljs-string">&apos;red&apos;</span>})
+<span class="hljs-built_in">window</span>.onpopstate = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>)</span>{  <span class="hljs-comment">//&#x76D1;&#x542C;</span>
+  <span class="hljs-built_in">console</span>.log(event.state)
+  <span class="hljs-keyword">if</span>(event.state &amp;&amp; event.state.color === <span class="hljs-string">&apos;red&apos;</span>){
+      <span class="hljs-built_in">document</span>.body.style.color = <span class="hljs-string">&apos;red&apos;</span>;
+  }
+}
+</code></pre>
+<p>&#x8FD9;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#x5E94;&#x7528;&#x4E8E;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x5386;&#x53F2;&#x8BB0;&#x5F55;&#x6808;&#xFF0C;&#x5728;&#x5F53;&#x524D;&#x5DF2;&#x6709;&#x7684;back,forward,go&#x7684;&#x57FA;&#x7840;&#x4E0A;&#xFF0C;&#x63D0;&#x4F9B;&#x4E86;&#x5BF9;&#x5386;&#x53F2;&#x8BB0;&#x5F55;&#x4FE1;&#x606F;&#x4FEE;&#x6539;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x53EA;&#x662F;&#x5F53;&#x4ED6;&#x4EEC;&#x6267;&#x884C;&#x4FEE;&#x6539;&#x65F6;&#x5019;&#xFF0C;&#x867D;&#x7136;&#x6539;&#x53D8;&#x4E86;&#x5F53;&#x524D;&#x7684;<code>URL</code>,&#x4F46;&#x662F;&#x6D4F;&#x89C8;&#x5668;&#x4E0D;&#x4F1A;&#x7ACB;&#x5373;&#x5411;&#x540E;&#x7AEF;&#x53D1;&#x9001;&#x8BF7;&#x6C42;</p>
+<h3 id="1-&#x4F7F;&#x7528;&#x573A;&#x666F;">1. &#x4F7F;&#x7528;&#x573A;&#x666F;</h3>
+<p>&#x4E00;&#x822C;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;hash&#x548C;history&#x90FD;&#x53EF;&#x4EE5;&#xFF0C;&#x9664;&#x975E;&#x4F60;&#x66F4;&#x5728;&#x610F;&#x989C;&#x503C;&#xFF0C;<code>#</code>&#x7B26;&#x53F7;&#x5939;&#x6742;&#x5728;<code>URL</code>&#x91CC;&#x9762;&#x770B;&#x8D77;&#x6765;&#x786E;&#x5B9E;&#x4E0D;&#x592A;&#x597D;</p>
+<pre><code class="lang-hml">&#x5982;&#x679C;&#x4E0D;&#x60F3;&#x8981;&#x5F88;&#x4E11;&#x7684; hash&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x7528;&#x8DEF;&#x7531;&#x7684; history &#x6A21;&#x5F0F;&#xFF0C;&#x8FD9;&#x79CD;&#x6A21;&#x5F0F;&#x5145;&#x5206;&#x5229;&#x7528; history.pushState API &#x6765;&#x5B8C;&#x6210;
+URL &#x8DF3;&#x8F6C;&#x800C;&#x65E0;&#x987B;&#x91CD;&#x65B0;&#x52A0;&#x8F7D;&#x9875;&#x9762;
+</code></pre>
+<p>&#x53E6;&#x5916;&#xFF1A;&#x8C03;&#x7528;history.pushState()&#x76F8;&#x6BD4;&#x8F83;&#x4E8E;&#x76F4;&#x63A5;&#x4FEE;&#x6539;hash&#xFF0C;&#x5B58;&#x5728;&#x4EE5;&#x4E0B;&#x4F18;&#x52BF;&#xFF1A;</p>
+<ul>
+<li>pushState() &#x8BBE;&#x7F6E;&#x65B0;&#x7684; <code>URL</code> &#x53EF;&#x4EE5;&#x662F;&#x4E0E;&#x5F53;&#x524D; <code>URL</code> &#x540C;&#x6E90;&#x7684;&#x4EFB;&#x610F; <code>URL</code>&#xFF1B;&#x800C; <code>hash</code> &#x53EA;&#x53EF;&#x4FEE;&#x6539; # &#x540E;&#x9762;&#x7684;&#x90E8;&#x5206;&#xFF0C;&#x56E0;&#x6B64;&#x53EA;&#x80FD;&#x8BBE;&#x7F6E;&#x4E0E;&#x5F53;&#x524D; <code>URL</code> &#x540C;&#x6587;&#x6863;&#x7684; URL&#xFF1B;</li>
+<li>pushState() &#x8BBE;&#x7F6E;&#x7684;&#x65B0; URL &#x53EF;&#x4EE5;&#x4E0E;&#x5F53;&#x524D; URL &#x4E00;&#x6A21;&#x4E00;&#x6837;&#xFF0C;&#x8FD9;&#x6837;&#x4E5F;&#x4F1A;&#x628A;&#x8BB0;&#x5F55;&#x6DFB;&#x52A0;&#x5230;&#x6808;&#x4E2D;&#xFF1B;&#x800C; hash &#x8BBE;&#x7F6E;&#x7684;&#x65B0;&#x503C;&#x5FC5;&#x987B;&#x4E0E;&#x539F;&#x6765;&#x4E0D;&#x4E00;&#x6837;&#x624D;&#x4F1A;&#x89E6;&#x53D1;&#x52A8;&#x4F5C;&#x5C06;&#x8BB0;&#x5F55;&#x6DFB;&#x52A0;&#x5230;&#x6808;&#x4E2D;&#xFF1B;</li>
+<li>pushState() &#x901A;&#x8FC7; stateObject &#x53C2;&#x6570;&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x4EFB;&#x610F;&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#x5230;&#x8BB0;&#x5F55;&#x4E2D;&#xFF1B;&#x800C; hash &#x53EA;&#x53EF;&#x6DFB;&#x52A0;&#x77ED;&#x5B57;&#x7B26;&#x4E32;&#xFF1B;</li>
+<li>pushState() &#x53EF;&#x989D;&#x5916;&#x8BBE;&#x7F6E; title &#x5C5E;&#x6027;&#x4F9B;&#x540E;&#x7EED;&#x4F7F;&#x7528;&#x3002;</li>
+</ul>
+<p>&#x5F53;&#x7136;&#xFF0C;<code>history</code> &#x4E5F;&#x4E0D;&#x662F;&#x6837;&#x6837;&#x90FD;&#x597D;&#x3002;<code>SPA</code>&#x867D;&#x7136;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x91CC;&#x9762;&#x6E38;&#x5203;&#x6709;&#x4F59;&#xFF0C;&#x4F46;&#x662F;&#x771F;&#x8981;&#x901A;&#x8FC7;<code>URL</code>&#x5411;&#x540E;&#x7AEF;&#x53D1;&#x8D77;&#x8BF7;&#x6C42;&#x65F6;&#x5019;&#xFF0C; &#x5C31;&#x4F1A;&#x6709;&#x5DEE;&#x5F02;
+&#x5C24;&#x5176;&#x662F;&#x7528;&#x6237;&#x624B;&#x52A8;&#x8F93;&#x5165;<code>URL</code>&#x56DE;&#x8F66;&#x4E4B;&#x540E;&#xFF0C;&#x6216;&#x8005;&#x91CD;&#x65B0;&#x5237;&#x65B0;(&#x91CD;&#x542F;)&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x65F6;&#x5019;</p>
 <ol>
-<li>&#x901A;&#x8FC7;&#x8BBE;&#x7F6E;Location &#x5BF9;&#x8C61; &#x7684; location.hash &#x6216; location.href &#x5C5E;&#x6027;&#x4FEE;&#x6539;&#x951A;&#x90E8;&#x5206;&#xFF1B;</li>
-<li>&#x4F7F;&#x7528;&#x4E0D;&#x540C;history&#x64CD;&#x4F5C;&#x65B9;&#x6CD5;&#x5230;&#x5E26;hash&#x7684;&#x9875;&#x9762;;</li>
-<li><p>&#x70B9;&#x51FB;&#x94FE;&#x63A5;&#x8DF3;&#x8F6C;&#x5230;&#x951A;&#x70B9;&#x3002;</p>
-<ol>
-<li>&#x901A;&#x8FC7;location.href&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;url&#x8BB0;&#x5F55;&#xFF0C;&#x5176;&#x5C06;&#x5F53;&#x524D;url&#x4E4B;&#x540E;&#x7684;&#x8BB0;&#x5F55;&#x6E05;&#x7A7A;&#xFF0C;&#x5E76;&#x5728;&#x5176;&#x540E;&#x65B0;&#x589E;url&#xFF1B;history&#x957F;&#x5EA6;&#x7531;&#x4E5F;&#x6539;&#x53D8;&#x4E86;&#xFF1B;history&#x7684;&#x6BCF;&#x6B21;&#x65B0;&#x589E;&#x64CD;&#x4F5C;&#xFF0C;&#x90FD;&#x4F1A;&#x5C06;&#x5176;&#x540E;&#x8BB0;&#x5F55;&#x6E05;&#x7A7A;&#xFF0C;&#x5728;&#x5176;&#x540E;&#x65B0;&#x589E;&#x8BB0;&#x5F55;&#x3002;</li>
-<li>&#x8FC7;pushState&#x65B9;&#x6CD5;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;url&#x8BB0;&#x5F55;&#xFF0C;&#x5176;&#x4E5F;&#x662F;&#x6E05;&#x7A7A;&#x3001;&#x518D;&#x65B0;&#x589E;&#x8BB0;&#x5F55;&#xFF1B;</li>
-<li>&#x901A;&#x8FC7;replaceState&#x65B9;&#x6CD5;&#x4FEE;&#x6539;&#x4E00;&#x4E2A;url&#x8BB0;&#x5F55;&#xFF0C;&#x5176;&#x4E0D;&#x4F1A;&#x4EA7;&#x751F;&#x65B0;&#x8BB0;&#x5F55;&#xFF0C;&#x800C;&#x662F;&#x5C06;&#x5F53;&#x524D;&#x8BB0;&#x5F55;&#x8FDB;&#x884C;&#x4FEE;&#x6539;&#x3002;</li>
+<li>hash &#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;&#x4EC5; hash &#x7B26;&#x53F7;&#x4E4B;&#x524D;&#x7684;&#x5185;&#x5BB9;&#x4F1A;&#x88AB;&#x5305;&#x542B;&#x5728;&#x8BF7;&#x6C42;&#x4E2D;&#xFF0C;&#x5982; <code>http://www.abc.com</code>&#xFF0C;&#x56E0;&#x6B64;&#x5BF9;&#x4E8E;&#x540E;&#x7AEF;&#x6765;&#x8BF4;&#xFF0C;&#x5373;&#x4F7F;&#x6CA1;&#x6709;&#x505A;&#x5230;&#x5BF9;&#x8DEF;&#x7531;&#x7684;&#x5168;&#x8986;&#x76D6;&#xFF0C;&#x4E5F;&#x4E0D;&#x4F1A;&#x8FD4;&#x56DE; 404 &#x9519;&#x8BEF;</li>
+<li>history &#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;&#x524D;&#x7AEF;&#x7684; URL &#x5FC5;&#x987B;&#x548C;&#x5B9E;&#x9645;&#x5411;&#x540E;&#x7AEF;&#x53D1;&#x8D77;&#x8BF7;&#x6C42;&#x7684; URL &#x4E00;&#x81F4;&#xFF0C;&#x5982; <code>http://www.abc.com/book/id</code> &#x5982;&#x679C;&#x540E;&#x7AEF;&#x7F3A;&#x5C11;&#x5BF9; <code>/book/id</code> &#x7684;&#x8DEF;&#x7531;&#x5904;&#x7406;&#xFF0C;&#x5C06;&#x8FD4;&#x56DE; <code>404</code> &#x9519;&#x8BEF;&#x3002;<code>Vue-Router &#x5B98;&#x7F51;&#x91CC;&#x5982;&#x6B64;&#x63CF;&#x8FF0;&#xFF1A;&#x201C;&#x4E0D;&#x8FC7;&#x8FD9;&#x79CD;&#x6A21;&#x5F0F;&#x8981;&#x73A9;&#x597D;&#xFF0C;&#x8FD8;&#x9700;&#x8981;&#x540E;&#x53F0;&#x914D;&#x7F6E;&#x652F;&#x6301;&#x2026;&#x2026;&#x6240;&#x4EE5;&#x5462;&#xFF0C;&#x4F60;&#x8981;&#x5728;&#x670D;&#x52A1;&#x7AEF;&#x589E;&#x52A0;&#x4E00;&#x4E2A;&#x8986;&#x76D6;&#x6240;&#x6709;&#x60C5;&#x51B5;&#x7684;&#x5019;&#x9009;&#x8D44;&#x6E90;&#xFF1A;&#x5982;&#x679C; URL &#x5339;&#x914D;&#x4E0D;&#x5230;&#x4EFB;&#x4F55;&#x9759;&#x6001;&#x8D44;&#x6E90;&#xFF0C;&#x5219;&#x5E94;&#x8BE5;&#x8FD4;&#x56DE;&#x540C;&#x4E00;&#x4E2A; index.html &#x9875;&#x9762;&#xFF0C;&#x8FD9;&#x4E2A;&#x9875;&#x9762;&#x5C31;&#x662F;&#x4F60; app &#x4F9D;&#x8D56;&#x7684;&#x9875;&#x9762;&#x3002;&#x201D;</code> &#x670D;&#x52A1;&#x5668;&#x8981;&#x914D;&#x5408;&#x8BBE;&#x7F6E;</li>
 </ol>
-<p><em>&#x503C;&#x5F97;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x901A;&#x8FC7;pushState&#x65B0;&#x589E;&#x6216;&#x8005;&#x4FEE;&#x6539;&#x7684;history&#x8BB0;&#x5F55;&#xFF0C;&#x88AB;&#x8BBF;&#x95EE;&#x65F6;&#xFF0C;&#x5F53;&#x524D;&#x9875;&#x9762;&#x4E0D;&#x5237;&#x65B0;&#x3002;&#x800C;locaiton.href&#x751F;&#x6210;&#x7684;&#x8BB0;&#x5F55;&#x88AB;&#x8BBF;&#x95EE;&#x65F6;&#xFF0C;&#x9875;&#x9762;&#x5C06;&#x8FDB;&#x884C;&#x5237;&#x65B0;&#x3002;</em></p>
-</li>
-</ol>
-<h3 id="vue-router&#x7684;&#x672C;&#x8D28;">vue router&#x7684;&#x672C;&#x8D28;</h3>
-<p>vue router &#x5176;&#x5B9E;&#x672C;&#x8D28;&#x662F;&#x5728;HTML5 historyAPI&#x3001;window.onpopstate&#x3001;window.onhashchange&#x4E0A;&#x505A;&#x7684;&#x5C01;&#x88C5;&#xFF0C;&#x901A;&#x8FC7;&#x4E00;&#x5B9A;&#x7684;&#x89C4;&#x5219;&#x6620;&#x5C04;&#x5230;&#x5BF9;&#x5E94;&#x7684;&#x65B9;&#x6CD5;&#x4E0A;&#xFF0C;&#x901A;&#x8FC7;&#x76D1;&#x542C;&#x53D8;&#x5316;&#xFF0C;&#x4ECE;&#x800C;&#x5B9E;&#x73B0;&#x5355;&#x9875;&#x8DEF;&#x8DEF;&#x7531;
-<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/onpopstate" target="_blank">&#x94FE;&#x63A5;</a></p>
 
                                 
                                 </section>
@@ -975,12 +984,12 @@ History &#x5BF9;&#x8C61;&#x662F; window &#x5BF9;&#x8C61;&#x7684;&#x4E00;&#x90E8;
 
             
                 
-                <a href="location.html" class="navigation navigation-prev " aria-label="Previous page: Location 详解">
+                <a href="vue-router-router.html" class="navigation navigation-prev " aria-label="Previous page: 谈谈 Vue-router 中的 route">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../dom/document.html" class="navigation navigation-next " aria-label="Next page: document">
+                <a href="vuex.html" class="navigation navigation-next " aria-label="Next page: 在 vue-router钩子函数用vuex">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -991,7 +1000,7 @@ History &#x5BF9;&#x8C61;&#x662F; window &#x5BF9;&#x8C61;&#x7684;&#x4E00;&#x90E8;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"history 详解","level":"5.3","depth":1,"next":{"title":"document","level":"6.1","depth":1,"path":"dom/document.md","ref":"dom/document.md","articles":[]},"previous":{"title":"Location 详解","level":"5.2","depth":1,"path":"browser/location.md","ref":"browser/location.md","articles":[]},"dir":"ltr"},"config":{"plugins":["etoc","theme-comscore","livereload"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"etoc":{"mindepth":3,"maxdepth":4,"header":1,"h2lb":3,"notoc":false},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"水泡泡","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*","description":"水泡泡的testbook"},"file":{"path":"browser/history.md","mtime":"2019-02-18T03:19:48.237Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-21T09:16:00.637Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"谈谈vue-router中的模式","level":"4.6","depth":1,"next":{"title":"在 vue-router钩子函数用vuex","level":"4.7","depth":1,"path":"vue-router/vuex.md","ref":"vue-router/vuex.md","articles":[]},"previous":{"title":"谈谈 Vue-router 中的 route","level":"4.5","depth":1,"path":"vue-router/vue-router-router.md","ref":"vue-router/vue-router-router.md","articles":[]},"dir":"ltr"},"config":{"plugins":["etoc","theme-comscore","livereload"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"etoc":{"mindepth":3,"maxdepth":4,"header":1,"h2lb":3,"notoc":false},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"水泡泡","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*","description":"水泡泡的testbook"},"file":{"path":"vue-router/mode.md","mtime":"2019-02-27T07:29:48.809Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-21T09:16:00.637Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
