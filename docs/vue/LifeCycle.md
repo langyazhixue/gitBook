@@ -30,7 +30,7 @@ new Vue({
   components: {App},
   beforeCreate: function () {
     console.group('beforeCreate 创建前状态===============》')
-    console.log('%c%s', 'color:red', 'el     : ' + this.$el) // undefined
+    console.log('%c%s', 'color:red', 'el     : ' + this.$el) // undefined Vue 实例使用的根 DOM 元素
     console.log('%c%s', 'color:red', 'data   : ' + this.$data) // undefined
     console.log('%c%s', 'color:red', 'message: ' + this.message)
   },
@@ -97,7 +97,7 @@ new Vue({
    * destroyed : vue 实例销毁
 
    下面放一张 官网出的图
-   ![图2](./img/o_lifecycle.png) 
+   ![图2](./img/lifeCyle/lifecycle.png) 
 
 ####  生命周期总结
 1. beforecreate : 举个栗子：可以在这加个loading事件 
@@ -105,3 +105,26 @@ new Vue({
 3. mounted ： 在这发起后端请求，拿回数据，配合路由钩子做一些事情
 4. beforeDestroy： 你确认删除XX吗？
 5. destroyed ：当前组件已被删除，清空相关内容
+
+
+#### 还有一个小问题，父组件跟子组件之间的生命周期是什么关系呢？？
+
+从组件`test1` 点到 `test3`直接把我的测试结果贴上来把
+
+![图3](./img/lifeCyle/1.jpg)
+
+* 总结，从图上来看，从组件1点击到组件3的时候 先走 `test3 父组件`的  `beforeCreate`  `created` `beforeMount`
+* 然后再走 `test3子组件中`的 `beforeCreate`  `created` `beforeMount`
+* 其次再走 `test1`组件中的 `beforeDestroy` `destroyed`
+* 再走 `test3子组件`的  `mounted`
+* 再走  `test3父组件`的 `mounted`
+
+然后再从组件`test3`再切回  `test1` 会发生什么呢
+
+![图3](./img/lifeCyle/2.jpg)
+
+* 总结，从图上来看，从`test3`再切回  `test1` 的时候，先走了 `test1`的 `beforeCreate`  `created` `beforeMount`
+* 然后再走 `test3父组件`的 `beforeDestroy`
+* 再走 `test3子组件中`的 `beforeDestroy`  `destroyed`
+* 然后走 `test3父组件`的 `destroyed`
+* 最后走 `test1` 的 `mounted`

@@ -1,103 +1,96 @@
-### vue-router Router 构件项
+## 谈谈 vue-router 中的 router
 
+在vue组件中可以这样得到
 ```js
-import Vue from 'vue'
-import Router from 'vue-router'
-Vue.use(Router)
-
-export dafault new Router({
-  routes: [
-    RouteConfig1,
-    RouteConfig2
-  ]
-})
-```
-
-#### 1. routes
-
-```js
-RouteConfig = {
-  path: string;
-  component?: Component;
-  name?: string; // 命名路由
-  components?: { [name: string]: Component }; // 命名视图组件
-  redirect?: string | Location | Function;
-  props?: boolean | Object | Function;
-  alias?: string | Array<string>;
-  children?: Array<RouteConfig>; // 嵌套路由
-  beforeEnter?: (to: Route, from: Route, next: Function) => void;
-  meta?: any;
-
-  // 2.6.0+
-  caseSensitive?: boolean; // 匹配规则是否大小写敏感？(默认值：false)
-  pathToRegexpOptions?: Object; // 编译正则的选项
+export default {
+  name: 'TestTHird',
+  mounted(){
+    console.log(this.$router)
+  }
 }
 ```
-* alias 别名
+### 1. Router实例属性
 
-“重定向”的意思是，当用户访问 /a时，URL 将会被替换成 /b，然后匹配路由为 /b，那么`别名`又是什么呢？
+* router.app
 
-`/a` 的别名 是`/b`,意味着，当用户访问 `/b`时候，URL会保持为`/b`,但是路由匹配为`/a`,就像用户访问`/a`一样
+配置了 router 的 Vue 根实例
 
-```js
-const router = new VueRouter({
-  routes: [
-    { path: '/a', component: A, alias: '/b' }
-  ]
-})
+* router.currentRoute
+  * 类型： `route`
+  当前路由对应的`路由信息对象`
+
+### 2. 路由实例方法
+* 导航守卫： `vue-router` 提供的导航守卫主要用来通过跳转或者取消的方式守卫导航。有很多机会植入路由导航过程中：`全局的`，`单个路由独享的`，或者 `组件级别的`
+  1. 全局前置守卫：`router.beforeEach`
+
+  ```js
+  const router = new VueRouter({ ... })
+  router.beforeEach((to, from, next) => {
+    // ...
+  })
+  ```
+  
+  当一个导航触发时，全局前置守卫按照创建顺序调用。守卫是异步解析执行，此时导航在所有守卫 resolve 完之前一直处于 `等待中`。
+  * `to`和`from`都很好理解，我们重点来讲讲`next`
+  导航守卫方法一定最后要调用 next()方法来resolve这个钩子，执行的效果依赖next()方法的调用参数
+
+    * `next()`:进行管道中的下一个钩子。如果全部钩子执行完了，则导航的状态就是 confirmed (确认的)
+      注意:next() 表示路由成功，直接进入to路由，不会再次调用router.beforeEach()
+      其他next('XXX')会再次调用router.beforeEach()
+
+
+    * `next(false)`:中断当前的导航。如果浏览器的 URL 改变了 (可能是用户手动或者浏览器后退按钮)，那么 URL 地址会重置到 from 路由对应的地址
+
+    * `next('/)`或者 `next({path:'/'})`: 跳转到一个不同的地址。当前的导航被中断，然后进行一个新的导航。
+
+    * `next(error)`:
+
+
+  2. 全局后置钩子 :`router.beforeResolve`
+
+
+* 路由独享的守卫,可以在路由配置上直接定义`beforeEnter`守卫
+
+``` js
+  const router = new VueRouter({
+    routes: [
+      {
+        path: '/foo',
+        component: Foo,
+        beforeEnter: (to, from, next) => {
+          // ...
+        }
+      }
+    ]
+  })
 ```
-`别名` 的功能让你可以自由地将 UI 结构映射到任意的 URL，而不是受限于配置的嵌套路由结构。
 
-* props
-就是在路由中配置一个`props` 参数, 然后可以在组件实例中获得配置的props
-
-1. 对象模式
+* 组件内的守卫: 就是在路由组件内直接定义以下路由导航守卫
+  1. beforeRouteEnter
+  2. beforeRouteUpdate
+  3. beforeRouteLeave
 
 ```js
-{
-  path: '/search',
-  component: () => import('@/views/login/index'),
-  alias: '/search22',
-  props: {
-    query: 11
+const Foo = {
+  template: `...`,
+  beforeRouteEnter (to, from, next) {
+    // 在渲染该组件的对应路由被 confirm 前调用
+    // 不！能！获取组件实例 `this`
+    // 因为当守卫执行前，组件实例还没被创建
+  },
+  beforeRouteUpdate (to, from, next) {
+    // 在当前路由改变，但是该组件被复用时调用
+    // 举例来说，对于一个带有动态参数的路径 /foo/:id，在 /foo/1 和 /foo/2 之间跳转的时候，
+    // 由于会渲染同样的 Foo 组件，因此组件实例会被复用。而这个钩子就会在这个情况下被调用。
+    // 可以访问组件实例 `this`
+  },
+  beforeRouteLeave (to, from, next) {
+    // 导航离开该组件的对应路由时调用
+    // 可以访问组件实例 `this`
   }
 }
 ```
 
-2. 函数模式
-
-```js
-const router = new VueRouter({
-  routes: [
-    { path: '/search', component: SearchUser, props: (route) => ({ query: route.query.q }) }
-  ]
-})
-```
-在 组件中应用
-
-```js
-props: {
-  query: {
-    default: 0,
-    type: Number
-  }
-}
-```
-#### 2. mode 指的是URL模式，可选值 `"hash" | "history" | "abstract"`
-配置路由模式
-1. `hash` :*默认模式*  使用 URL hash 值来作路由。支持所有浏览器，包括不支持 HTML5 History Api 的浏览器
-2. `history`: 依赖 HTML5 History API 和服务器配置。查看 HTML5 History 模式。
-3. `abstract`: 支持所有 JavaScript 运行环境，如 Node.js 服务器端。如果发现没有浏览器的 API，路由会自动强制进入这个模式。
-
-#### 3. base 
-1. 默认值：'/'
-应用的基路径。例如，如果整个单页应用服务在 /app/ 下，然后 base 就应该设为 "/app/"
-
-####  4. linkActiveClass
-
-#### 5. linkExactActiveClass
-
-#### 6. scrollBehavior
 
 
 
