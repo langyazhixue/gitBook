@@ -72,18 +72,25 @@ export default {
 但是，添加到对象上的新属性不会触发更新。在这种情况下可以创建一个新的对象，让它包含原对象的属性和新的属性
 
 ```js
+
 // 代替 Object.assign(this.obj, { a: 1, e: 2 })
 this.obj= Object.assign({}, this.obj, { a: 1, e: 2 })
+
 ```
 
 * 如果想向数组中更新一些内容，可以这样
 
 ```js
+
 data:{
   arr1 = ['a','b','c']
 }
 vm.$set(arr1,2,'d')
+
 ```
+
+#### 顺便说说 vue.delete 吧
+
 
 
 

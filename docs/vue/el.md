@@ -24,3 +24,5 @@ ref 需要在dom渲染完成后才会有，在使用的时候确保`DOM`已经�
 `$el` 是Vue 实例使用的根 DOM 元素,在 `beforeMount` 中才能找到
 
 #### this.$refs 和 this.$el的区别
+
+`this.$refs.x`一般是一个组件实例，里面包含了组件的各种方法和数据，而 `this.$el` 是 实例使用的根 DOM 元素
