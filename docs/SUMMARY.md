@@ -44,10 +44,16 @@
 * [在 vue-router钩子函数用vuex](vue-router/vuex.md)
 
 ### Vue API 探索
-
-* [谈谈Vue.$extend](vue-api/extend.md)
-* [谈谈Vue.$nextTick](vue-api/nextTick.md)
-* [谈谈Vue.$set](vue-api/set.md)
+* Vue 全局API
+  * [谈谈Vue.extend](vue-api/extend.md)
+  * [谈谈Vue.nextTick](vue-api/nextTick.md)
+  * [谈谈Vue.set](vue-api/set.md)
+  * [谈谈Vue.directive](vue-api/directive.md)
+  * [谈谈Vue.filter](vue-api/filter.md)
+  * [谈谈Vue.component](vue-api/component.md)
+* Vue 选项/DOM
+  * [谈谈el](vue-dom/el.md)
+  * [谈谈template](vue-dom/template.md)
 
 
 
