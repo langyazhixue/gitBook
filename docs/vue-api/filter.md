@@ -1,7 +1,7 @@
 ### 谈谈 vue.filter(id,[definition])
 * 参数
   1. `{string} id`
-  2. `{}Function} [definition]`
+  2. `{Function} [definition]`
 
 * 用法：
   注册或获取全局过滤器

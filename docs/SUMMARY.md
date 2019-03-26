@@ -21,7 +21,7 @@
 * [Vue的组件](vue/component.md)
 * [Vue中的provide/inject](vue/provide-inject.md)
 * [Vue的mixins](vue/mixins.md)
-* [Vue自定义指令](vue/directive.md)
+* [Vue的directive](vue/directive.md)
 * [Vue的插槽](vue/slot.md)
 * [Vue的computed](vue/computed.md)
 * [Vue的watch](vue/watch.md)
@@ -31,17 +31,6 @@
 * [Vue为什么组件的data要写成返回对象的函数?](vue/question-data.md)
 * [Vue $el和$refs的用处和区别](vue/el.md)
 * [Vue深度作用选择器](vue/deep.md)
-
-
-### Vue 路由
-* [谈谈Vue-Router中的path](vue-router/vue-router-path.md)
-* [谈谈Vue-Router中的router-link](vue-router/vue-router-router-link.md)
-* [谈谈Vue-Router中的redirect](vue-router/vue-router-redirect.md)
-* [谈谈Vue-Router中的router-view](vue-router/vue-router-router-view.md)
-* [谈谈 Vue-router 中的 route](vue-router/vue-router-route.md)
-* [谈谈Vue-router中国的router](vue-router/vue-router-router.md)
-* [谈谈vue-router中的模式](vue-router/mode.md)
-* [在 vue-router钩子函数用vuex](vue-router/vuex.md)
 
 ### Vue API 探索
 * Vue 全局API
@@ -54,8 +43,22 @@
 * Vue 选项/DOM
   * [谈谈el](vue-dom/el.md)
   * [谈谈template](vue-dom/template.md)
+  * [谈谈render](vue-dom/render.md)
+* Vue 选项/组合
+  * [谈谈$parent,$children](vue-group/parent.md)
+  * [谈谈extends](vue-group/extends.md)
 
-
+* Vue 选项/其他
+  * [谈谈model以及v-modelv-model指令](vue-other/model.md)
+### Vue 路由
+* [谈谈Vue-Router中的path](vue-router/vue-router-path.md)
+* [谈谈Vue-Router中的router-link](vue-router/vue-router-router-link.md)
+* [谈谈Vue-Router中的redirect](vue-router/vue-router-redirect.md)
+* [谈谈Vue-Router中的router-view](vue-router/vue-router-router-view.md)
+* [谈谈 Vue-router 中的 route](vue-router/vue-router-route.md)
+* [谈谈Vue-router中国的router](vue-router/vue-router-router.md)
+* [谈谈vue-router中的模式](vue-router/mode.md)
+* [在 vue-router钩子函数用vuex](vue-router/vuex.md)
 
 ### Vue 组件
 * [Popup 弹框组件](part14/Popup.md)
