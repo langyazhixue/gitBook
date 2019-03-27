@@ -50,6 +50,7 @@
 
 * Vue 选项/其他
   * [谈谈model以及v-modelv-model指令](vue-other/model.md)
+  * [谈谈inheritAttrs](vue-other/inheritAttrs.md)
 ### Vue 路由
 * [谈谈Vue-Router中的path](vue-router/vue-router-path.md)
 * [谈谈Vue-Router中的router-link](vue-router/vue-router-router-link.md)
