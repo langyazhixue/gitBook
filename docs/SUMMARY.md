@@ -31,6 +31,7 @@
 * [Vue为什么组件的data要写成返回对象的函数?](vue/question-data.md)
 * [Vue $el和$refs的用处和区别](vue/el.md)
 * [Vue深度作用选择器](vue/deep.md)
+* [谈谈Vue中$attrs和$listeners](vue/listerens.md)
 
 ### Vue API 探索
 * Vue 全局API
@@ -51,8 +52,10 @@
 * Vue 选项/其他
   * [谈谈model以及v-modelv-model指令](vue-other/model.md)
   * [谈谈inheritAttrs](vue-other/inheritAttrs.md)
+  * [谈谈comments](vue-other/comments.md)
+  * [谈谈vue的实例属性](vue-other/attrs.md)
 
-  
+
 ### Vue 路由
 * [谈谈Vue-Router中的path](vue-router/vue-router-path.md)
 * [谈谈Vue-Router中的router-link](vue-router/vue-router-router-link.md)
@@ -62,6 +65,7 @@
 * [谈谈Vue-router中国的router](vue-router/vue-router-router.md)
 * [谈谈vue-router中的模式](vue-router/mode.md)
 * [在 vue-router钩子函数用vuex](vue-router/vuex.md)
+
 
 ### Vue 组件
 * [Popup 弹框组件](part14/Popup.md)

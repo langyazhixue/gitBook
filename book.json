@@ -1,7 +1,12 @@
 {
-    "author": "水泡泡",
-    "description": "水泡泡的testbook",
+    "author": "langyazhixue",
+    "description": "langyazhixue",
 	"root": "./docs",
-    "plugins": ["etoc","theme-comscore"],
+    "plugins": ["etoc","theme-comscore","advanced-emoji","github"],
+    "pluginsConfig": {
+        "github": {
+            "url": "https://github.com/zhangjikai"
+        }
+    },
     "output": "./blog"
 }

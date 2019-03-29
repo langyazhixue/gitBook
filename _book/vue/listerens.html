@@ -1,0 +1,1327 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>谈谈Vue中$attrs和$listeners · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="langyazhixue">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-etoc/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="deep.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">代码规范</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../part2/code-rules.html">
+            
+                <a href="../part2/code-rules.html">
+            
+                    
+                    规范与 Eslint 配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../part2/issues.html">
+            
+                <a href="../part2/issues.html">
+            
+                    
+                    前端常见问题及处理方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">React 入门</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../part4/redux.html">
+            
+                <a href="../part4/redux.html">
+            
+                    
+                    saga + redux + container 数据流转
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../part4/HOC.html">
+            
+                <a href="../part4/HOC.html">
+            
+                    
+                    React高阶组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../part4/async.html">
+            
+                <a href="../part4/async.html">
+            
+                    
+                    async + await 并发或顺序数据请求
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../part4/router.html">
+            
+                <a href="../part4/router.html">
+            
+                    
+                    React + React-Router 路由配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../part4/react.html">
+            
+                <a href="../part4/react.html">
+            
+                    
+                    React 全家桶 demo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../part5/form.html">
+            
+                <a href="../part5/form.html">
+            
+                    
+                    表单操作管理实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../part5/table.html">
+            
+                <a href="../part5/table.html">
+            
+                    
+                    table
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Vue 入门</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="LifeCycle.html">
+            
+                <a href="LifeCycle.html">
+            
+                    
+                    关于Vue的生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="component.html">
+            
+                <a href="component.html">
+            
+                    
+                    Vue的组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="provide-inject.html">
+            
+                <a href="provide-inject.html">
+            
+                    
+                    Vue中的provide/inject
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="mixins.html">
+            
+                <a href="mixins.html">
+            
+                    
+                    Vue的mixins
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="directive.html">
+            
+                <a href="directive.html">
+            
+                    
+                    Vue的directive
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="slot.html">
+            
+                <a href="slot.html">
+            
+                    
+                    Vue的插槽
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="computed.html">
+            
+                <a href="computed.html">
+            
+                    
+                    Vue的computed
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="watch.html">
+            
+                <a href="watch.html">
+            
+                    
+                    Vue的watch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.9" data-path="filter.html">
+            
+                <a href="filter.html">
+            
+                    
+                    Vue过滤器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.10" data-path="plugin.html">
+            
+                <a href="plugin.html">
+            
+                    
+                    Vue自定义插件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.11" data-path="keep-alive.html">
+            
+                <a href="keep-alive.html">
+            
+                    
+                    Vue的keep-alive用法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.12" data-path="question-data.html">
+            
+                <a href="question-data.html">
+            
+                    
+                    Vue为什么组件的data要写成返回对象的函数?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13" data-path="el.html">
+            
+                <a href="el.html">
+            
+                    
+                    Vue $el和$refs的用处和区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.14" data-path="deep.html">
+            
+                <a href="deep.html">
+            
+                    
+                    Vue深度作用选择器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.15" data-path="listerens.html">
+            
+                <a href="listerens.html">
+            
+                    
+                    谈谈Vue中$attrs和$listeners
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Vue API 探索</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" >
+            
+                <span>
+            
+                    
+                    Vue 全局API
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../vue-api/extend.html">
+            
+                <a href="../vue-api/extend.html">
+            
+                    
+                    谈谈Vue.extend
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="../vue-api/nextTick.html">
+            
+                <a href="../vue-api/nextTick.html">
+            
+                    
+                    谈谈Vue.nextTick
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="../vue-api/set.html">
+            
+                <a href="../vue-api/set.html">
+            
+                    
+                    谈谈Vue.set
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="../vue-api/directive.html">
+            
+                <a href="../vue-api/directive.html">
+            
+                    
+                    谈谈Vue.directive
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.5" data-path="../vue-api/filter.html">
+            
+                <a href="../vue-api/filter.html">
+            
+                    
+                    谈谈Vue.filter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.6" data-path="../vue-api/component.html">
+            
+                <a href="../vue-api/component.html">
+            
+                    
+                    谈谈Vue.component
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" >
+            
+                <span>
+            
+                    
+                    Vue 选项/DOM
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.2.1" data-path="../vue-dom/el.html">
+            
+                <a href="../vue-dom/el.html">
+            
+                    
+                    谈谈el
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.2" data-path="../vue-dom/template.html">
+            
+                <a href="../vue-dom/template.html">
+            
+                    
+                    谈谈template
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.3" data-path="../vue-dom/render.html">
+            
+                <a href="../vue-dom/render.html">
+            
+                    
+                    谈谈render
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" >
+            
+                <span>
+            
+                    
+                    Vue 选项/组合
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.3.1" data-path="../vue-group/parent.html">
+            
+                <a href="../vue-group/parent.html">
+            
+                    
+                    谈谈$parent,$children
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.2" data-path="../vue-group/extends.html">
+            
+                <a href="../vue-group/extends.html">
+            
+                    
+                    谈谈extends
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" >
+            
+                <span>
+            
+                    
+                    Vue 选项/其他
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.4.1" data-path="../vue-other/model.html">
+            
+                <a href="../vue-other/model.html">
+            
+                    
+                    谈谈model以及v-modelv-model指令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.2" data-path="../vue-other/inheritAttrs.html">
+            
+                <a href="../vue-other/inheritAttrs.html">
+            
+                    
+                    谈谈inheritAttrs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.3" data-path="../vue-other/comments.html">
+            
+                <a href="../vue-other/comments.html">
+            
+                    
+                    谈谈comments
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.4" data-path="../vue-other/attrs.html">
+            
+                <a href="../vue-other/attrs.html">
+            
+                    
+                    谈谈vue的实例属性
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Vue 路由</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../vue-router/vue-router-path.html">
+            
+                <a href="../vue-router/vue-router-path.html">
+            
+                    
+                    谈谈Vue-Router中的path
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../vue-router/vue-router-router-link.html">
+            
+                <a href="../vue-router/vue-router-router-link.html">
+            
+                    
+                    谈谈Vue-Router中的router-link
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../vue-router/vue-router-redirect.html">
+            
+                <a href="../vue-router/vue-router-redirect.html">
+            
+                    
+                    谈谈Vue-Router中的redirect
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="../vue-router/vue-router-router-view.html">
+            
+                <a href="../vue-router/vue-router-router-view.html">
+            
+                    
+                    谈谈Vue-Router中的router-view
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="../vue-router/vue-router-route.html">
+            
+                <a href="../vue-router/vue-router-route.html">
+            
+                    
+                    谈谈 Vue-router 中的 route
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="../vue-router/vue-router-router.html">
+            
+                <a href="../vue-router/vue-router-router.html">
+            
+                    
+                    谈谈Vue-router中国的router
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="../vue-router/mode.html">
+            
+                <a href="../vue-router/mode.html">
+            
+                    
+                    谈谈vue-router中的模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.8" data-path="../vue-router/vuex.html">
+            
+                <a href="../vue-router/vuex.html">
+            
+                    
+                    在 vue-router钩子函数用vuex
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Vue 组件</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../part14/Popup.md">
+            
+                <span>
+            
+                    
+                    Popup 弹框组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Browser对象</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../browser/URL.html">
+            
+                <a href="../browser/URL.html">
+            
+                    
+                    URI和URL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../browser/location.html">
+            
+                <a href="../browser/location.html">
+            
+                    
+                    Location 详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../browser/history.html">
+            
+                <a href="../browser/history.html">
+            
+                    
+                    history 详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">HTML DOM 对象</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../dom/document.html">
+            
+                <a href="../dom/document.html">
+            
+                    
+                    document
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">javascript对象之es5</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="../es5/throttle.html">
+            
+                <a href="../es5/throttle.html">
+            
+                    
+                    函数防抖和节流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="../es5/scope.html">
+            
+                <a href="../es5/scope.html">
+            
+                    
+                    作用域链
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" data-path="../es5/closure.html">
+            
+                <a href="../es5/closure.html">
+            
+                    
+                    闭包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.4" data-path="../es5/memory.html">
+            
+                <a href="../es5/memory.html">
+            
+                    
+                    内存回收
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.5" data-path="../es5/sort.html">
+            
+                <a href="../es5/sort.html">
+            
+                    
+                    排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.6" data-path="../es5/array_sort.html">
+            
+                <a href="../es5/array_sort.html">
+            
+                    
+                    数组排序的几种方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.7" data-path="../es5/recursion.html">
+            
+                <a href="../es5/recursion.html">
+            
+                    
+                    递归算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">javascript对象之es6</li>
+        
+        
+    
+        <li class="chapter " data-level="10.1" data-path="../es6/Object.defineProperty.html">
+            
+                <a href="../es6/Object.defineProperty.html">
+            
+                    
+                    Object.defineProperty
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">css 预编译语言</li>
+        
+        
+    
+        <li class="chapter " data-level="11.1" data-path="../css/css-name.html">
+            
+                <a href="../css/css-name.html">
+            
+                    
+                    css 命名规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.2" data-path="../css/less.html">
+            
+                <a href="../css/less.html">
+            
+                    
+                    less 入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.3" data-path="../css/scss.html">
+            
+                <a href="../css/scss.html">
+            
+                    
+                    scss 入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.4" data-path="../css/changeStyle.html">
+            
+                <a href="../css/changeStyle.html">
+            
+                    
+                    elementUI等插件修改样式不污染全局环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">webpack 基础内容</li>
+        
+        
+    
+        <li class="chapter " data-level="12.1" data-path="../webpack/webpack.html">
+            
+                <a href="../webpack/webpack.html">
+            
+                    
+                    关于webpack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.2" data-path="../webpack/loader.html">
+            
+                <a href="../webpack/loader.html">
+            
+                    
+                    关于loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.3" data-path="../webpack/devServe.html">
+            
+                <a href="../webpack/devServe.html">
+            
+                    
+                    关于webpackDevServe
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.4" data-path="../webpack/pk-image.html">
+            
+                <a href="../webpack/pk-image.html">
+            
+                    
+                    webpack踩坑之路(1)——图片的路径与打包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.5" data-path="../webpack/plugin.html">
+            
+                <a href="../webpack/plugin.html">
+            
+                    
+                    关于Plugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.6" data-path="../webpack/hash.html">
+            
+                <a href="../webpack/hash.html">
+            
+                    
+                    hash详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >谈谈Vue中$attrs和$listeners</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h3 id="attrs&#x548C;listeners&#x7684;&#x4F7F;&#x7528;"><code>$attrs</code>&#x548C;<code>$listeners</code>&#x7684;&#x4F7F;&#x7528;</h3>
+<p><img src="img/listerens/1.jpg" alt="&#x56FE;1"></p>
+<p><font color="#006600">#</font> <strong>&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x8BA8;&#x8BBA;&#x4E0B; A&#x7EC4;&#x4EF6;&#x548C; B &#x7EC4;&#x4EF6; &#x5982;&#x4F55;&#x901A;&#x4FE1;&#xFF0C;&#x6709;&#x51E0;&#x79CD;&#x89E3;&#x51B3;&#x65B9;&#x6848;</strong></p>
+<ol>
+<li><p><strong>Vuex:</strong>
+&#x6211;Vuex&#x6765;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x7BA1;&#x7406;&#xFF0C;&#x4F46;&#x662F;&#x5982;&#x679C;&#x9879;&#x76EE;&#x4E2D;<strong>&#x591A;&#x4E2A;&#x7EC4;&#x4EF6;&#x5171;&#x4EAB;&#x72B6;&#x6001;&#x6BD4;&#x8F83;&#x5C11;</strong>&#xFF0C;&#x9879;&#x76EE;&#x6BD4;&#x8F83;&#x5C0F;&#xFF0C;&#x5E76;&#x4E14;&#x5168;&#x5C40;&#x72B6;&#x6001;&#x6BD4;&#x8F83;&#x5C11;&#xFF0C;&#x90A3;&#x4F7F;&#x7528;<code>Vuex</code>&#x6765;&#x5B9E;&#x73B0;&#x8BE5;&#x529F;&#x80FD;&#xFF0C;&#x5E76;&#x6CA1;&#x6709;&#x53D1;&#x6325;&#x51FA;<code>Vuex</code>&#x5A01;&#x529B;</p>
+</li>
+<li><p><strong>&#x901A;&#x8FC7;B&#x7EC4;&#x4EF6;</strong>
+&#x4F7F;&#x7528;B&#x6765;&#x505A;&#x4E2D;&#x8F6C;&#x7AD9;&#xFF0C;&#x5F53;<strong>A&#x7EC4;&#x4EF6;</strong>&#x9700;&#x8981;&#x628A;&#x4FE1;&#x606F;&#x4F20;&#x7ED9;<strong>C&#x7EC4;&#x4EF6;</strong>&#x65F6;&#x5019;&#xFF0C;B&#x63A5;&#x53D7;<strong>A&#x7EC4;&#x4EF6;</strong>&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x7136;&#x540E;&#x5229;&#x7528;&#x5C5E;&#x6027;&#x4F20;&#x7ED9;<strong>C&#x7EC4;&#x4EF6;</strong></p>
+</li>
+</ol>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="deep.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Vue深度作用选择器">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"谈谈Vue中$attrs和$listeners","level":"3.15","depth":1,"next":{"title":"Vue 全局API","level":"4.1","depth":1,"ref":"","articles":[{"title":"谈谈Vue.extend","level":"4.1.1","depth":2,"path":"vue-api/extend.md","ref":"vue-api/extend.md","articles":[]},{"title":"谈谈Vue.nextTick","level":"4.1.2","depth":2,"path":"vue-api/nextTick.md","ref":"vue-api/nextTick.md","articles":[]},{"title":"谈谈Vue.set","level":"4.1.3","depth":2,"path":"vue-api/set.md","ref":"vue-api/set.md","articles":[]},{"title":"谈谈Vue.directive","level":"4.1.4","depth":2,"path":"vue-api/directive.md","ref":"vue-api/directive.md","articles":[]},{"title":"谈谈Vue.filter","level":"4.1.5","depth":2,"path":"vue-api/filter.md","ref":"vue-api/filter.md","articles":[]},{"title":"谈谈Vue.component","level":"4.1.6","depth":2,"path":"vue-api/component.md","ref":"vue-api/component.md","articles":[]}]},"previous":{"title":"Vue深度作用选择器","level":"3.14","depth":1,"path":"vue/deep.md","ref":"vue/deep.md","articles":[]},"dir":"ltr"},"config":{"plugins":["etoc","theme-comscore","advanced-emoji","github","livereload"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"etoc":{"mindepth":3,"maxdepth":4,"header":1,"h2lb":3,"notoc":false},"github":{"url":"https://github.com/zhangjikai"},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"langyazhixue","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*","description":"langyazhixue"},"file":{"path":"vue/listerens.md","mtime":"2019-03-28T10:07:52.581Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-29T02:12:31.300Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-etoc/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+
