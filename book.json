@@ -2,7 +2,7 @@
     "author": "langyazhixue",
     "description": "langyazhixue",
 	"root": "./docs",
-    "plugins": ["etoc","theme-comscore","advanced-emoji","github"],
+    "plugins":  ["etoc","theme-comscore","advanced-emoji","github","copy-code-button"],
     "pluginsConfig": {
         "github": {
             "url": "https://github.com/zhangjikai"
