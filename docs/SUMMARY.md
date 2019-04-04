@@ -41,19 +41,26 @@
   * [谈谈Vue.directive](vue-api/directive.md)
   * [谈谈Vue.filter](vue-api/filter.md)
   * [谈谈Vue.component](vue-api/component.md)
+
 * Vue 选项/DOM
   * [谈谈el](vue-dom/el.md)
   * [谈谈template](vue-dom/template.md)
   * [谈谈render](vue-dom/render.md)
+
 * Vue 选项/组合
   * [谈谈$parent,$children](vue-group/parent.md)
   * [谈谈extends](vue-group/extends.md)
 
+
 * Vue 选项/其他
-  * [谈谈model以及v-modelv-model指令](vue-other/model.md)
+  * [谈谈model以及v-model指令](vue-other/model.md)
   * [谈谈inheritAttrs](vue-other/inheritAttrs.md)
   * [谈谈comments](vue-other/comments.md)
   * [谈谈vue的实例属性](vue-other/attrs.md)
+  * [谈谈Vue的实例方法/事件](vue-other/event.md)
+  * [谈谈Vue的实例方法/生命周期](vue-other/lifeCycle.md)
+  * [谈谈Vue的指令](vue-other/directives.md)
+  * [谈谈指令v-on中的修饰符.native](vue-other/native.md)
 
 
 ### Vue 路由

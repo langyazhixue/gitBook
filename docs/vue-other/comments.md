@@ -1,6 +1,6 @@
 
 
-### commonets
+### comments
 * 类型：`bollean`
 * 默认值：`false`
 * 限制：这个选项只在完整构建版本中的浏览器内编译时可用

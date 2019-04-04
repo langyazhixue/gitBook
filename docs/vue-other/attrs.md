@@ -56,7 +56,7 @@ Vue 实例使用的根 DOM 元素。
 * **详细：** 
   当前实例的直接子组件。需要注意 $children 并不保证顺序，也不是响应式的。如果你发现自己正在尝试使用 $children 来进行数据绑定，考虑使用一个数组配合 v-for 来生成子组件，并且使用 Array 作为真正的来源。
 
-<font color="#006600">\#</font> **vm.$slot**
+<font color="#006600">\#</font> **vm.$slots**
 
 * **类型：** `{ [name:string]: ? Array<VNode>}`
 * **只读**
@@ -90,6 +90,7 @@ Vue 实例使用的根 DOM 元素。
   &nbsp;
   `vm.$scopedSlots`在使用<font color="#006600">渲染函数</font>开发一个组件时候特别有效
   &nbsp;
+  
   **注意：** 
     1. 作用域插槽函数现在保证返回一个 VNode 数组，除非在返回值无效的情况下返回 undefined。
     2. 所有的 `$slots` 现在都会作为函数暴露在 `$scopedSlots`中。
