@@ -61,7 +61,8 @@
   * [谈谈Vue的实例方法/生命周期](vue-other/lifeCycle.md)
   * [谈谈Vue的指令](vue-other/directives.md)
   * [谈谈指令v-on中的修饰符.native](vue-other/native.md)
-
+  * [谈谈vue的特殊特性](v-other/speciality.md)
+  
 
 ### Vue 路由
 * [谈谈Vue-Router中的path](vue-router/vue-router-path.md)
