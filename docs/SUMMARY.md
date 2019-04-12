@@ -20,6 +20,7 @@
 <!-- * [Vue 开发常见问题及处理方式](part10/issues.md) -->
 <!-- * [2.0版本与1.0版本的区别](part10/differenceBetween2A1.md) -->
 * Vue 入门
+  * [vue这种MVVM模式的理解](vue/mvvm.md)
   * [关于Vue的生命周期](vue/LifeCycle.md)
   * [Vue的组件](vue/component.md)
   * [Vue中的provide/inject](vue/provide-inject.md)
@@ -81,6 +82,7 @@
     *[谈谈http之cookie](http/cookie.md)
     *[谈谈http之request和response](http/request.md)
   * Express
+  
 
 ### JS
 
