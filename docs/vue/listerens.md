@@ -23,8 +23,8 @@
 <template>
   <div class="test-container">
    <listeners-child
-    :items='items'
-    @updateItems='receveNewItems'
+    :items="items"
+    @updateItems="receveNewItems"
    ></listeners-child> 
   </div>
 </template>

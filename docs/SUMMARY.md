@@ -36,6 +36,7 @@
   * [Vue $el和$refs的用处和区别](vue/el.md)
   * [Vue深度作用选择器](vue/deep.md)
   * [谈谈Vue中$attrs和$listeners](vue/listerens.md)
+  * [谈谈Vue中的递归组件](vue/recursion.md)
 
 * Vue 全局API
   * [谈谈Vue.extend](vue-api/extend.md)
@@ -49,6 +50,8 @@
   * [谈谈el](vue-dom/el.md)
   * [谈谈template](vue-dom/template.md)
   * [谈谈render](vue-dom/render.md)
+  * [谈谈函数式组件](vue-dom/functional.md)
+  * [slots和scopedSlots对比](vue-dom/compare.md)
 
 * Vue 选项/组合
   * [谈谈$parent,$children](vue-group/parent.md)

@@ -476,6 +476,19 @@
             
         </li>
     
+        <li class="chapter " data-level="4.1.17" data-path="../vue/recursion.html">
+            
+                <a href="../vue/recursion.html">
+            
+                    
+                    谈谈Vue中的递归组件
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -624,6 +637,32 @@
             
                     
                     谈谈render
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.4" data-path="../vue-dom/functional.html">
+            
+                <a href="../vue-dom/functional.html">
+            
+                    
+                    谈谈函数式组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.5" data-path="../vue-dom/compare.html">
+            
+                <a href="../vue-dom/compare.html">
+            
+                    
+                    slots和scopedSlots对比
             
                 </a>
             
@@ -1660,6 +1699,8 @@
 <li>css: &#x5C06;&#x6587;&#x4EF6;&#x89C6;&#x4E3A; css &#x6587;&#x4EF6;&#xFF0C;&#x65E0;&#x8BBA;&#x6269;&#x5C55;&#x540D;&#x4E3A;&#x4EC0;&#x4E48;</li>
 <li>once: &#x8BE5;&#x6587;&#x4EF6;&#x4EC5;&#x53EF;&#x5BFC;&#x5165;&#x4E00;&#x6B21; (&#x9ED8;&#x8BA4;)</li>
 </ul>
+<pre><code class="lang-css">  @<span class="hljs-keyword">import</span> (reference, css) <span class="hljs-string">&quot;styles.less&quot;</span>
+</code></pre>
 <h3 id="&#x5B57;&#x7B26;&#x4E32;&#x62FC;&#x63A5;">&#x5B57;&#x7B26;&#x4E32;&#x62FC;&#x63A5;</h3>
 <p>&#x8F93;&#x5165;</p>
 <pre><code>@iconUrl: &quot;/img&quot;;
@@ -1763,7 +1804,7 @@ div {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"less 入门","level":"8.2","depth":1,"next":{"title":"scss 入门","level":"8.3","depth":1,"path":"css/scss.md","ref":"css/scss.md","articles":[]},"previous":{"title":"css 命名规范","level":"8.1","depth":1,"path":"css/css-name.md","ref":"css/css-name.md","articles":[]},"dir":"ltr"},"config":{"plugins":["etoc","theme-comscore","advanced-emoji","github","copy-code-button","livereload"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"etoc":{"h2lb":3,"header":1,"maxdepth":4,"mindepth":3,"notoc":false},"github":{"url":"https://github.com/zhangjikai"},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"langyazhixue","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*","description":"langyazhixue"},"file":{"path":"css/less.md","mtime":"2018-11-19T11:31:34.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-12T01:49:52.340Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"less 入门","level":"8.2","depth":1,"next":{"title":"scss 入门","level":"8.3","depth":1,"path":"css/scss.md","ref":"css/scss.md","articles":[]},"previous":{"title":"css 命名规范","level":"8.1","depth":1,"path":"css/css-name.md","ref":"css/css-name.md","articles":[]},"dir":"ltr"},"config":{"plugins":["etoc","theme-comscore","advanced-emoji","github","copy-code-button","livereload"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"etoc":{"h2lb":3,"header":1,"maxdepth":4,"mindepth":3,"notoc":false},"github":{"url":"https://github.com/zhangjikai"},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"langyazhixue","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*","description":"langyazhixue"},"file":{"path":"css/less.md","mtime":"2019-04-19T06:04:53.692Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-19T08:22:57.745Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

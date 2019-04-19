@@ -19,7 +19,7 @@
 <script type="text/x-template" id="demo4">
     <h1 style="color:red">我是script标签模板4</h1>
 </script>
- 
+
 <script>
     var vm=new Vue({
       el:"#app",

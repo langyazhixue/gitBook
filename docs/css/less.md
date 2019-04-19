@@ -326,6 +326,10 @@
 * css: 将文件视为 css 文件，无论扩展名为什么
 * once: 该文件仅可导入一次 (默认)
 
+```css
+  @import (reference, css) "styles.less"
+```
+
 ### 字符串拼接
 
 输入
