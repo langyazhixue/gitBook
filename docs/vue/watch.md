@@ -149,6 +149,6 @@ export default {
   })
   unWatch()
   ```
-
+  #### 5.注意，不能使用箭头函数 来定义  watcher 函数
 
 
