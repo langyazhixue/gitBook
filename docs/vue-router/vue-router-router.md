@@ -46,7 +46,19 @@ export default {
     * `next(error)`:
 
 
-  2. 全局后置钩子 :`router.beforeResolve`
+  2. 全局解析守卫 :`router.beforeResolve`
+    用`router.beforeRsolve`注册一个全局守卫，跟 `router.beforeEach`类似，区别是在导航被确认之前，**同时在所有组件内守卫和异步路由组件被解析之后**，解析守卫被调用
+
+  3. 全局后置钩子: `router.afterEach`
+
+  ```js
+  router.afterEach((to, from) => {
+    // 注册全局后置钩子，不接受`next`函数，也不会改变导航本身
+  })
+  ```
+  
+  该函数会在每次路由切换成功进入激活阶段时被调用。
+  注意，该函数调用时仅仅意味着切换已经被验证过了，也就是所有 `canDeactivate` 和 `canActivate` 钩子函数都成功的被断定( `resolved` )了，而且浏览器地址栏中的地址也已经更新。并不能保证所有的 `activate` 钩子函数都被断定了。
 
 
 * 路由独享的守卫,可以在路由配置上直接定义`beforeEnter`守卫
