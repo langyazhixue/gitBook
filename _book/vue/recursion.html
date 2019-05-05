@@ -983,7 +983,7 @@
                 <a href="../vue-router/vuex.html">
             
                     
-                    在 vue-router钩子函数用vuex
+                    在vue-router钩子函数用vuex
             
                 </a>
             
@@ -1466,6 +1466,162 @@
                                 <section class="normal markdown-section">
                                 
                                 <h3 id="&#x8C08;&#x8C08;vue&#x4E2D;&#x7684;&#x9012;&#x5F52;&#x7EC4;&#x4EF6;">&#x8C08;&#x8C08;Vue&#x4E2D;&#x7684;&#x9012;&#x5F52;&#x7EC4;&#x4EF6;</h3>
+<p>&#x7EC4;&#x4EF6;&#x662F;&#x53EF;&#x4EE5;&#x5728;&#x5B83;&#x4EEC;&#x81EA;&#x5DF1;&#x7684;&#x6A21;&#x677F;&#x4E2D;&#x8C03;&#x7528;&#x81EA;&#x8EAB;&#x7684;&#x3002;&#x4E0D;&#x8FC7;&#x5B83;&#x4EEC;&#x53EA;&#x80FD;&#x901A;&#x8FC7; name &#x9009;&#x9879;&#x6765;&#x505A;&#x8FD9;&#x4EF6;&#x4E8B;&#xFF1A;</p>
+<pre><code class="lang-js">  name:<span class="hljs-string">&apos;unique-name-of-my-component&apos;</span>
+</code></pre>
+<p>&#x4E00;&#x822C;&#x9879;&#x76EE;&#x4E2D;&#x9700;&#x8981;&#x7528;&#x9012;&#x5F52;&#x7EC4;&#x4EF6;&#x751F;&#x6210;&#x76EE;&#x5F55;&#x6811;&#xFF0C;&#x5E9F;&#x8BDD;&#x4E0D;&#x591A;&#x8BF4;&#xFF0C;&#x54B1;&#x4E0A;&#x4E2A;&#x4F8B;&#x5B50;&#x5427;</p>
+<ul>
+<li><p>&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;sidebar &#x63A7;&#x4EF6;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;main--class&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>
+      <span class="hljs-attr">v-for</span> = &apos;(<span class="hljs-attr">modelItem</span>, $<span class="hljs-attr">index</span>) <span class="hljs-attr">in</span> <span class="hljs-attr">data</span>&apos;
+      <span class="hljs-attr">:key</span>=<span class="hljs-string">&apos;$index&apos;</span>
+    &gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">tree-menu</span> <span class="hljs-attr">:model</span>=<span class="hljs-string">&apos;modelItem&apos;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+<span class="hljs-keyword">import</span> TreeMenu <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./treeMenu.vue&apos;</span>
+<span class="hljs-keyword">var</span> demoData = [
+{
+  <span class="hljs-string">&apos;id&apos;</span>: <span class="hljs-string">&apos;1&apos;</span>,
+  <span class="hljs-string">&apos;menuName&apos;</span>: <span class="hljs-string">&apos;&#x57FA;&#x7840;&#x7BA1;&#x7406;&apos;</span>,
+  <span class="hljs-string">&apos;menuCode&apos;</span>: <span class="hljs-string">&apos;10&apos;</span>,
+  <span class="hljs-string">&apos;children&apos;</span>: [
+    {
+      <span class="hljs-string">&apos;menuName&apos;</span>: <span class="hljs-string">&apos;&#x7528;&#x6237;&#x7BA1;&#x7406;&apos;</span>,
+      <span class="hljs-string">&apos;menuCode&apos;</span>: <span class="hljs-string">&apos;11&apos;</span>
+    },
+    {
+      <span class="hljs-string">&apos;menuName&apos;</span>: <span class="hljs-string">&apos;&#x89D2;&#x8272;&#x7BA1;&#x7406;&apos;</span>,
+      <span class="hljs-string">&apos;menuCode&apos;</span>: <span class="hljs-string">&apos;12&apos;</span>,
+      <span class="hljs-string">&apos;children&apos;</span>: [
+        {
+          <span class="hljs-string">&apos;menuName&apos;</span>: <span class="hljs-string">&apos;&#x7BA1;&#x7406;&#x5458;&apos;</span>,
+          <span class="hljs-string">&apos;menuCode&apos;</span>: <span class="hljs-string">&apos;121&apos;</span>,
+          <span class="hljs-string">&apos;children&apos;</span>:[
+            {
+              <span class="hljs-string">&apos;menuName&apos;</span>: <span class="hljs-string">&apos;&#x89D2;&#x8272;&#x7BA1;&#x7406;11&apos;</span>,
+              <span class="hljs-string">&apos;menuCode&apos;</span>: <span class="hljs-string">&apos;124&apos;</span>,
+            },
+            {
+              <span class="hljs-string">&apos;menuName&apos;</span>: <span class="hljs-string">&apos;&#x89D2;&#x8272;&#x7BA1;&#x7406;22&apos;</span>,
+              <span class="hljs-string">&apos;menuCode&apos;</span>: <span class="hljs-string">&apos;125&apos;</span>,
+            }
+          ]
+        },
+        {
+          <span class="hljs-string">&apos;menuName&apos;</span>: <span class="hljs-string">&apos;CEO&apos;</span>,
+          <span class="hljs-string">&apos;menuCode&apos;</span>: <span class="hljs-string">&apos;122&apos;</span>
+        },
+        {
+          <span class="hljs-string">&apos;menuName&apos;</span>: <span class="hljs-string">&apos;CFO&apos;</span>,
+          <span class="hljs-string">&apos;menuCode&apos;</span>: <span class="hljs-string">&apos;123&apos;</span>
+        },
+        {
+          <span class="hljs-string">&apos;menuName&apos;</span>: <span class="hljs-string">&apos;COO&apos;</span>,
+          <span class="hljs-string">&apos;menuCode&apos;</span>: <span class="hljs-string">&apos;124&apos;</span>
+        },
+        {
+          <span class="hljs-string">&apos;menuName&apos;</span>: <span class="hljs-string">&apos;&#x666E;&#x901A;&#x4EBA;&apos;</span>,
+          <span class="hljs-string">&apos;menuCode&apos;</span>: <span class="hljs-string">&apos;124&apos;</span>
+        }
+      ]
+    },
+    {
+      <span class="hljs-string">&apos;menuName&apos;</span>: <span class="hljs-string">&apos;&#x6743;&#x9650;&#x7BA1;&#x7406;&apos;</span>,
+      <span class="hljs-string">&apos;menuCode&apos;</span>: <span class="hljs-string">&apos;13&apos;</span>
+    }
+  ]
+},
+{
+  <span class="hljs-string">&apos;id&apos;</span>: <span class="hljs-string">&apos;2&apos;</span>,
+  <span class="hljs-string">&apos;menuName&apos;</span>: <span class="hljs-string">&apos;&#x5546;&#x54C1;&#x7BA1;&#x7406;&apos;</span>,
+  <span class="hljs-string">&apos;menuCode&apos;</span>: <span class="hljs-string">&apos;&apos;</span>
+},
+{
+  <span class="hljs-string">&apos;id&apos;</span>: <span class="hljs-string">&apos;3&apos;</span>,
+  <span class="hljs-string">&apos;menuName&apos;</span>: <span class="hljs-string">&apos;&#x8BA2;&#x5355;&#x7BA1;&#x7406;&apos;</span>,
+  <span class="hljs-string">&apos;menuCode&apos;</span>: <span class="hljs-string">&apos;30&apos;</span>,
+  <span class="hljs-string">&apos;children&apos;</span>: [
+    {
+      <span class="hljs-string">&apos;menuName&apos;</span>: <span class="hljs-string">&apos;&#x8BA2;&#x5355;&#x5217;&#x8868;&apos;</span>,
+      <span class="hljs-string">&apos;menuCode&apos;</span>: <span class="hljs-string">&apos;31&apos;</span>
+    },
+    {
+      <span class="hljs-string">&apos;menuName&apos;</span>: <span class="hljs-string">&apos;&#x9000;&#x8D27;&#x5217;&#x8868;&apos;</span>,
+      <span class="hljs-string">&apos;menuCode&apos;</span>: <span class="hljs-string">&apos;32&apos;</span>,
+      <span class="hljs-string">&apos;children&apos;</span>: []
+    }
+  ]
+},
+{
+  <span class="hljs-string">&apos;id&apos;</span>: <span class="hljs-string">&apos;4&apos;</span>,
+  <span class="hljs-string">&apos;menuName&apos;</span>: <span class="hljs-string">&apos;&#x5546;&#x5BB6;&#x7BA1;&#x7406;&apos;</span>,
+  <span class="hljs-string">&apos;menuCode&apos;</span>: <span class="hljs-string">&apos;&apos;</span>,
+  <span class="hljs-string">&apos;children&apos;</span>: []
+}
+];
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+name: <span class="hljs-string">&apos;demo&apos;</span>,
+data() {
+  <span class="hljs-keyword">return</span> {
+    data:demoData
+  }
+},
+components:{
+  TreeMenu
+}
+}
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+</li>
+<li><p>&#x7EC4;&#x4EF6; treeMenu</p>
+</li>
+</ul>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">&apos;hasChild&apos;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a-icon</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;file-text&quot;</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>{{model.menuName}}<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">&apos;hasChild&apos;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&apos;margin-left:20px&apos;</span>&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">tree-menu</span> 
+        <span class="hljs-attr">style</span>=<span class="hljs-string">&apos;margin-left:20px&apos;</span>
+        <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;(item,$index) in model.children&quot;</span>  
+        <span class="hljs-attr">:model</span>=<span class="hljs-string">&quot;item&quot;</span> 
+        <span class="hljs-attr">:key</span>=<span class="hljs-string">&quot;$index&quot;</span>&gt;</span>
+       <span class="hljs-tag">&lt;/<span class="hljs-name">tree-menu</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  name:<span class="hljs-string">&apos;TreeMenu&apos;</span>,
+  props: {
+    model: {
+      required: <span class="hljs-literal">true</span>,
+      type: <span class="hljs-built_in">Object</span>
+    }
+  },
+ computed:{
+   hasChild(){
+     <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.model.children &amp;&amp; <span class="hljs-keyword">this</span>.model.children.length
+    } 
+ }
+}
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<p>ensp;</p>
+<p><font color="#006600">#</font><strong>&#x6CE8;&#x610F;</strong>
+  &#x8FD9;&#x4E2A;treeMenu&#x7EC4;&#x4EF6;&#x5FC5;&#x987B;&#x6709;<code>name</code>,&#x56E0;&#x4E3A;&#x6CA1;&#x6709;name&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x4F1A;&#x9020;&#x6210;&#x63A7;&#x4EF6;&#x81EA;&#x8EAB;&#x4E0D;&#x80FD;&#x8C03;&#x7528;&#x81EA;&#x8EAB;&#xFF0C;&#x81EA;&#x8EAB;&#x8C03;&#x7528;&#x7684;&#x65F6;&#x5019;&#x6700;&#x597D;&#x6709;&#x7ED1;&#x5B9A;key&#xFF0C;
+&#x56E0;&#x4E3A;&#x8FD9;&#x4E2A;key&#x662F;&#x552F;&#x4E00;&#x6807;&#x65F6;&#xFF0C;&#x5BF9;&#x4E8E;<code>vue</code>&#x66F4;&#x65B0;&#x63A7;&#x4EF6;&#x6BD4;&#x8F83;&#x597D;&#xFF0C;&#x9664;&#x975E;&#x63A7;&#x4EF6;&#x975E;&#x5E38;&#x7B80;&#x5355;&#x5C31;&#x4E0D;&#x7528;key</p>
+<p>  &#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x5C31;&#x662F;&#x9012;&#x5F52;&#x7EC4;&#x4EF6;&#x65F6;&#x5019;&#xFF0C;&#x9700;&#x8981;&#x6709;&#x4E00;&#x4E2A;&#x6761;&#x4EF6;&#x6765;&#x7EC8;&#x6B62;&#x9012;&#x5F52;&#xFF0C;&#x5728;&#x8FD9;&#x91CC;&#x4F7F;&#x7528; <code>v-for</code>&#x9690;&#x5F62;&#x6761;&#x4EF6;&#x7EC8;&#x6B62;&#x9012;&#x5F52;&#xFF0C;props&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x5176;&#x5B9E;&#x4E3B;&#x8981;
+&#x4F20;&#x9012;&#x7236;&#x63A7;&#x4EF6;&#x7684;&#x6570;&#x636E;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x5177;&#x4F53;&#x7528;&#x6CD5;&#x53EF;&#x4EE5;&#x53C2;&#x8BE6;<code>vue</code>&#x7684;&#x5B98;&#x65B9;&#x6587;&#x6863;</p>
+<ul>
+<li>&#x6700;&#x7EC8;&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#x56FE;
+<img src="img/recursion/1.jpg" alt="img"></li>
+</ul>
 
                                 
                                 </section>
@@ -1505,7 +1661,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"谈谈Vue中的递归组件","level":"4.1.17","depth":2,"next":{"title":"Vue 全局API","level":"4.2","depth":1,"ref":"","articles":[{"title":"谈谈Vue.extend","level":"4.2.1","depth":2,"path":"vue-api/extend.md","ref":"vue-api/extend.md","articles":[]},{"title":"谈谈Vue.nextTick","level":"4.2.2","depth":2,"path":"vue-api/nextTick.md","ref":"vue-api/nextTick.md","articles":[]},{"title":"谈谈Vue.set","level":"4.2.3","depth":2,"path":"vue-api/set.md","ref":"vue-api/set.md","articles":[]},{"title":"谈谈Vue.directive","level":"4.2.4","depth":2,"path":"vue-api/directive.md","ref":"vue-api/directive.md","articles":[]},{"title":"谈谈Vue.filter","level":"4.2.5","depth":2,"path":"vue-api/filter.md","ref":"vue-api/filter.md","articles":[]},{"title":"谈谈Vue.component","level":"4.2.6","depth":2,"path":"vue-api/component.md","ref":"vue-api/component.md","articles":[]}]},"previous":{"title":"谈谈Vue中$attrs和$listeners","level":"4.1.16","depth":2,"path":"vue/listerens.md","ref":"vue/listerens.md","articles":[]},"dir":"ltr"},"config":{"plugins":["etoc","theme-comscore","advanced-emoji","github","copy-code-button","livereload"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"etoc":{"h2lb":3,"header":1,"maxdepth":4,"mindepth":3,"notoc":false},"github":{"url":"https://github.com/zhangjikai"},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"langyazhixue","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*","description":"langyazhixue"},"file":{"path":"vue/recursion.md","mtime":"2019-04-19T08:23:18.732Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-19T08:22:57.745Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"谈谈Vue中的递归组件","level":"4.1.17","depth":2,"next":{"title":"Vue 全局API","level":"4.2","depth":1,"ref":"","articles":[{"title":"谈谈Vue.extend","level":"4.2.1","depth":2,"path":"vue-api/extend.md","ref":"vue-api/extend.md","articles":[]},{"title":"谈谈Vue.nextTick","level":"4.2.2","depth":2,"path":"vue-api/nextTick.md","ref":"vue-api/nextTick.md","articles":[]},{"title":"谈谈Vue.set","level":"4.2.3","depth":2,"path":"vue-api/set.md","ref":"vue-api/set.md","articles":[]},{"title":"谈谈Vue.directive","level":"4.2.4","depth":2,"path":"vue-api/directive.md","ref":"vue-api/directive.md","articles":[]},{"title":"谈谈Vue.filter","level":"4.2.5","depth":2,"path":"vue-api/filter.md","ref":"vue-api/filter.md","articles":[]},{"title":"谈谈Vue.component","level":"4.2.6","depth":2,"path":"vue-api/component.md","ref":"vue-api/component.md","articles":[]}]},"previous":{"title":"谈谈Vue中$attrs和$listeners","level":"4.1.16","depth":2,"path":"vue/listerens.md","ref":"vue/listerens.md","articles":[]},"dir":"ltr"},"config":{"plugins":["etoc","theme-comscore","advanced-emoji","github","copy-code-button","livereload"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"etoc":{"h2lb":3,"header":1,"maxdepth":4,"mindepth":3,"notoc":false},"github":{"url":"https://github.com/zhangjikai"},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"langyazhixue","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*","description":"langyazhixue"},"file":{"path":"vue/recursion.md","mtime":"2019-05-05T08:59:38.975Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-05T07:09:08.024Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

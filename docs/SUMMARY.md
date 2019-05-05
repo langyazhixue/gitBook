@@ -78,7 +78,7 @@
 * [谈谈Vue-router中的router](vue-router/vue-router-router.md)
 * [谈谈导航完成之后Vue-router中的$router](vue-router/vue-router-$router.md)
 * [谈谈vue-router中的模式](vue-router/mode.md)
-* [在 vue-router钩子函数用vuex](vue-router/vuex.md)
+* [在vue-router钩子函数用vuex](vue-router/vuex.md)
 
 ### Node 探索
   * HTTP
