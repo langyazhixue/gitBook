@@ -1490,7 +1490,8 @@ template: <span class="hljs-string">&apos;&lt;div&gt;Hello!&lt;/div&gt;&apos;</s
 
 <span class="hljs-comment">// &#x6216;&#x8005;&#xFF0C;&#x5728;&#x6587;&#x6863;&#x4E4B;&#x5916;&#x6E32;&#x67D3;&#x5E76;&#x4E14;&#x968F;&#x540E;&#x6302;&#x8F7D;</span>
 <span class="hljs-keyword">var</span> component = <span class="hljs-keyword">new</span> MyComponent().$mount()
-<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;app&apos;</span>).appendChild(component.$el)
+<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;app&apos;</span>).appendChild(component.$el)  
+<span class="hljs-comment">//  vue.js?e503:634 [Vue warn]: Failed to mount component: template or render function not defined.</span>
 </code></pre>
 <p>&#x2002;
 <font color="#006600">#</font> <strong>vm.$forceUpdate()</strong> </p>
@@ -1506,8 +1507,11 @@ template: <span class="hljs-string">&apos;&lt;div&gt;Hello!&lt;/div&gt;&apos;</s
 <p><font color="#006600">#</font> <strong>vm.$destory</strong> </p>
 <ul>
 <li>&#x7528;&#x6CD5;&#xFF1A; &#x5B8C;&#x5168;&#x9500;&#x6BC1;&#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;&#x3002;&#x6E05;&#x7406;&#x5B83;&#x4E0E;&#x5176;&#x4ED6;&#x5B9E;&#x4F8B;&#x7684;&#x94FE;&#x63A5;&#xFF0C;&#x89E3;&#x7ED1;&#x5B83;&#x7684;&#x5168;&#x90E8;&#x6307;&#x4EE4;&#x4EE5;&#x53CA;&#x4E8B;&#x4EF6;&#x76D1;&#x542C;&#x5668;&#x3002;
-&#x89E6;&#x53D1; <code>beforeDestory</code> &#x548C; <code>destoryed</code> &#x7684;&#x94A9;&#x5B50;</li>
+&#x89E6;&#x53D1; <code>beforeDestroy</code> &#x548C; <code>destory</code> &#x7684;&#x94A9;&#x5B50;</li>
 </ul>
+<blockquote>
+<p>&#x5728;&#x5927;&#x591A;&#x6570;&#x573A;&#x666F;&#x4E2D;&#x4F60;&#x4E0D;&#x5E94;&#x8BE5;&#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x3002;&#x6700;&#x597D;&#x4F7F;&#x7528; v-if &#x548C; v-for &#x6307;&#x4EE4;&#x4EE5;&#x6570;&#x636E;&#x9A71;&#x52A8;&#x7684;&#x65B9;&#x5F0F;&#x63A7;&#x5236;&#x5B50;&#x7EC4;&#x4EF6;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x3002;</p>
+</blockquote>
 
                                 
                                 </section>
@@ -1551,7 +1555,7 @@ template: <span class="hljs-string">&apos;&lt;div&gt;Hello!&lt;/div&gt;&apos;</s
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"谈谈Vue的实例方法/生命周期","level":"4.5.6","depth":2,"next":{"title":"谈谈Vue的指令","level":"4.5.7","depth":2,"path":"vue-other/directives.md","ref":"vue-other/directives.md","articles":[]},"previous":{"title":"谈谈Vue的实例方法/事件","level":"4.5.5","depth":2,"path":"vue-other/event.md","ref":"vue-other/event.md","articles":[]},"dir":"ltr"},"config":{"plugins":["etoc","theme-comscore","advanced-emoji","github","copy-code-button","livereload"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"etoc":{"h2lb":3,"header":1,"maxdepth":4,"mindepth":3,"notoc":false},"github":{"url":"https://github.com/zhangjikai"},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"langyazhixue","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*","description":"langyazhixue"},"file":{"path":"vue-other/lifeCycle.md","mtime":"2019-04-09T03:21:56.761Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-05T07:09:08.024Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"谈谈Vue的实例方法/生命周期","level":"4.5.6","depth":2,"next":{"title":"谈谈Vue的指令","level":"4.5.7","depth":2,"path":"vue-other/directives.md","ref":"vue-other/directives.md","articles":[]},"previous":{"title":"谈谈Vue的实例方法/事件","level":"4.5.5","depth":2,"path":"vue-other/event.md","ref":"vue-other/event.md","articles":[]},"dir":"ltr"},"config":{"plugins":["etoc","theme-comscore","advanced-emoji","github","copy-code-button","livereload"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"etoc":{"h2lb":3,"header":1,"maxdepth":4,"mindepth":3,"notoc":false},"github":{"url":"https://github.com/zhangjikai"},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"langyazhixue","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*","description":"langyazhixue"},"file":{"path":"vue-other/lifeCycle.md","mtime":"2019-05-06T02:55:05.960Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-05T07:09:08.024Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

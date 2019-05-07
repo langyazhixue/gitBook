@@ -26,8 +26,9 @@
 
   // 或者，在文档之外渲染并且随后挂载
   var component = new MyComponent().$mount()
-  document.getElementById('app').appendChild(component.$el)
-  
+  document.getElementById('app').appendChild(component.$el)  
+  //  vue.js?e503:634 [Vue warn]: Failed to mount component: template or render function not defined.
+
   ```
 &ensp;
 <font color="#006600">#</font> **vm.$forceUpdate()** 
@@ -37,11 +38,10 @@
 ** :tada: 注意 ** 
 > 如果你发现你需要在Vue中做一次强制更新，99.9%的情况，或者你可能依赖来一个未被Vue的响应式系统追踪的状态
 
-
-
-
 &ensp;
 <font color="#006600">#</font> **vm.$destory** 
 
 * 用法： 完全销毁一个实例。清理它与其他实例的链接，解绑它的全部指令以及事件监听器。
-触发 `beforeDestory` 和 `destoryed` 的钩子
+  触发 `beforeDestroy` 和 `destory` 的钩子
+
+> 在大多数场景中你不应该调用这个方法。最好使用 v-if 和 v-for 指令以数据驱动的方式控制子组件的生命周期。

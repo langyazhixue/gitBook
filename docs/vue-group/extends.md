@@ -6,32 +6,70 @@
 
 其实接下来我想谈谈当 `extends` 和 `mixins` 结合在一起会发生什么
 
-
 * 继承钩子函数
 
-```js
+```html
+<template>
+  <div>
+    <span>{{name}}</span>
+    <a-button @click='change'>改变</a-button>
+  </div>
+</template>
+<script>
 const extend = {
-  created () {
+  created() {
     console.log('extends created')
+  },
+  watch:{
+    name(newVal,oldVal){
+      console.log('extends watch')
+    }
   }
 }
+
 const mixin1 = {
-  created () {
+  created() {
     console.log('mixin1 created')
+  },
+  watch:{
+    name(newVal,oldVal){
+      console.log('mixin1 watch')
+    }
   }
 }
+
 const mixin2 = {
-  created () {
+  created() {
     console.log('mixin2 created')
+  },
+  watch:{
+    name(newVal,oldVal){
+      console.log('mixin2 watch')
+    }
   }
 }
+
 export default {
+  name: 'testView',
   extends: extend,
-  mixins: [mixin1, mixin2],
-  name: 'app',
-  created () {
-    console.log('created')
+  mixins: [mixin1,mixin2],
+  data(){
+    return {
+      name:'前面'
+    }
+  },
+  watch:{
+    name(newVal,oldVal){
+      console.log('mySelf watch')
+    }
+  },
+  methods:{
+    change(){
+      this.name = '后面'
+    }
+  }
 }
+</script>
 
 ```
 
@@ -41,6 +79,15 @@ export default {
 extends created
 mixin1 created
 mixin2 created
+```
+点击按钮后输出
+
+```html
+extends watch
+mixin1 watch
+mixin2 watch
+mySelf watch
+
 ```
   1. 结论：优先调用 mixins 和 extends 继承的父类，extends 触发的优先级更高，相对于是队列
   2. push(extend, mixin1, minxin2, 本身的钩子函数)

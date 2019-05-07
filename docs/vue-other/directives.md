@@ -9,7 +9,7 @@ vue 自带的指令有很多，比方说`v-text` `v-html` `v-show` `v-if` `v-els
   * `.stop` - 调用 event.stopProgragation()
   * `.prevent`- 调用 `event.preventDefautl()`
   * `.capture` - 添加事件侦听器时使用`capture`
-  * `.self`- 只当事件时从侦听器绑定的元素本身触发时才触发收回
+  * `.self`- 只当事件时从侦听器绑定的元素本身触发时才触发回调
   * `.{keyCode | keyAlias }` - 只当事件是从特定键触发才触发回调
   * `.native`- 监听根元素的原生事件
   * `.once` - 只触发一次回调
@@ -117,7 +117,7 @@ vue 自带的指令有很多，比方说`v-text` `v-html` `v-show` `v-if` `v-els
 * demo
 
 ```js
-<span v-pre>{{ this will not be compiled }}</span>
+<span v-clock>{{ this will not be compiled }}</span>
 ```
 
 &ensp;

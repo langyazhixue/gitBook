@@ -1475,33 +1475,78 @@
 <ul>
 <li>&#x7EE7;&#x627F;&#x94A9;&#x5B50;&#x51FD;&#x6570;</li>
 </ul>
-<pre><code class="lang-js"><span class="hljs-keyword">const</span> extend = {
-  created () {
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>{{name}}<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a-button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&apos;change&apos;</span>&gt;</span>&#x6539;&#x53D8;<span class="hljs-tag">&lt;/<span class="hljs-name">a-button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+<span class="hljs-keyword">const</span> extend = {
+  created() {
     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;extends created&apos;</span>)
+  },
+  watch:{
+    name(newVal,oldVal){
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;extends watch&apos;</span>)
+    }
   }
 }
+
 <span class="hljs-keyword">const</span> mixin1 = {
-  created () {
+  created() {
     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;mixin1 created&apos;</span>)
+  },
+  watch:{
+    name(newVal,oldVal){
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;mixin1 watch&apos;</span>)
+    }
   }
 }
+
 <span class="hljs-keyword">const</span> mixin2 = {
-  created () {
+  created() {
     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;mixin2 created&apos;</span>)
+  },
+  watch:{
+    name(newVal,oldVal){
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;mixin2 watch&apos;</span>)
+    }
   }
 }
+
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  name: <span class="hljs-string">&apos;testView&apos;</span>,
   extends: extend,
-  mixins: [mixin1, mixin2],
-  name: <span class="hljs-string">&apos;app&apos;</span>,
-  created () {
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;created&apos;</span>)
+  mixins: [mixin1,mixin2],
+  data(){
+    <span class="hljs-keyword">return</span> {
+      name:<span class="hljs-string">&apos;&#x524D;&#x9762;&apos;</span>
+    }
+  },
+  watch:{
+    name(newVal,oldVal){
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;mySelf watch&apos;</span>)
+    }
+  },
+  methods:{
+    change(){
+      <span class="hljs-keyword">this</span>.name = <span class="hljs-string">&apos;&#x540E;&#x9762;&apos;</span>
+    }
+  }
 }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 </code></pre>
 <p>&#x63A7;&#x5236;&#x53F0;&#x8F93;&#x51FA;</p>
 <pre><code class="lang-html">extends created
 mixin1 created
 mixin2 created
+</code></pre>
+<p>&#x70B9;&#x51FB;&#x6309;&#x94AE;&#x540E;&#x8F93;&#x51FA;</p>
+<pre><code class="lang-html">extends watch
+mixin1 watch
+mixin2 watch
+mySelf watch
 </code></pre>
 <ol>
 <li>&#x7ED3;&#x8BBA;&#xFF1A;&#x4F18;&#x5148;&#x8C03;&#x7528; mixins &#x548C; extends &#x7EE7;&#x627F;&#x7684;&#x7236;&#x7C7B;&#xFF0C;extends &#x89E6;&#x53D1;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x66F4;&#x9AD8;&#xFF0C;&#x76F8;&#x5BF9;&#x4E8E;&#x662F;&#x961F;&#x5217;</li>
@@ -1608,7 +1653,7 @@ mixin2 created
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"谈谈extends","level":"4.4.2","depth":2,"next":{"title":"Vue 选项/其他","level":"4.5","depth":1,"ref":"","articles":[{"title":"谈谈model以及v-model指令","level":"4.5.1","depth":2,"path":"vue-other/model.md","ref":"vue-other/model.md","articles":[]},{"title":"谈谈inheritAttrs","level":"4.5.2","depth":2,"path":"vue-other/inheritAttrs.md","ref":"vue-other/inheritAttrs.md","articles":[]},{"title":"谈谈comments","level":"4.5.3","depth":2,"path":"vue-other/comments.md","ref":"vue-other/comments.md","articles":[]},{"title":"谈谈vue的实例属性","level":"4.5.4","depth":2,"path":"vue-other/attrs.md","ref":"vue-other/attrs.md","articles":[]},{"title":"谈谈Vue的实例方法/事件","level":"4.5.5","depth":2,"path":"vue-other/event.md","ref":"vue-other/event.md","articles":[]},{"title":"谈谈Vue的实例方法/生命周期","level":"4.5.6","depth":2,"path":"vue-other/lifeCycle.md","ref":"vue-other/lifeCycle.md","articles":[]},{"title":"谈谈Vue的指令","level":"4.5.7","depth":2,"path":"vue-other/directives.md","ref":"vue-other/directives.md","articles":[]},{"title":"谈谈指令v-on中的修饰符.native","level":"4.5.8","depth":2,"path":"vue-other/native.md","ref":"vue-other/native.md","articles":[]},{"title":"谈谈vue的特殊特性","level":"4.5.9","depth":2,"path":"v-other/speciality.md","ref":"v-other/speciality.md","articles":[]}]},"previous":{"title":"谈谈$parent,$children","level":"4.4.1","depth":2,"path":"vue-group/parent.md","ref":"vue-group/parent.md","articles":[]},"dir":"ltr"},"config":{"plugins":["etoc","theme-comscore","advanced-emoji","github","copy-code-button","livereload"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"etoc":{"h2lb":3,"header":1,"maxdepth":4,"mindepth":3,"notoc":false},"github":{"url":"https://github.com/zhangjikai"},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"langyazhixue","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*","description":"langyazhixue"},"file":{"path":"vue-group/extends.md","mtime":"2019-03-19T09:22:05.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-05T07:09:08.024Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"谈谈extends","level":"4.4.2","depth":2,"next":{"title":"Vue 选项/其他","level":"4.5","depth":1,"ref":"","articles":[{"title":"谈谈model以及v-model指令","level":"4.5.1","depth":2,"path":"vue-other/model.md","ref":"vue-other/model.md","articles":[]},{"title":"谈谈inheritAttrs","level":"4.5.2","depth":2,"path":"vue-other/inheritAttrs.md","ref":"vue-other/inheritAttrs.md","articles":[]},{"title":"谈谈comments","level":"4.5.3","depth":2,"path":"vue-other/comments.md","ref":"vue-other/comments.md","articles":[]},{"title":"谈谈vue的实例属性","level":"4.5.4","depth":2,"path":"vue-other/attrs.md","ref":"vue-other/attrs.md","articles":[]},{"title":"谈谈Vue的实例方法/事件","level":"4.5.5","depth":2,"path":"vue-other/event.md","ref":"vue-other/event.md","articles":[]},{"title":"谈谈Vue的实例方法/生命周期","level":"4.5.6","depth":2,"path":"vue-other/lifeCycle.md","ref":"vue-other/lifeCycle.md","articles":[]},{"title":"谈谈Vue的指令","level":"4.5.7","depth":2,"path":"vue-other/directives.md","ref":"vue-other/directives.md","articles":[]},{"title":"谈谈指令v-on中的修饰符.native","level":"4.5.8","depth":2,"path":"vue-other/native.md","ref":"vue-other/native.md","articles":[]},{"title":"谈谈vue的特殊特性","level":"4.5.9","depth":2,"path":"v-other/speciality.md","ref":"v-other/speciality.md","articles":[]}]},"previous":{"title":"谈谈$parent,$children","level":"4.4.1","depth":2,"path":"vue-group/parent.md","ref":"vue-group/parent.md","articles":[]},"dir":"ltr"},"config":{"plugins":["etoc","theme-comscore","advanced-emoji","github","copy-code-button","livereload"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"etoc":{"h2lb":3,"header":1,"maxdepth":4,"mindepth":3,"notoc":false},"github":{"url":"https://github.com/zhangjikai"},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"langyazhixue","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*","description":"langyazhixue"},"file":{"path":"vue-group/extends.md","mtime":"2019-05-07T02:30:21.019Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-05T07:09:08.024Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
