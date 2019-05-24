@@ -37,6 +37,7 @@
   * [Vue深度作用选择器](vue/deep.md)
   * [谈谈Vue中$attrs和$listeners](vue/listerens.md)
   * [谈谈Vue中的递归组件](vue/recursion.md)
+  * [谈谈Vue中的过渡和动画](vue/transition.md)
 
 * Vue 全局API
   * [谈谈Vue.extend](vue-api/extend.md)
