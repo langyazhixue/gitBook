@@ -467,7 +467,94 @@ new Vue({
 
 
 :palm_tree:动态过渡
+在`Vue`中即使是过渡也是数据驱动的！动态过渡最基本的例子是通过`name`特性来绑定动态值
+```html
+<transition v-bind:name="transitionName">
+  <!-- ... -->
+</transition>
+
+```
 用`Vue`的过渡系统来定义的`css`过渡/动画在不同过渡间切换会非常有用
+
+所有过渡特性都可以动态绑定，但我们不仅仅只有特性可以利用，还可以通过事件钩子获取上下文中的所有数据，因为事件钩子都是方法。这意味着，根据组件状态不同，你的`Javascript`过渡会有不同的表现
+
+```html
+  <div id="dynamic-fade-demo" class="demo">
+    Fade In:  <input v-model="fadeInDuration" type="range" min="0" :max="maxFadeDuration">
+    Fade Out: <input v-model="fadeOutDuration" type="range" min="0" :max="maxFadeDuration">
+    <br>
+    <transition
+      :css="false"
+      @before-enter="dynamicBeforeEnter"
+      @enter="dynamicEnter"
+      @leave="dynamicLeave"
+    >
+      <p v-if="dynamicShow">
+        show
+      </p>
+    </transition>
+    <br/>
+    <a-button
+      v-if="dynamicStop"
+      @click="dynamicStop = false; dynamicShow = false"
+    >
+      Start animating
+    </a-button>
+    <a-button
+      v-else
+      @click="dynamicStop = true"
+    >
+      Stop it!
+    </a-button>
+  </div>
+```
+```js
+import Velocity from 'velocity-animate'
+new Vue({
+  el: '#dynamic-fade-demo',
+  data: {
+    show: true,
+    fadeInDuration: 1000,
+    fadeOutDuration: 1000,
+    maxFadeDuration: 1500,
+    stop: true
+  },
+  mounted: function () {
+    this.show = false
+  },
+  methods: {
+    dynamicBeforeEnter: function (el) {
+      el.style.opacity = 0
+    },
+    dynamicEnter: function (el, done) {
+      var vm = this
+      Velocity(el,
+        { opacity: 1 },
+        {
+          duration: this.fadeInDuration,
+          complete: function () {
+            done()
+            if (!vm.stop) vm.show = false
+          }
+        }
+      )
+    },
+    dynamicLeave: function (el, done) {
+      var vm = this
+      Velocity(el,
+        { opacity: 0 },
+        {
+          duration: this.fadeOutDuration,
+          complete: function () {
+            done()
+            vm.show = true
+          }
+        }
+      )
+    }
+  }
+})
+```
 
 
 

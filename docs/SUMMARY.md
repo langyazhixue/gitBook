@@ -37,8 +37,7 @@
   * [Vue深度作用选择器](vue/deep.md)
   * [谈谈Vue中$attrs和$listeners](vue/listerens.md)
   * [谈谈Vue中的递归组件](vue/recursion.md)
-  * [谈谈Vue中的过渡和动画](vue/transition.md)
-
+  * [谈谈Vue中的进入/离开 & 列表过渡](vue/transition.md)
 * Vue 全局API
   * [谈谈Vue.extend](vue-api/extend.md)
   * [谈谈Vue.nextTick](vue-api/nextTick.md)
@@ -46,7 +45,7 @@
   * [谈谈Vue.directive](vue-api/directive.md)
   * [谈谈Vue.filter](vue-api/filter.md)
   * [谈谈Vue.component](vue-api/component.md)
-
+  
 * Vue 选项/DOM
   * [谈谈el](vue-dom/el.md)
   * [谈谈template](vue-dom/template.md)
