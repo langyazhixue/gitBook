@@ -1,4 +1,4 @@
-### 谈谈Vue中的过渡和动画
+# 谈谈Vue中单元素/组件的过渡
 Vue 在插入、更新、或者移除DOM时候，提供多种不同方式的应用过渡效果。
 包括以下工具：
 
@@ -7,9 +7,9 @@ Vue 在插入、更新、或者移除DOM时候，提供多种不同方式的应�
 * 在过渡钩子函数中使用Javascript直接操作DOM
 * 可以配合使用第三方Javascript动画库，如 `Velocity.js`
 
-#### 单元素/组件的过渡
 ---
 
+## 简单的过渡
 Vue 提供了`transition`的封装组件，在下列情形下，可以给任何元素和组件添加进入/离开过渡
 
 * 条件渲染(使用 `v-if`)
@@ -77,7 +77,7 @@ new Vue({
 那么 `v-enter`会替换成 `my-transition-enter`
 `v-enter-active` 和 `v-leave-active` 可以控制进入/离开过渡的不同的缓和曲线
 
-:palm_tree:css动画
+## css动画
 
 ```html
 <h2>css 动画用法同css过渡，区别是在动画中`v-enter`类名在节点插入DOM后不会立即删除，而是`animationend`事件触发时删除</h2>
@@ -134,6 +134,7 @@ new Vue({
   }
 }
 ```
+
 * 自定义过渡的类名，他们的优先级高于普通的类名，这对于Vue的过渡系统和其他第三方`css`动画库，如
 `Animate.css`结合使用十分有用
 * 显性的过渡持续时间
@@ -141,9 +142,9 @@ new Vue({
   <transition :duration="{ enter: 500, leave: 800 }">...</transition>
 ```
 
-:palm_tree:Javascript 钩子
+## Javascript 钩子
 
-```js
+```html
 <transition
   v-on:before-enter="beforeEnter"
   v-on:enter="enter"
@@ -156,11 +157,13 @@ new Vue({
   v-on:leave-cancelled="leaveCancelled"
 >
 </transition>
+
 ```
 > 当只用 JavaScript 过渡的时候，在 enter 和 leave 中必须使用 done 进行回调。否则，它们将被同步调用，过渡会立即完成。
 > 推荐对于仅使用 JavaScript 过渡的元素添加 v-bind:css="false"，Vue 会跳过 CSS 的检测。这也可以避免过渡过程中 CSS 的影响。
 
 :palm_tree:初使渲染的过渡
+
 ```html
   <a-button @click="show5=!show5">
     Toggle
@@ -194,18 +197,18 @@ new Vue({
 .appear-active-test-class {
   transition: all 10s ease
 }
-.appear-active-test-class {
+.appear-to-test-class {
   opacity: 1
 }
 ```
 
 
-:palm_tree:多元素的过渡
+## 多元素的过渡
 * transition 默认 -  进入和离开会同时发生
 * `in-out`:新元素先进行过渡，完成之后当前元素过渡离开
 * `out-in`: 当前元素先进行过渡,完成之后新元素过渡进入
 > 当有相同标签名的元素切换时候，需要通过`key`特性设置唯一的值来标记以
-让Vue来区分它们，
+让Vue来区分它们
 
 ```html
   <h2>in-out</h2>
@@ -219,15 +222,14 @@ new Vue({
       </a-button>
     </transition>
   </div>
-```
-
-```js
-new Vue({
-  el: '#demo',
-  data: {
-    show6:true
-  }
-})
+  <script>
+  var vueObj = new Vue({
+    el: '#demo',
+    data: {
+      show6:true
+    }
+  })
+  </script>
 ```
 
 ```css
@@ -261,10 +263,9 @@ new Vue({
 }
 ```
 
-:palm_tree:多组件的过渡
+## 多组件的过渡
 
 多个组件的过渡简单很多-我们不需要使用`key`特性。相反，我们只需要使用`动态组件`
-
 ```html
 <h2>多个组件过渡</h2>
 <a-button @click="toggle">
@@ -314,8 +315,10 @@ new Vue({
 ```
 
 
-:palm_tree:列表的过渡
+## 列表的过渡
+
  使用 `<transiyion-group>` 组件，这个组件有以下特点：
+
  * 不同于 `transiyion`, 它会以一个真实元素呈现，默认为一个`span`。
  也可以通过`tag`特性更换为其他元素
 
@@ -324,24 +327,30 @@ new Vue({
 * 内部元素 `总是需要` 提供唯一的 `key`值
 
 ```html
-<h2>列表的过渡</h2>
-<div id="list-demo" class="demo11">
-  <a-button v-on:click="shuffle">
-    Shuffle
-  </a-button>
-  <a-button @click="handleradd">
-    Add
-  </a-button>
-  <a-button @click="remove">
-    Remove
-  </a-button>
-  <transition-group name="listdddd" tag="p">
-    <span v-for="item in items" :key="item" class="list-item">
-      {{ item }}
-    </span>
-  </transition-group>
-</div>
+
+  <h2>列表的过渡</h2>
+  <div id="list-demo" class="demo11">
+    <a-button @click="shuffle">
+      Shuffle
+    </a-button>
+    <a-button @click="handleradd">
+      Add
+    </a-button>
+    <a-button @click="remove">
+      Remove
+    </a-button>
+    <transition-group name="listdddd" tag="p">
+      <span 
+      v-for="item in items" 
+      :key="item" 
+      class="list-item"
+      >
+        {{ item }}
+      </span>
+    </transition-group>
+  </div>
 ```
+
 ```css
 .listdddd-enter-active, .listdddd-leave-active {
   transition: all 1s;
@@ -388,7 +397,8 @@ new Vue({
 })
 ```
 
-:palm_tree:列表的交错过渡
+## 列表的交错过渡
+
 通过`Data`属性和`Javascript`通信，就可以实现列表的交错过渡
 
 ```html
@@ -466,7 +476,7 @@ new Vue({
 ```
 
 
-:palm_tree:动态过渡
+## 动态过渡
 在`Vue`中即使是过渡也是数据驱动的！动态过渡最基本的例子是通过`name`特性来绑定动态值
 ```html
 <transition v-bind:name="transitionName">
@@ -477,7 +487,6 @@ new Vue({
 用`Vue`的过渡系统来定义的`css`过渡/动画在不同过渡间切换会非常有用
 
 所有过渡特性都可以动态绑定，但我们不仅仅只有特性可以利用，还可以通过事件钩子获取上下文中的所有数据，因为事件钩子都是方法。这意味着，根据组件状态不同，你的`Javascript`过渡会有不同的表现
-
 ```html
   <div id="dynamic-fade-demo" class="demo">
     Fade In:  <input v-model="fadeInDuration" type="range" min="0" :max="maxFadeDuration">
