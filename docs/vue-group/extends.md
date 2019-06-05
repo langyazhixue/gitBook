@@ -89,7 +89,7 @@ mySelf watch
 
 ```
   1. 结论：优先调用 mixins 和 extends 继承的父类，extends 触发的优先级更高，相对于是队列
-  2. push(extend, mixin1, minxin2, 本身的钩子函数)
+  2. push(extend, mixin1, mixin2, 本身的钩子函数)
   3. 经过测试，watch的值继承规则一样。
 
 
