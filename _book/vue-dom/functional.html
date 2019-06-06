@@ -1484,18 +1484,21 @@
 <p><font color="#006600">#</font> Vue&#x4E2D;&#x6709;&#x4E00;&#x79CD;&#x7EC4;&#x4EF6;&#x6CA1;&#x6709;&#x7BA1;&#x7406;&#x4EFB;&#x4F55;&#x72B6;&#x6001;&#xFF0C;&#x4E5F;&#x6CA1;&#x6709;&#x76D1;&#x542C;&#x4EFB;&#x4F55;&#x4F20;&#x9012;&#x7ED9;&#x5B83;&#x7684;&#x72B6;&#x6001;&#xFF0C;&#x4E5F;&#x6CA1;&#x6709;&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x5B83;&#x53EA;&#x662F;&#x4E00;&#x4E2A;&#x63A5;&#x53D7;&#x4E00;&#x4E9B;Prop&#x7684;&#x51FD;&#x6570;&#x3002;&#x5728;&#x8FD9;&#x6837;&#x573A;&#x666F;&#x4E0B;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5C06;&#x7EC4;&#x5C06;&#x6807;&#x8BB0;&#x4E3A;<code>functional</code>,&#x8FD9;&#x610F;&#x5473;&#x7740;&#x5B83;&#x4E3A;&#x72B6;&#x6001;(&#x6CA1;&#x6709;<code>&#x54CD;&#x5E94;&#x5F0F;&#x6570;&#x636E;</code>)&#xFF0C;&#x4E5F;&#x6CA1;&#x6709;&#x5B9E;&#x4F8B;(&#x6CA1;&#x6709;<code>this&#x4E0A;&#x4E0B;&#x6587;</code>)</p>
 <p><img align="absmiddle" alt=":palm_tree:" class="emoji" src="../gitbook/gitbook-plugin-advanced-emoji/emojis/palm_tree.png" title=":palm_tree:"> demo</p>
 <pre><code class="lang-js">  Vue.component(<span class="hljs-string">&apos;my-component&apos;</span>, {
-  functional: <span class="hljs-literal">true</span>,
+  functional: <span class="hljs-literal">true</span>, <span class="hljs-comment">// &#x5FC5;&#x987B;&#x7684;</span>
   <span class="hljs-comment">// Props &#x662F;&#x53EF;&#x9009;&#x7684;</span>
   props: {
     <span class="hljs-comment">// ...</span>
   },
   <span class="hljs-comment">// &#x4E3A;&#x4E86;&#x5F25;&#x8865;&#x7F3A;&#x5C11;&#x7684;&#x5B9E;&#x4F8B;</span>
-  <span class="hljs-comment">// &#x63D0;&#x4F9B;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x4F5C;&#x4E3A;&#x4E0A;&#x4E0B;&#x6587;</span>
+  <span class="hljs-comment">// &#x63D0;&#x4F9B;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x4F5C;&#x4E3A;&#x4E0A;&#x4E0B;&#x6587; &#x5C31;&#x662F;context</span>
   render: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">createElement, context</span>) </span>{
     <span class="hljs-comment">// ...</span>
   }
 })
 </code></pre>
+<blockquote>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x5728; 2.3.0 &#x4E4B;&#x524D;&#x7684;&#x7248;&#x672C;&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x5F0F;&#x7EC4;&#x4EF6;&#x60F3;&#x8981;&#x63A5;&#x6536; prop&#xFF0C;&#x5219; props &#x9009;&#x9879;&#x662F;&#x5FC5;&#x987B;&#x7684;&#x3002;&#x5728; 2.3.0 &#x6216;&#x4EE5;&#x4E0A;&#x7684;&#x7248;&#x672C;&#x4E2D;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x7701;&#x7565; props &#x9009;&#x9879;&#xFF0C;&#x6240;&#x6709;&#x7EC4;&#x4EF6;&#x4E0A;&#x7684;&#x7279;&#x6027;&#x90FD;&#x4F1A;&#x88AB;&#x81EA;&#x52A8;&#x9690;&#x5F0F;&#x89E3;&#x6790;&#x4E3A; prop&#x3002;</p>
+</blockquote>
 <p>&#x5728;2.5.0&#x4EE5;&#x53CA;&#x4EE5;&#x4E0A;&#x7248;&#x672C;&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x4F7F;&#x7528;&#x4E86;<code>&#x5355;&#x6587;&#x4EF6;&#x7EC4;&#x4EF6;</code>,&#x90A3;&#x4E48;&#x57FA;&#x4E8E;&#x6A21;&#x7248;&#x7684;&#x51FD;&#x6570;&#x5F0F;&#x7EC4;&#x4EF6;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x58F0;&#x660E;&#xFF1A;</p>
 <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">functional</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
@@ -1508,55 +1511,55 @@
 </li>
 <li><p><code>slots</code>: &#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x8FD4;&#x56DE;&#x4E86;&#x5305;&#x542B;&#x6240;&#x6709;&#x63D2;&#x69FD;&#x7684;&#x5BF9;&#x8C61;</p>
 </li>
-<li><p><code>scopedSlots</code>: &#x4E00;&#x4E2A;&#x66B4;&#x9732;&#x4F20;&#x5165;&#x7684;&#x4F5C;&#x7528;&#x57DF;&#x63D2;&#x69FD;&#x7684;&#x5BF9;&#x8C61;</p>
+<li><p><code>scopedSlots</code>:(2.6.0+) &#x4E00;&#x4E2A;&#x66B4;&#x9732;&#x4F20;&#x5165;&#x7684;&#x4F5C;&#x7528;&#x57DF;&#x63D2;&#x69FD;&#x7684;&#x5BF9;&#x8C61;&#x3002;&#x4E5F;&#x4EE5;&#x51FD;&#x6570;&#x5F62;&#x52BF;&#x66B4;&#x9732;&#x666E;&#x901A;&#x63D2;&#x4EF6;</p>
 </li>
 <li><p><code>data</code>: &#x4F20;&#x9012;&#x7ED9;&#x7EC4;&#x4EF6;&#x7684;&#x6574;&#x4E2A;<code>&#x6570;&#x636E;&#x5BF9;&#x8C61;</code>,&#x4F5C;&#x4E3A;<code>createElement</code>&#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x4F20;&#x5165;&#x7EC4;&#x4EF6;</p>
 </li>
 <li><p><code>parent</code>: &#x5BF9;&#x7236;&#x7EC4;&#x4EF6;&#x7684;&#x5F15;&#x7528;</p>
 </li>
-<li><p><code>listeners</code>: &#x4E00;&#x4E2A;&#x5305;&#x542B;&#x4E86;&#x6240;&#x6709;&#x7236;&#x7EC4;&#x4EF6;&#x4E3A;&#x5F53;&#x524D;&#x7EC4;&#x4EF6;&#x6CE8;&#x518C;&#x7684;&#x4E8B;&#x4EF6;&#x76D1;&#x542C;&#x5668;&#x7684;&#x5BF9;&#x8C61;</p>
+<li><p><code>listeners</code>: (2.6.0+)&#x4E00;&#x4E2A;&#x5305;&#x542B;&#x4E86;&#x6240;&#x6709;&#x7236;&#x7EC4;&#x4EF6;&#x4E3A;&#x5F53;&#x524D;&#x7EC4;&#x4EF6;&#x6CE8;&#x518C;&#x7684;&#x4E8B;&#x4EF6;&#x76D1;&#x542C;&#x5668;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x8FD9;&#x662F;<code>data.on</code>&#x7684;&#x4E00;&#x4E2A;&#x522B;&#x540D;</p>
 </li>
 <li><p><code>injections</code>: &#x5982;&#x679C;&#x4F7F;&#x7528;&#x4E86;<code>inject</code>&#x9009;&#x9879;&#xFF0C;&#x5219;&#x8BE5;&#x5BF9;&#x8C61;&#x5305;&#x542B;&#x4E86;&#x5E94;&#x5F53;&#x88AB;&#x6CE8;&#x5165;&#x7684;&#x5C5E;&#x6027;</p>
 </li>
 </ul>
-<p>&#x56E0;&#x4E3A;&#x51FD;&#x6570;&#x5F0F;&#x7EC4;&#x4EF6;&#x53EA;&#x662F;&#x51FD;&#x6570;&#xFF0C;&#x6240;&#x4EE5;&#x6E32;&#x67D3;&#x5F00;&#x9500;&#x4E5F;&#x4F4E;&#x5F88;&#x591A;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x5BF9;&#x6301;&#x4E45;&#x5316;&#x5B9E;&#x4F8B;&#x7684;&#x7F3A;&#x4E4F;&#x4E5F;&#x610F;&#x5473;&#x7740;&#x51FD;&#x6570;&#x5F0F;&#x7EC4;&#x4EF6;&#x4E0D;&#x4F1A;&#x51FA;&#x73B0;&#x5728; <code>Vue devtools</code> &#x7684;&#x7EC4;&#x4EF6;&#x6811;&#x91CC;&#x3002;</p>
+<p>&#x56E0;&#x4E3A;&#x51FD;&#x6570;&#x5F0F;&#x7EC4;&#x4EF6;&#x53EA;&#x662F;&#x51FD;&#x6570;&#xFF0C;&#x6240;&#x4EE5;&#x6E32;&#x67D3;&#x5F00;&#x9500;&#x4E5F;&#x4F4E;&#x5F88;&#x591A;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x5BF9;&#x6301;&#x4E45;&#x5316;&#x5B9E;&#x4F8B;&#x7684;&#x7F3A;&#x4E4F;&#x4E5F;&#x610F;&#x5473;&#x7740;&#x51FD;&#x6570;&#x5F0F;&#x7EC4;&#x4EF6;&#x4E0D;&#x4F1A;&#x51FA;&#x73B0;&#x5728; <code>Vue devtools</code> &#x7684;&#x7EC4;&#x4EF6;&#x6811;&#x91CC;</p>
 <p>&#x5728;&#x4F5C;&#x4E3A;&#x5305;&#x88C5;&#x7EC4;&#x4EF6;&#x65F6;&#x5B83;&#x4EEC;&#x4E5F;&#x975E;&#x5E38;&#x6709;&#x7528;&#x3002;&#x6BD4;&#x5982;&#xFF0C;&#x5F53;&#x4F60;&#x9700;&#x8981;&#x505A;&#x8FD9;&#x4E9B;&#x65F6;&#xFF1A;</p>
 <ul>
 <li><p>&#x7A0B;&#x5E8F;&#x5316;&#x5730;&#x591A;&#x4E2A;&#x7EC4;&#x4EF6;&#x4E2D;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x4EE3;&#x4E3A;&#x6E32;&#x67D3;</p>
 </li>
-<li><p>&#x5728;&#x5C06; <code>children</code>&#x3001;<code>props</code>&#x3001;<code>data</code>&#x4F20;&#x9012;&#x7ED9;&#x5B50;&#x7EC4;&#x4EF6;&#x4E4B;&#x524D;&#x64CD;&#x4F5C;&#x5B83;&#x4EEC;&#x3002;</p>
-</li>
-</ul>
+<li><p>&#x5728;&#x5C06; <code>children</code>&#x3001;<code>props</code>&#x3001;<code>data</code>&#x4F20;&#x9012;&#x7ED9;&#x5B50;&#x7EC4;&#x4EF6;&#x4E4B;&#x524D;&#x64CD;&#x4F5C;&#x5B83;&#x4EEC;</p>
 <pre><code class="lang-js"><span class="hljs-keyword">var</span> EmptyList = { <span class="hljs-comment">/* ... */</span> }
 <span class="hljs-keyword">var</span> TableList = { <span class="hljs-comment">/* ... */</span> }
 <span class="hljs-keyword">var</span> OrderedList = { <span class="hljs-comment">/* ... */</span> }
 <span class="hljs-keyword">var</span> UnorderedList = { <span class="hljs-comment">/* ... */</span> }
 Vue.component(<span class="hljs-string">&apos;smart-list&apos;</span>, {
-  functional: <span class="hljs-literal">true</span>,
-  props: {
-    items: {
-      type: <span class="hljs-built_in">Array</span>,
-      required: <span class="hljs-literal">true</span>
-    },
-    isOrdered: <span class="hljs-built_in">Boolean</span>
+functional: <span class="hljs-literal">true</span>,
+props: {
+  items: {
+    type: <span class="hljs-built_in">Array</span>,
+    required: <span class="hljs-literal">true</span>
   },
-  render: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">createElement, context</span>) </span>{
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">appropriateListComponent</span> (<span class="hljs-params"></span>) </span>{
-      <span class="hljs-keyword">var</span> items = context.props.items
-      <span class="hljs-keyword">if</span> (items.length === <span class="hljs-number">0</span>)           <span class="hljs-keyword">return</span> EmptyList
-      <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> items[<span class="hljs-number">0</span>] === <span class="hljs-string">&apos;object&apos;</span>) <span class="hljs-keyword">return</span> TableList
-      <span class="hljs-keyword">if</span> (context.props.isOrdered)      <span class="hljs-keyword">return</span> OrderedList
-      <span class="hljs-keyword">return</span> UnorderedList
-    }
-    <span class="hljs-keyword">return</span> createElement(
-      appropriateListComponent(),
-      context.data,
-      context.children
-    )
+  isOrdered: <span class="hljs-built_in">Boolean</span>
+},
+render: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">createElement, context</span>) </span>{
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">appropriateListComponent</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> items = context.props.items
+    <span class="hljs-keyword">if</span> (items.length === <span class="hljs-number">0</span>)           <span class="hljs-keyword">return</span> EmptyList
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> items[<span class="hljs-number">0</span>] === <span class="hljs-string">&apos;object&apos;</span>) <span class="hljs-keyword">return</span> TableList
+    <span class="hljs-keyword">if</span> (context.props.isOrdered)      <span class="hljs-keyword">return</span> OrderedList
+    <span class="hljs-keyword">return</span> UnorderedList
   }
+  <span class="hljs-keyword">return</span> createElement(
+    appropriateListComponent(),
+    context.data,
+    context.children
+  )
+}
 })
 </code></pre>
 <p><font color="#006600">#</font> &#x5411;&#x5B50;&#x5143;&#x7D20;&#x6216;&#x5B50;&#x7EC4;&#x4EF6;&#x4F20;&#x9012;&#x7279;&#x6027;&#x548C;&#x4E8B;&#x4EF6;</p>
+</li>
+</ul>
 <p>&#x5728;&#x666E;&#x901A;&#x7EC4;&#x4EF6;&#x4E2D;&#xFF0C;&#x6CA1;&#x6709;&#x88AB;&#x5B9A;&#x4E49;&#x4E3A; prop &#x7684;&#x7279;&#x6027;&#x4F1A;&#x81EA;&#x52A8;&#x6DFB;&#x52A0;&#x5230;&#x7EC4;&#x4EF6;&#x7684;&#x6839;&#x5143;&#x7D20;&#x4E0A;&#xFF0C;&#x5C06;&#x5DF2;&#x6709;&#x7684;&#x540C;&#x540D;&#x7279;&#x6027;&#x8FDB;&#x884C;&#x66FF;&#x6362;&#x6216;&#x4E0E;&#x5176;&#x8FDB;&#x884C;&#x667A;&#x80FD;&#x5408;&#x5E76;&#x3002;</p>
 <p>&#x7136;&#x800C;&#x51FD;&#x6570;&#x5F0F;&#x7EC4;&#x4EF6;&#x8981;&#x6C42;&#x4F60;&#x663E;&#x5F0F;&#x5B9A;&#x4E49;&#x8BE5;&#x884C;&#x4E3A;&#xFF1A;</p>
 <pre><code class="lang-js">Vue.component(<span class="hljs-string">&apos;my-functional-button&apos;</span>, {
@@ -1568,7 +1571,7 @@ Vue.component(<span class="hljs-string">&apos;smart-list&apos;</span>, {
   }
 })
 </code></pre>
-<p>&#x5982;&#x679C;&#x4F60;&#x4F7F;&#x7528;&#x57FA;&#x4E8E;&#x6A21;&#x677F;&#x7684;&#x51FD;&#x6570;&#x5F0F;&#x7EC4;&#x4EF6;&#xFF0C;&#x90A3;&#x4E48;&#x4F60;&#x8FD8;&#x9700;&#x8981;&#x624B;&#x52A8;&#x6DFB;&#x52A0;&#x7279;&#x6027;&#x548C;&#x76D1;&#x542C;&#x5668;&#x3002;&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x5230;&#x5176;&#x72EC;&#x7ACB;&#x7684;&#x4E0A;&#x4E0B;&#x6587;&#x5185;&#x5BB9;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; data.attrs &#x4F20;&#x9012;&#x4EFB;&#x4F55; HTML &#x7279;&#x6027;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; listeners (&#x5373; data.on &#x7684;&#x522B;&#x540D;) &#x4F20;&#x9012;&#x4EFB;&#x4F55;&#x4E8B;&#x4EF6;&#x76D1;&#x542C;&#x5668;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4F60;&#x4F7F;&#x7528;&#x57FA;&#x4E8E;&#x6A21;&#x677F;&#x7684;&#x51FD;&#x6570;&#x5F0F;&#x7EC4;&#x4EF6;&#xFF0C;&#x90A3;&#x4E48;&#x4F60;&#x8FD8;&#x9700;&#x8981;&#x624B;&#x52A8;&#x6DFB;&#x52A0;&#x7279;&#x6027;&#x548C;&#x76D1;&#x542C;&#x5668;&#x3002;&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x5230;&#x5176;&#x72EC;&#x7ACB;&#x7684;&#x4E0A;&#x4E0B;&#x6587;&#x5185;&#x5BB9;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; data.attrs &#x4F20;&#x9012;&#x4EFB;&#x4F55; HTML &#x7279;&#x6027;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; listeners (&#x5373; data.on &#x7684;&#x522B;&#x540D;) &#x4F20;&#x9012;&#x4EFB;&#x4F55;&#x4E8B;&#x4EF6;&#x76D1;&#x542C;&#x5668;</p>
 <pre><code class="lang-js">&lt;template functional&gt;
   &lt;button
     class=&quot;btn btn-primary&quot;
@@ -1622,7 +1625,7 @@ Vue.component(<span class="hljs-string">&apos;smart-list&apos;</span>, {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"谈谈函数式组件","level":"4.3.4","depth":2,"next":{"title":"slots和scopedSlots对比","level":"4.3.5","depth":2,"path":"vue-dom/compare.md","ref":"vue-dom/compare.md","articles":[]},"previous":{"title":"谈谈render","level":"4.3.3","depth":2,"path":"vue-dom/render.md","ref":"vue-dom/render.md","articles":[]},"dir":"ltr"},"config":{"plugins":["etoc","theme-comscore","advanced-emoji","github","copy-code-button","livereload"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"etoc":{"h2lb":3,"header":1,"maxdepth":4,"mindepth":3,"notoc":false},"github":{"url":"https://github.com/zhangjikai"},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"langyazhixue","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*","description":"langyazhixue"},"file":{"path":"vue-dom/functional.md","mtime":"2019-04-22T09:27:54.216Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-03T02:33:09.846Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"谈谈函数式组件","level":"4.3.4","depth":2,"next":{"title":"slots和scopedSlots对比","level":"4.3.5","depth":2,"path":"vue-dom/compare.md","ref":"vue-dom/compare.md","articles":[]},"previous":{"title":"谈谈render","level":"4.3.3","depth":2,"path":"vue-dom/render.md","ref":"vue-dom/render.md","articles":[]},"dir":"ltr"},"config":{"plugins":["etoc","theme-comscore","advanced-emoji","github","copy-code-button","livereload"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"etoc":{"h2lb":3,"header":1,"maxdepth":4,"mindepth":3,"notoc":false},"github":{"url":"https://github.com/zhangjikai"},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"langyazhixue","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*","description":"langyazhixue"},"file":{"path":"vue-dom/functional.md","mtime":"2019-06-06T03:32:06.022Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-06T06:20:36.040Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -6,19 +6,21 @@
 
 ```js
   Vue.component('my-component', {
-  functional: true,
+  functional: true, // 必须的
   // Props 是可选的
   props: {
     // ...
   },
   // 为了弥补缺少的实例
-  // 提供第二个参数作为上下文
+  // 提供第二个参数作为上下文 就是context
   render: function (createElement, context) {
     // ...
   }
 })
 
 ```
+> 注意：在 2.3.0 之前的版本中，如果一个函数式组件想要接收 prop，则 props 选项是必须的。在 2.3.0 或以上的版本中，你可以省略 props 选项，所有组件上的特性都会被自动隐式解析为 prop。
+
 在2.5.0以及以上版本中，如果你使用了`单文件组件`,那么基于模版的函数式组件可以这样声明：
 
 ```html
@@ -33,23 +35,22 @@
 
 * `slots`: 一个函数，返回了包含所有插槽的对象
 
-* `scopedSlots`: 一个暴露传入的作用域插槽的对象
+* `scopedSlots`:(2.6.0+) 一个暴露传入的作用域插槽的对象。也以函数形势暴露普通插件
 
 * `data`: 传递给组件的整个`数据对象`,作为`createElement`的第二个参数传入组件
 
 * `parent`: 对父组件的引用
 
-* `listeners`: 一个包含了所有父组件为当前组件注册的事件监听器的对象
+* `listeners`: (2.6.0+)一个包含了所有父组件为当前组件注册的事件监听器的对象，这是`data.on`的一个别名
 
 * `injections`: 如果使用了`inject`选项，则该对象包含了应当被注入的属性
 
-因为函数式组件只是函数，所以渲染开销也低很多。然而，对持久化实例的缺乏也意味着函数式组件不会出现在 `Vue devtools` 的组件树里。
+因为函数式组件只是函数，所以渲染开销也低很多。然而，对持久化实例的缺乏也意味着函数式组件不会出现在 `Vue devtools` 的组件树里
 
 在作为包装组件时它们也非常有用。比如，当你需要做这些时：
 * 程序化地多个组件中选择一个代为渲染
 
-* 在将 `children`、`props`、`data`传递给子组件之前操作它们。
-
+* 在将 `children`、`props`、`data`传递给子组件之前操作它们
 ```js
 var EmptyList = { /* ... */ }
 var TableList = { /* ... */ }
@@ -96,9 +97,7 @@ Vue.component('my-functional-button', {
   }
 })
 ```
-
-如果你使用基于模板的函数式组件，那么你还需要手动添加特性和监听器。因为我们可以访问到其独立的上下文内容，所以我们可以使用 data.attrs 传递任何 HTML 特性，也可以使用 listeners (即 data.on 的别名) 传递任何事件监听器。
-
+如果你使用基于模板的函数式组件，那么你还需要手动添加特性和监听器。因为我们可以访问到其独立的上下文内容，所以我们可以使用 data.attrs 传递任何 HTML 特性，也可以使用 listeners (即 data.on 的别名) 传递任何事件监听器
 ```js
 <template functional>
   <button
